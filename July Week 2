@@ -348,6 +348,19 @@
     padding: 2px 8px;
     margin-left: 6px;
   }
+<!-- ══════════════════════════════════════════
+     PAGE 1 — COVER
+══════════════════════════════════════════ -->
+<div class="page">
+  <div class="cover-page">
+    <div class="cover-badge">📅 July – December 2026 &nbsp;·&nbsp; Every Thursday 8:30 PM</div>
+    <div class="cover-title">English Learning Journey<br>2026</div>
+    <div class="cover-subtitle">With Miss Iman</div>
+
+    <div class="cover-details">
+      <div class="cover-detail-pill">🌐 Fully Online (Video Call)</div>
+      <div class="cover-detail-pill">🕜 8:30 – 9:30 PM every Thursday</div>
+    </div>
 
 <!-- Jul Session 2 -->
   <div class="session-card">
