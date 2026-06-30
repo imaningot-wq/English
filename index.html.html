@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>4-Week English Curriculum – ASD/ADHD (Age 15)</title>
+<style>
+  /* ===== PRINT & SCREEN STYLES ===== */
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap');
+
+  :root {
+    --blue:    #2563EB;
+    --indigo:  #4F46E5;
+    --purple:  #7C3AED;
+    --pink:    #EC4899;
+    --green:   #16A34A;
+    --teal:    #0D9488;
+    --amber:   #D97706;
+    --red:     #DC2626;
+    --sky:     #0EA5E9;
+    --gray:    #374151;
+    --bg:      #F9FAFB;
+    --card:    #FFFFFF;
+    --border:  #E5E7EB;
+    --muted:   #6B7280;
+    --light-blue: #EFF6FF;
+    --light-green: #F0FDF4;
+    --light-purple: #F5F3FF;
+    --light-amber: #FFFBEB;
+    --light-pink: #FDF2F8;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--gray);
+    line-height: 1.6;
+    font-size: 14px;
+  }
+
+  /* ===== COVER PAGE ===== */
+  .cover {
+    background: linear-gradient(135deg, #1e3a8a 0%, #4F46E5 40%, #7C3AED 70%, #EC4899 100%);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 40px;
+    page-break-after: always;
+  }
+  .cover .emoji-row { font-size: 52px; margin-bottom: 24px; letter-spacing: 8px; }
+  .cover h1 { font-family: 'Nunito', sans-serif; font-size: 42px; font-weight: 900; line-height: 1.2; margin-bottom: 12px; }
+  .cover .subtitle { font-size: 18px; opacity: 0.88; margin-bottom: 32px; font-weight: 300; }
+  .cover .tag-row { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 40px; }
+  .cover .tag { background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.35); border-radius: 20px; padding: 6px 18px; font-size: 13px; font-weight: 600; }
+  .cover .meta-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; margin-top: 20px; max-width: 720px; }
+  .cover .meta-card { background: rgba(255,255,255,0.15); border-radius: 14px; padding: 18px 12px; }
+  .cover .meta-card .num { font-family: 'Nunito', sans-serif; font-size: 32px; font-weight: 900; }
+  .cover .meta-card .lbl { font-size: 12px; opacity: 0.8; margin-top: 4px; }
+
+  /* ===== PAGE UTILITIES ===== */
+  .page-break { page-break-before: always; }
+  .section-title {
+    font-family: 'Nunito', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 3px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* ===== HOW TO USE PAGE ===== */
+  .how-page { padding: 48px 48px 32px; page-break-after: always; }
+  .how-page h2 { font-family: 'Nunito', sans-serif; font-size: 28px; font-weight: 900; margin-bottom: 6px; color: var(--indigo); }
+  .how-page .intro { color: var(--muted); margin-bottom: 28px; font-size: 14px; }
+  .principle-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-bottom: 28px; }
+  .principle-card { border-radius: 12px; padding: 18px; border: 2px solid; }
+  .principle-card.blue  { background: var(--light-blue);   border-color: #93C5FD; }
+  .principle-card.green { background: var(--light-green);  border-color: #86EFAC; }
+  .principle-card.purple{ background: var(--light-purple); border-color: #C4B5FD; }
+  .principle-card.amber { background: var(--light-amber);  border-color: #FCD34D; }
+  .principle-card.pink  { background: var(--light-pink);   border-color: #F9A8D4; }
+  .principle-card.teal  { background: #F0FDFA;              border-color: #5EEAD4; }
+  .principle-card .pc-icon { font-size: 26px; margin-bottom: 6px; }
+  .principle-card .pc-title { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 13px; margin-bottom: 4px; }
+  .principle-card .pc-text  { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+  /* ===== SUBJECT COLOR SYSTEM ===== */
+  .subject-grammar  { --sc: #2563EB; --sc-bg: #EFF6FF; --sc-border: #93C5FD; }
+  .subject-vocab    { --sc: #7C3AED; --sc-bg: #F5F3FF; --sc-border: #C4B5FD; }
+  .subject-speaking { --sc: #D97706; --sc-bg: #FFFBEB; --sc-border: #FCD34D; }
+  .subject-reading  { --sc: #16A34A; --sc-bg: #F0FDF4; --sc-border: #86EFAC; }
+
+  /* ===== WEEKLY SCHEDULE TEMPLATE ===== */
+  .week-page { padding: 36px 40px 32px; page-break-after: always; }
+  .week-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+  .week-badge {
+    font-family: 'Nunito', sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    padding: 6px 18px;
+    border-radius: 20px;
+    color: white;
+  }
+  .week-progress-bar {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+  .week-progress-bar .dot {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700; color: white;
+  }
+  .dot.done  { background: var(--green); }
+  .dot.current { background: var(--blue); }
+  .dot.todo  { background: var(--border); color: var(--muted); }
+
+  .schedule-grid {
+    display: grid;
+    grid-template-columns: 90px repeat(5,1fr);
+    gap: 0;
+    border: 2px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    font-size: 12px;
+  }
+  .sg-header {
+    background: var(--gray);
+    color: white;
+    padding: 10px 8px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 12px;
+    text-align: center;
+  }
+  .sg-time {
+    background: #F3F4F6;
+    padding: 8px 6px;
+    font-weight: 600;
+    font-size: 11px;
+    color: var(--muted);
+    text-align: center;
+    border-right: 2px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+  }
+  .sg-time .arrow { font-size: 10px; color: #D1D5DB; }
+  .sg-cell {
+    padding: 7px 8px;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .sg-cell:last-child { border-right: none; }
+  .sg-cell .activity-tag {
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    color: white;
+    width: fit-content;
+  }
+  .sg-cell .activity-name { font-size: 11px; font-weight: 600; color: var(--gray); line-height: 1.3; }
+  .sg-cell .activity-note { font-size: 10px; color: var(--muted); }
+  .tag-grammar  { background: var(--blue); }
+  .tag-vocab    { background: var(--purple); }
+  .tag-speaking { background: var(--amber); }
+  .tag-reading  { background: var(--green); }
+  .tag-break    { background: #9CA3AF; }
+  .tag-wrap     { background: #6B7280; }
+  .sg-cell.break-cell { background: #F9FAFB; }
+  .sg-cell.empty-cell { background: #FAFAFA; }
+
+  /* ===== LESSON BLOCK CARD ===== */
+  .lessons-page { padding: 32px 40px; page-break-after: always; }
+  .lesson-block {
+    border: 2px solid var(--sc-border, #E5E7EB);
+    background: var(--sc-bg, white);
+    border-radius: 14px;
+    margin-bottom: 14px;
+    overflow: hidden;
+  }
+  .lb-header {
+    background: var(--sc, #374151);
+    color: white;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .lb-header .lb-title { font-family: 'Nunito', sans-serif; font-size: 14px; font-weight: 800; display: flex; align-items: center; gap: 8px; }
+  .lb-header .lb-meta { font-size: 11px; opacity: 0.85; display: flex; gap: 12px; }
+  .lb-body { padding: 12px 16px; }
+  .lb-blocks { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; margin-bottom: 10px; }
+  .time-block {
+    border-radius: 10px;
+    border: 1.5px solid rgba(0,0,0,0.08);
+    padding: 10px 10px 8px;
+    position: relative;
+    background: white;
+  }
+  .time-block .tb-time {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--sc, var(--gray));
+    background: var(--sc-bg, #F3F4F6);
+    border-radius: 5px;
+    padding: 2px 6px;
+    margin-bottom: 5px;
+    display: inline-block;
+  }
+  .time-block .tb-title { font-family: 'Nunito', sans-serif; font-size: 12px; font-weight: 800; color: var(--gray); margin-bottom: 3px; line-height: 1.3; }
+  .time-block .tb-desc  { font-size: 10.5px; color: var(--muted); line-height: 1.45; }
+  .time-block .tb-emoji { font-size: 18px; float: right; margin-left: 4px; }
+  .lb-footer { border-top: 1px dashed var(--sc-border, #E5E7EB); padding: 8px 16px; display: flex; gap: 20px; }
+  .lb-footer .tip { font-size: 11px; color: var(--muted); display: flex; align-items: center; gap: 5px; }
+  .lb-footer .tip strong { color: var(--gray); }
+
+  /* ===== PROGRESS TRACKER ===== */
+  .tracker-page { padding: 32px 40px; page-break-after: always; }
+  .tracker-section { margin-bottom: 24px; }
+  .tracker-title { font-family: 'Nunito', sans-serif; font-size: 16px; font-weight: 800; margin-bottom: 12px; color: var(--indigo); display: flex; align-items: center; gap: 8px; }
+
+  .star-tracker { display: grid; grid-template-columns: repeat(7,1fr); gap: 8px; }
+  .star-day { border: 2px solid var(--border); border-radius: 12px; padding: 10px 6px; text-align: center; }
+  .star-day .sd-label { font-size: 11px; font-weight: 700; color: var(--muted); margin-bottom: 6px; }
+  .star-day .sd-star { font-size: 22px; color: #D1D5DB; }
+  .star-day.earned .sd-star { color: #F59E0B; }
+  .star-day .sd-text { font-size: 10px; color: var(--muted); margin-top: 4px; }
+
+  .skill-tracker { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; }
+  .skill-row { display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: white; border: 1.5px solid var(--border); border-radius: 10px; }
+  .skill-row .sr-icon { font-size: 20px; flex-shrink: 0; }
+  .skill-row .sr-info { flex: 1; }
+  .skill-row .sr-name { font-size: 12px; font-weight: 700; }
+  .skill-row .sr-bar-bg { height: 8px; background: #E5E7EB; border-radius: 4px; margin-top: 4px; overflow: hidden; }
+  .skill-row .sr-bar-fill { height: 100%; border-radius: 4px; }
+  .skill-row .sr-pct { font-size: 11px; font-weight: 600; color: var(--muted); flex-shrink: 0; }
+
+  .streak-box {
+    background: linear-gradient(135deg, #1e3a8a, #4F46E5);
+    color: white;
+    border-radius: 14px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  .streak-box .sb-left .sb-num { font-family: 'Nunito', sans-serif; font-size: 52px; font-weight: 900; line-height: 1; }
+  .streak-box .sb-left .sb-lbl { font-size: 13px; opacity: 0.8; }
+  .streak-box .sb-right .sb-fire { font-size: 48px; }
+  .streak-box .sb-message { font-size: 14px; opacity: 0.9; max-width: 240px; line-height: 1.5; }
+
+  .badge-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 10px; }
+  .badge { text-align: center; padding: 12px 8px; border-radius: 12px; border: 2px dashed var(--border); }
+  .badge.unlocked { border-style: solid; border-color: #FCD34D; background: #FFFBEB; }
+  .badge .b-icon { font-size: 28px; margin-bottom: 4px; }
+  .badge.locked .b-icon { filter: grayscale(1); opacity: 0.4; }
+  .badge .b-name { font-size: 10px; font-weight: 700; line-height: 1.3; }
+  .badge.locked .b-name { color: var(--muted); }
+
+  /* ===== SPECIAL INTEREST GUIDE ===== */
+  .si-page { padding: 32px 40px; page-break-after: always; }
+  .si-intro { background: linear-gradient(135deg, #F5F3FF, #EFF6FF); border: 2px solid #C4B5FD; border-radius: 14px; padding: 18px 20px; margin-bottom: 20px; }
+  .si-intro h3 { font-family: 'Nunito', sans-serif; font-size: 15px; font-weight: 800; color: var(--indigo); margin-bottom: 6px; }
+  .si-intro p { font-size: 12px; color: var(--muted); line-height: 1.6; }
+  .si-subject-block { margin-bottom: 18px; }
+  .si-subject-header { font-family: 'Nunito', sans-serif; font-size: 14px; font-weight: 800; padding: 8px 14px; border-radius: 8px 8px 0 0; color: white; }
+  .si-subject-body { border: 2px solid var(--border); border-top: none; border-radius: 0 0 8px 8px; padding: 12px 14px; }
+  .si-example-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 8px; }
+  .si-ex { background: white; border: 1.5px solid var(--border); border-radius: 8px; padding: 10px 12px; }
+  .si-ex .sie-label { font-size: 10px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+  .si-ex .sie-text  { font-size: 11.5px; line-height: 1.5; }
+  .si-tip { font-size: 11px; background: #F3F4F6; border-radius: 6px; padding: 7px 10px; color: var(--gray); display: flex; gap: 6px; align-items: flex-start; }
+
+  /* ===== VOCABULARY CARDS ===== */
+  .vocab-page { padding: 32px 40px; page-break-after: always; }
+  .vocab-card-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
+  .vocab-card {
+    border-radius: 12px;
+    border: 2px solid var(--border);
+    overflow: hidden;
+  }
+  .vc-header { padding: 10px 12px 8px; }
+  .vc-word { font-family: 'Nunito', sans-serif; font-size: 18px; font-weight: 900; }
+  .vc-pos { font-size: 10px; font-weight: 600; color: white; background: rgba(0,0,0,0.2); display: inline-block; padding: 2px 7px; border-radius: 5px; margin-top: 2px; }
+  .vc-body { padding: 10px 12px; background: white; }
+  .vc-def { font-size: 11px; color: var(--gray); margin-bottom: 5px; }
+  .vc-example { font-size: 11px; color: var(--muted); font-style: italic; margin-bottom: 5px; }
+  .vc-si { font-size: 10.5px; background: #F3F4F6; border-radius: 6px; padding: 5px 8px; border-left: 3px solid var(--purple); }
+
+  /* ===== GRAMMAR RULES ===== */
+  .grammar-page { padding: 32px 40px; page-break-after: always; }
+  .rule-box { border-radius: 12px; border: 2px solid var(--blue); background: var(--light-blue); padding: 14px 16px; margin-bottom: 12px; }
+  .rule-box h4 { font-family: 'Nunito', sans-serif; font-size: 14px; font-weight: 800; color: var(--blue); margin-bottom: 6px; }
+  .rule-formula { background: white; border: 1.5px solid #93C5FD; border-radius: 8px; padding: 8px 12px; font-family: monospace; font-size: 13px; margin-bottom: 8px; color: var(--indigo); }
+  .rule-examples { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .rule-example { font-size: 12px; padding: 7px 10px; background: white; border-left: 3px solid var(--blue); border-radius: 0 6px 6px 0; }
+  .rule-example .re-yes { color: var(--green); font-weight: 700; margin-right: 4px; }
+  .rule-example .re-no  { color: var(--red);   font-weight: 700; margin-right: 4px; }
+
+  /* ===== SPEAKING ACTIVITY ===== */
+  .speaking-page { padding: 32px 40px; page-break-after: always; }
+  .sp-activity { border: 2px solid #FCD34D; border-radius: 12px; overflow: hidden; margin-bottom: 14px; }
+  .sp-activity .spa-header { background: var(--amber); color: white; padding: 10px 16px; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 14px; display: flex; align-items: center; justify-content: space-between; }
+  .sp-activity .spa-body { padding: 12px 16px; background: var(--light-amber); }
+  .sp-activity .spa-steps { list-style: none; }
+  .sp-activity .spa-steps li { padding: 5px 0 5px 24px; font-size: 12px; position: relative; }
+  .sp-activity .spa-steps li::before { content: attr(data-n); position: absolute; left: 0; background: var(--amber); color: white; width: 18px; height: 18px; border-radius: 50%; font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center; top: 6px; }
+  .prompt-box { background: white; border: 1.5px dashed #FCD34D; border-radius: 8px; padding: 10px 12px; margin-top: 8px; }
+  .prompt-box h5 { font-size: 11px; font-weight: 700; color: var(--amber); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 5px; }
+  .prompt-list { display: flex; flex-wrap: wrap; gap: 6px; }
+  .prompt-chip { background: var(--light-amber); border: 1px solid #FCD34D; border-radius: 8px; padding: 4px 10px; font-size: 11px; font-style: italic; }
+
+  /* ===== READING SECTION ===== */
+  .reading-page { padding: 32px 40px; page-break-after: always; }
+  .reading-card { border: 2px solid #86EFAC; border-radius: 12px; overflow: hidden; margin-bottom: 14px; }
+  .reading-card .rc-header { background: var(--green); color: white; padding: 10px 16px; }
+  .reading-card .rc-header h4 { font-family: 'Nunito', sans-serif; font-size: 14px; font-weight: 800; }
+  .reading-card .rc-header .rc-meta { font-size: 11px; opacity: 0.85; }
+  .reading-card .rc-body { padding: 12px 16px; background: var(--light-green); }
+  .question-list { list-style: none; }
+  .question-list li { padding: 6px 10px 6px 26px; font-size: 12px; position: relative; border-bottom: 1px dashed #86EFAC; }
+  .question-list li:last-child { border-bottom: none; }
+  .question-list li::before { content: "Q" attr(data-q); position: absolute; left: 0; font-size: 10px; font-weight: 700; color: var(--green); top: 7px; }
+
+  /* ===== FOOTER ===== */
+  .page-footer { text-align: center; font-size: 10px; color: var(--muted); padding: 8px 0; border-top: 1px solid var(--border); margin-top: 16px; }
+
+  /* ===== PRINT OVERRIDES ===== */
+  @media print {
+    body { background: white; font-size: 11px; }
+    .cover { min-height: auto; padding: 60px 40px; }
+    .week-page, .lessons-page, .tracker-page, .si-page, .vocab-page, .grammar-page, .speaking-page, .reading-page { padding: 24px 32px; }
+    .lb-blocks { grid-template-columns: repeat(4,1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- ================================================================ COVER ================================================================ -->
+<div class="cover">
+  <div class="emoji-row">📖 ✏️ 🗣️ 🌟 💬</div>
+  <h1>4-Week English Curriculum</h1>
+  <div class="subtitle">Designed for Learners with ASD &amp; ADHD · Age 15 · Structured &amp; Visual</div>
+  <div class="tag-row">
+    <span class="tag">🔵 Grammar</span>
+    <span class="tag">🟣 Vocab &amp; Writing</span>
+    <span class="tag">🟡 Speaking</span>
+    <span class="tag">🟢 Reading</span>
+    <span class="tag">⏱ 15-Min Blocks</span>
+    <span class="tag">🎯 Special Interest Integration</span>
+    <span class="tag">⭐ Visual Progress Tracker</span>
+  </div>
+  <div class="meta-grid">
+    <div class="meta-card"><div class="num">4</div><div class="lbl">Weeks of Content</div></div>
+    <div class="meta-card"><div class="num">20</div><div class="lbl">Lesson Days</div></div>
+    <div class="meta-card"><div class="num">15</div><div class="lbl">Min Blocks</div></div>
+    <div class="meta-card"><div class="num">80+</div><div class="lbl">Activities</div></div>
+  </div>
+</div>
+
+<!-- ================================================================ HOW TO USE ================================================================ -->
+<div class="how-page">
+  <h2>How to Use This Curriculum</h2>
+  <p class="intro">This curriculum is built on evidence-based principles for neurodivergent learners. Every lesson is modular — use what works, skip what doesn't.</p>
+  <div class="principle-grid">
+    <div class="principle-card blue">
+      <div class="pc-icon">⏱️</div>
+      <div class="pc-title">15-Minute Blocks</div>
+      <div class="pc-text">Each activity is exactly 15 minutes. Use a visible timer (analog clock or timer app). Short bursts prevent overwhelm and match the ADHD attention window.</div>
+    </div>
+    <div class="principle-card green">
+      <div class="pc-icon">🎯</div>
+      <div class="pc-title">Special Interest Hook</div>
+      <div class="pc-text">Every lesson links vocabulary, grammar, or topics to the student's special interest. This activates intrinsic motivation and improves retention.</div>
+    </div>
+    <div class="principle-card purple">
+      <div class="pc-icon">👁️</div>
+      <div class="pc-title">Visual Schedule First</div>
+      <div class="pc-text">Show the day's schedule BEFORE starting. Tick off blocks as they complete. Predictability reduces anxiety and transitions become smoother.</div>
+    </div>
+    <div class="principle-card amber">
+      <div class="pc-icon">🔁</div>
+      <div class="pc-title">5-Min Breaks</div>
+      <div class="pc-text">After every 15-min block, a 5-minute sensory or movement break is built in. Movement re-regulates the nervous system and restores focus.</div>
+    </div>
+    <div class="principle-card pink">
+      <div class="pc-icon">⭐</div>
+      <div class="pc-title">Earn Stars Daily</div>
+      <div class="pc-text">Each completed block earns a star on the weekly tracker. 5 stars = unlock a special interest activity or preferred break. Keep it low-pressure.</div>
+    </div>
+    <div class="principle-card teal">
+      <div class="pc-icon">🔄</div>
+      <div class="pc-title">Modular by Design</div>
+      <div class="pc-text">Each skill (Grammar, Vocab, Speaking, Reading) is its own colour-coded block. You can rearrange days or add extra grammar days without breaking the flow.</div>
+    </div>
+  </div>
+
+  <div class="section-title" style="color:#374151">📅 Weekly Structure at a Glance</div>
+  <table style="width:100%;border-collapse:collapse;font-size:12px;">
+    <tr style="background:#F3F4F6;">
+      <th style="padding:8px 12px;text-align:left;border:1px solid #E5E7EB;">Day</th>
+      <th style="padding:8px 12px;text-align:left;border:1px solid #E5E7EB;color:#2563EB">Block 1 (15 min)</th>
+      <th style="padding:8px 12px;text-align:left;border:1px solid #E5E7EB;">Break (5 min)</th>
+      <th style="padding:8px 12px;text-align:left;border:1px solid #E5E7EB;color:#7C3AED">Block 2 (15 min)</th>
+      <th style="padding:8px 12px;text-align:left;border:1px solid #E5E7EB;">Break (5 min)</th>
+      <th style="padding:8px 12px;text-align:left;border:1px solid #E5E7EB;color:#D97706">Block 3 (15 min)</th>
+      <th style="padding:8px 12px;text-align:left;border:1px solid #E5E7EB;">Wrap (5 min)</th>
+    </tr>
+    <tr><td style="padding:8px 12px;border:1px solid #E5E7EB;font-weight:700;">Monday</td><td style="padding:8px 12px;border:1px solid #E5E7EB;color:#2563EB;font-weight:600;">Grammar Focus</td><td style="padding:8px 12px;border:1px solid #E5E7EB;color:#9CA3AF;">Move / Stim</td><td style="padding:8px 12px;border:1px solid #E5E7EB;color:#7C3AED;font-weight:600;">Vocabulary Build</td><td style="padding:8px 12px;border:1px solid #E5E7EB;color:#9CA3AF;">Snack / Rest</td><td style="padding:8px 12px;border:1px solid #E5E7EB;color:#D97706;font-weight:600;">Writing Practice</td><td style="padding:8px 12px;border:1px solid #E5E7EB;color:#6B7280;">Star Chart</td></tr>
+    <tr style="background:#FAFAFA"><td style="padding:8px 12px;border:1px solid #E5E7EB;font-weight:700;">Tuesday</td><td style="padding:8px 12px;border:1px solid #E5E7EB;color:#16A34A;font-weight:600;">Reading 1</td><td style="padding:8px 12px;border:1px solid #E5E7EB;color:#9CA3AF;">Move / Stim</td><td style="padding:8px 12px;border:1px solid #E5E7EB;color:#D97706;font-weight:600;">Speaking Activity</td><td style="padding:8px 12px;border:1px solid #E5E7EB;color:#9CA3AF;">Snack / Rest</td><td style="padding:8px 12px;border:1px solid #E5E7EB;color:#7C3AED;font-weight:600;">Vocab Review Game</td><td style="padding:8px 12px;border:1px solid #E5E7EB;color:#6B7280;">Star Chart</td></tr>
+    <tr><td style="padding:8px 12px;border:1px solid #E5E7EB;font-weight:700;">Wednesday</td><td style="padding:8px 12px;border:1px solid #E5E7EB;color:#2563EB;font-weight:600;">Grammar Apply</td><td style="padding:8px 12px;border:1px solid #E5E7EB;color:#9CA3AF;">Move / Stim</td><td style="padding:8px 12px;border:1px solid #E5E7EB;color:#16A34A;font-weight:600;">Reading 2</td><td style="padding:8px 12px;border:1px solid #E5E7EB;color:#9CA3AF;">Snack / Rest</td><td style="padding:8px 12px;border:1px solid #E5E7EB;color:#7C3AED;font-weight:600;">Writing: SI Topic</td><td style="padding:8px 12px;border:1px solid #E5E7EB;color:#6B7280;">Star Chart</td></tr>
+    <tr style="background:#FAFAFA"><td style="padding:8px 12px;border:1px solid #E5E7EB;font-weight:700;">Thursday</td><td style="padding:8px 12px;border:1px solid #E5E7EB;color:#D97706;font-weight:600;">Speaking Roleplay</td><td style="padding:8px 12px;border:1px solid #E5E7EB;color:#9CA3AF;">Move / Stim</td><td style="padding:8px 12px;border:1px solid #E5E7EB;color:#2563EB;font-weight:600;">Grammar Game</td><td style="padding:8px 12px;border:1px solid #E5E7EB;color:#9CA3AF;">Snack / Rest</td><td style="padding:8px 12px;border:1px solid #E5E7EB;color:#16A34A;font-weight:600;">Read Aloud</td><td style="padding:8px 12px;border:1px solid #E5E7EB;color:#6B7280;">Star Chart</td></tr>
+    <tr><td style="padding:8px 12px;border:1px solid #E5E7EB;font-weight:700;">Friday</td><td style="padding:8px 12px;border:1px solid #E5E7EB;color:#7C3AED;font-weight:600;">SI Vocab Showcase</td><td style="padding:8px 12px;border:1px solid #E5E7EB;color:#9CA3AF;">Move / Stim</td><td style="padding:8px 12px;border:1px solid #E5E7EB;color:#D97706;font-weight:600;">Speaking: Teach-Back</td><td style="padding:8px 12px;border:1px solid #E5E7EB;color:#9CA3AF;">Snack / Rest</td><td style="padding:8px 12px;border:1px solid #E5E7EB;color:#2563EB;font-weight:600;">Grammar Consolidate</td><td style="padding:8px 12px;border:1px solid #E5E7EB;color:#6B7280;">Week Review</td></tr>
+  </table>
+  <div style="margin-top:14px;font-size:12px;color:#6B7280;background:#F3F4F6;border-radius:8px;padding:10px 14px;">
+    💡 <strong>SI = Special Interest.</strong> Adapt all SI slots to the student's actual high-interest topic (see the Special Interest Integration Guide on page 6). This timetable is a template — adjust timing to suit energy levels.
+  </div>
+  <div class="page-footer">4-Week English Curriculum · ASD/ADHD · Age 15 · Page 2</div>
+</div>
+
+<!-- ================================================================ WEEK 1 SCHEDULE ================================================================ -->
+<div class="week-page">
+  <div class="week-header">
+    <div>
+      <div class="week-badge" style="background:linear-gradient(90deg,#2563EB,#4F46E5)">📘 WEEK 1 — FOUNDATIONS</div>
+      <div style="font-size:12px;color:#6B7280;margin-top:4px;">Focus: Present Tense · Descriptive Words · Introducing Yourself</div>
+    </div>
+    <div class="week-progress-bar">
+      <span style="font-size:11px;color:#6B7280;margin-right:4px;">Progress:</span>
+      <div class="dot current">1</div>
+      <div class="dot todo">2</div>
+      <div class="dot todo">3</div>
+      <div class="dot todo">4</div>
+    </div>
+  </div>
+
+  <div class="schedule-grid">
+    <div class="sg-header" style="border-radius:12px 0 0 0;">⏰ Time</div>
+    <div class="sg-header">📅 MON</div>
+    <div class="sg-header">📅 TUE</div>
+    <div class="sg-header">📅 WED</div>
+    <div class="sg-header">📅 THU</div>
+    <div class="sg-header" style="border-radius:0 12px 0 0;">📅 FRI</div>
+
+    <div class="sg-time"><span>Block 1</span><span class="arrow">▼</span><span style="font-weight:700;">0–15</span><span>min</span></div>
+    <div class="sg-cell">
+      <span class="activity-tag tag-grammar">GRAMMAR</span>
+      <span class="activity-name">Simple Present Tense Intro</span>
+      <span class="activity-note">Pattern cards: I / You / He…</span>
+    </div>
+    <div class="sg-cell">
+      <span class="activity-tag tag-reading">READING</span>
+      <span class="activity-name">Short Text: "My Favourite Thing"</span>
+      <span class="activity-note">SI-adapted passage · highlight key words</span>
+    </div>
+    <div class="sg-cell">
+      <span class="activity-tag tag-grammar">GRAMMAR</span>
+      <span class="activity-name">Present Tense: Sentence Builder</span>
+      <span class="activity-note">Cut-up word cards · arrange in order</span>
+    </div>
+    <div class="sg-cell">
+      <span class="activity-tag tag-speaking">SPEAKING</span>
+      <span class="activity-name">Introduce Yourself Script</span>
+      <span class="activity-note">Name · Age · 3 facts practice</span>
+    </div>
+    <div class="sg-cell">
+      <span class="activity-tag tag-vocab">VOCAB</span>
+      <span class="activity-name">SI Word Showcase</span>
+      <span class="activity-note">Pick 5 SI words · define &amp; draw</span>
+    </div>
+
+    <div class="sg-time break-cell"><span style="color:#9CA3AF;font-size:10px;">☕ Break</span><span>5 min</span></div>
+    <div class="sg-cell break-cell"><span class="activity-tag tag-break">BREAK</span><span class="activity-name">Move / Stim time</span></div>
+    <div class="sg-cell break-cell"><span class="activity-tag tag-break">BREAK</span><span class="activity-name">Snack or walk</span></div>
+    <div class="sg-cell break-cell"><span class="activity-tag tag-break">BREAK</span><span class="activity-name">Move / Stim time</span></div>
+    <div class="sg-cell break-cell"><span class="activity-tag tag-break">BREAK</span><span class="activity-name">Snack or walk</span></div>
+    <div class="sg-cell break-cell"><span class="activity-tag tag-break">BREAK</span><span class="activity-name">Move / Stim time</span></div>
+
+    <div class="sg-time"><span>Block 2</span><span class="arrow">▼</span><span style="font-weight:700;">20–35</span><span>min</span></div>
+    <div class="sg-cell">
+      <span class="activity-tag tag-vocab">VOCAB</span>
+      <span class="activity-name">5 New Words — SI Set</span>
+      <span class="activity-note">Flashcard + definition + example</span>
+    </div>
+    <div class="sg-cell">
+      <span class="activity-tag tag-speaking">SPEAKING</span>
+      <span class="activity-name">"Hot Seat" — Answer 3 Questions</span>
+      <span class="activity-note">About SI topic · full sentence answers</span>
+    </div>
+    <div class="sg-cell">
+      <span class="activity-tag tag-reading">READING</span>
+      <span class="activity-name">Read for Detail</span>
+      <span class="activity-note">Find 5 facts in SI article</span>
+    </div>
+    <div class="sg-cell">
+      <span class="activity-tag tag-grammar">GRAMMAR</span>
+      <span class="activity-name">Error Fix Game</span>
+      <span class="activity-note">Spot &amp; correct 5 sentences</span>
+    </div>
+    <div class="sg-cell">
+      <span class="activity-tag tag-speaking">SPEAKING</span>
+      <span class="activity-name">Teach-Back: Explain a SI Fact</span>
+      <span class="activity-note">2-minute verbal explanation</span>
+    </div>
+
+    <div class="sg-time break-cell"><span style="color:#9CA3AF;font-size:10px;">☕ Break</span><span>5 min</span></div>
+    <div class="sg-cell break-cell"><span class="activity-tag tag-break">BREAK</span><span class="activity-name">Sensory / rest</span></div>
+    <div class="sg-cell break-cell"><span class="activity-tag tag-break">BREAK</span><span class="activity-name">Sensory / rest</span></div>
+    <div class="sg-cell break-cell"><span class="activity-tag tag-break">BREAK</span><span class="activity-name">Sensory / rest</span></div>
+    <div class="sg-cell break-cell"><span class="activity-tag tag-break">BREAK</span><span class="activity-name">Sensory / rest</span></div>
+    <div class="sg-cell break-cell"><span class="activity-tag tag-break">BREAK</span><span class="activity-name">Sensory / rest</span></div>
+
+    <div class="sg-time"><span>Block 3</span><span class="arrow">▼</span><span style="font-weight:700;">40–55</span><span>min</span></div>
+    <div class="sg-cell">
+      <span class="activity-tag tag-vocab">WRITING</span>
+      <span class="activity-name">3 Sentences About My SI</span>
+      <span class="activity-note">Use today's vocab words</span>
+    </div>
+    <div class="sg-cell">
+      <span class="activity-tag tag-vocab">VOCAB</span>
+      <span class="activity-name">Vocab Match &amp; Sort Game</span>
+      <span class="activity-note">Match words to pictures / categories</span>
+    </div>
+    <div class="sg-cell">
+      <span class="activity-tag tag-vocab">WRITING</span>
+      <span class="activity-name">Write a SI Paragraph</span>
+      <span class="activity-note">5 sentences · topic + 3 details + close</span>
+    </div>
+    <div class="sg-cell">
+      <span class="activity-tag tag-reading">READ ALOUD</span>
+      <span class="activity-name">SI Article Read-Aloud</span>
+      <span class="activity-note">Fluency + comprehension check</span>
+    </div>
+    <div class="sg-cell">
+      <span class="activity-tag tag-grammar">GRAMMAR</span>
+      <span class="activity-name">Week Consolidation Quiz</span>
+      <span class="activity-note">10 Qs · visual multiple choice</span>
+    </div>
+
+    <div class="sg-time"><span>Wrap</span><span class="arrow">▼</span><span style="font-weight:700;">55–60</span><span>min</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-wrap">WRAP</span><span class="activity-name">⭐ Fill Star Chart</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-wrap">WRAP</span><span class="activity-name">⭐ Fill Star Chart</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-wrap">WRAP</span><span class="activity-name">⭐ Fill Star Chart</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-wrap">WRAP</span><span class="activity-name">⭐ Fill Star Chart</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-wrap">WRAP</span><span class="activity-name">🏆 Week 1 Review</span></div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:10px;">
+    <div style="background:#EFF6FF;border:2px solid #93C5FD;border-radius:10px;padding:10px 12px;">
+      <div style="font-size:11px;font-weight:800;color:#2563EB;margin-bottom:4px;">🔵 GRAMMAR GOAL</div>
+      <div style="font-size:11px;color:#374151;">Form correct simple present tense sentences with I / He / She / They</div>
+    </div>
+    <div style="background:#F5F3FF;border:2px solid #C4B5FD;border-radius:10px;padding:10px 12px;">
+      <div style="font-size:11px;font-weight:800;color:#7C3AED;margin-bottom:4px;">🟣 VOCAB GOAL</div>
+      <div style="font-size:11px;color:#374151;">Learn 15 new words (5 per lesson), all connected to special interest topic</div>
+    </div>
+    <div style="background:#FFFBEB;border:2px solid #FCD34D;border-radius:10px;padding:10px 12px;">
+      <div style="font-size:11px;font-weight:800;color:#D97706;margin-bottom:4px;">🟡 SPEAKING GOAL</div>
+      <div style="font-size:11px;color:#374151;">Introduce self clearly in 3–5 sentences using complete, fluent speech</div>
+    </div>
+    <div style="background:#F0FDF4;border:2px solid #86EFAC;border-radius:10px;padding:10px 12px;">
+      <div style="font-size:11px;font-weight:800;color:#16A34A;margin-bottom:4px;">🟢 READING GOAL</div>
+      <div style="font-size:11px;color:#374151;">Read a short SI-adapted text and identify 5 key facts</div>
+    </div>
+  </div>
+  <div class="page-footer">4-Week English Curriculum · ASD/ADHD · Age 15 · Week 1</div>
+</div>
+
+<!-- ================================================================ WEEK 2 SCHEDULE ================================================================ -->
+<div class="week-page">
+  <div class="week-header">
+    <div>
+      <div class="week-badge" style="background:linear-gradient(90deg,#7C3AED,#EC4899)">📗 WEEK 2 — BUILDING UP</div>
+      <div style="font-size:12px;color:#6B7280;margin-top:4px;">Focus: Question Forms · Adjectives &amp; Comparisons · Descriptive Writing</div>
+    </div>
+    <div class="week-progress-bar">
+      <span style="font-size:11px;color:#6B7280;margin-right:4px;">Progress:</span>
+      <div class="dot done">1</div>
+      <div class="dot current">2</div>
+      <div class="dot todo">3</div>
+      <div class="dot todo">4</div>
+    </div>
+  </div>
+
+  <div class="schedule-grid">
+    <div class="sg-header" style="border-radius:12px 0 0 0;">⏰ Time</div>
+    <div class="sg-header">📅 MON</div>
+    <div class="sg-header">📅 TUE</div>
+    <div class="sg-header">📅 WED</div>
+    <div class="sg-header">📅 THU</div>
+    <div class="sg-header" style="border-radius:0 12px 0 0;">📅 FRI</div>
+
+    <div class="sg-time"><span>Block 1</span><span class="arrow">▼</span><span style="font-weight:700;">0–15</span><span>min</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-grammar">GRAMMAR</span><span class="activity-name">Question Words: Who What Where When Why</span><span class="activity-note">Visual map of 5 Ws + How</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-reading">READING</span><span class="activity-name">SI Article: Scan &amp; Find Questions</span><span class="activity-note">Underline answers to 5 Ws</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-grammar">GRAMMAR</span><span class="activity-name">Adjective Ladder: Comparative Forms</span><span class="activity-note">big → bigger → biggest</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-speaking">SPEAKING</span><span class="activity-name">Interview a "Character" from SI</span><span class="activity-note">Roleplay: student asks 5 questions</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-vocab">VOCAB</span><span class="activity-name">Adjective Showcase: SI Edition</span><span class="activity-note">Describe SI topic in 6 adjectives</span></div>
+
+    <div class="sg-time break-cell"><span style="color:#9CA3AF;font-size:10px;">☕ Break</span><span>5 min</span></div>
+    <div class="sg-cell break-cell"><span class="activity-tag tag-break">BREAK</span></div>
+    <div class="sg-cell break-cell"><span class="activity-tag tag-break">BREAK</span></div>
+    <div class="sg-cell break-cell"><span class="activity-tag tag-break">BREAK</span></div>
+    <div class="sg-cell break-cell"><span class="activity-tag tag-break">BREAK</span></div>
+    <div class="sg-cell break-cell"><span class="activity-tag tag-break">BREAK</span></div>
+
+    <div class="sg-time"><span>Block 2</span><span class="arrow">▼</span><span style="font-weight:700;">20–35</span><span>min</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-vocab">VOCAB</span><span class="activity-name">Adjective Word Wall — SI Themed</span><span class="activity-note">Create a physical or drawn word wall</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-speaking">SPEAKING</span><span class="activity-name">Question Practice: Back-and-Forth</span><span class="activity-note">Ask + answer pairs with teacher</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-reading">READING</span><span class="activity-name">Comparison Text: Find Comparatives</span><span class="activity-note">Highlight "bigger / better / faster"</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-grammar">GRAMMAR</span><span class="activity-name">Question vs Statement Sort</span><span class="activity-note">Match question to answer strips</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-speaking">SPEAKING</span><span class="activity-name">Teach-Back: Explain 3 SI Comparisons</span><span class="activity-note">"X is faster than Y because…"</span></div>
+
+    <div class="sg-time break-cell"><span style="color:#9CA3AF;font-size:10px;">☕ Break</span><span>5 min</span></div>
+    <div class="sg-cell break-cell"><span class="activity-tag tag-break">BREAK</span></div>
+    <div class="sg-cell break-cell"><span class="activity-tag tag-break">BREAK</span></div>
+    <div class="sg-cell break-cell"><span class="activity-tag tag-break">BREAK</span></div>
+    <div class="sg-cell break-cell"><span class="activity-tag tag-break">BREAK</span></div>
+    <div class="sg-cell break-cell"><span class="activity-tag tag-break">BREAK</span></div>
+
+    <div class="sg-time"><span>Block 3</span><span class="arrow">▼</span><span style="font-weight:700;">40–55</span><span>min</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-vocab">WRITING</span><span class="activity-name">Descriptive Paragraph: My SI</span><span class="activity-note">Use 3+ adjectives from word wall</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-vocab">VOCAB</span><span class="activity-name">Vocab Bingo — SI Words</span><span class="activity-note">Definitions read aloud · cross off words</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-vocab">WRITING</span><span class="activity-name">Compare Two SI Things in Writing</span><span class="activity-note">Mini paragraph: A vs B using comparatives</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-reading">READ ALOUD</span><span class="activity-name">Read SI passage expressively</span><span class="activity-note">Fluency: pause, stress, speed</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-grammar">GRAMMAR</span><span class="activity-name">Week 2 Grammar Game — Kahoot-Style</span><span class="activity-note">Visual Q&amp;A · self-score with stars</span></div>
+
+    <div class="sg-time"><span>Wrap</span><span class="arrow">▼</span><span style="font-weight:700;">55–60</span><span>min</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-wrap">WRAP</span><span class="activity-name">⭐ Fill Star Chart</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-wrap">WRAP</span><span class="activity-name">⭐ Fill Star Chart</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-wrap">WRAP</span><span class="activity-name">⭐ Fill Star Chart</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-wrap">WRAP</span><span class="activity-name">⭐ Fill Star Chart</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-wrap">WRAP</span><span class="activity-name">🏆 Week 2 Review</span></div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:10px;">
+    <div style="background:#EFF6FF;border:2px solid #93C5FD;border-radius:10px;padding:10px 12px;"><div style="font-size:11px;font-weight:800;color:#2563EB;margin-bottom:4px;">🔵 GRAMMAR GOAL</div><div style="font-size:11px;color:#374151;">Form correct questions (Yes/No and Wh-) and use comparative adjectives</div></div>
+    <div style="background:#F5F3FF;border:2px solid #C4B5FD;border-radius:10px;padding:10px 12px;"><div style="font-size:11px;font-weight:800;color:#7C3AED;margin-bottom:4px;">🟣 VOCAB GOAL</div><div style="font-size:11px;color:#374151;">Learn 15 adjectives connected to SI; use in writing with comparative forms</div></div>
+    <div style="background:#FFFBEB;border:2px solid #FCD34D;border-radius:10px;padding:10px 12px;"><div style="font-size:11px;font-weight:800;color:#D97706;margin-bottom:4px;">🟡 SPEAKING GOAL</div><div style="font-size:11px;color:#374151;">Ask and answer questions fluently in short conversation exchanges</div></div>
+    <div style="background:#F0FDF4;border:2px solid #86EFAC;border-radius:10px;padding:10px 12px;"><div style="font-size:11px;font-weight:800;color:#16A34A;margin-bottom:4px;">🟢 READING GOAL</div><div style="font-size:11px;color:#374151;">Scan a text for specific information; identify and explain 3 comparisons</div></div>
+  </div>
+  <div class="page-footer">4-Week English Curriculum · ASD/ADHD · Age 15 · Week 2</div>
+</div>
+
+<!-- ================================================================ WEEK 3 SCHEDULE ================================================================ -->
+<div class="week-page">
+  <div class="week-header">
+    <div>
+      <div class="week-badge" style="background:linear-gradient(90deg,#D97706,#DC2626)">📙 WEEK 3 — EXPANDING</div>
+      <div style="font-size:12px;color:#6B7280;margin-top:4px;">Focus: Past Tense · Narrative Writing · Opinion Expression</div>
+    </div>
+    <div class="week-progress-bar">
+      <span style="font-size:11px;color:#6B7280;margin-right:4px;">Progress:</span>
+      <div class="dot done">1</div>
+      <div class="dot done">2</div>
+      <div class="dot current">3</div>
+      <div class="dot todo">4</div>
+    </div>
+  </div>
+
+  <div class="schedule-grid">
+    <div class="sg-header" style="border-radius:12px 0 0 0;">⏰ Time</div>
+    <div class="sg-header">📅 MON</div>
+    <div class="sg-header">📅 TUE</div>
+    <div class="sg-header">📅 WED</div>
+    <div class="sg-header">📅 THU</div>
+    <div class="sg-header" style="border-radius:0 12px 0 0;">📅 FRI</div>
+
+    <div class="sg-time"><span>Block 1</span><span class="arrow">▼</span><span style="font-weight:700;">0–15</span><span>min</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-grammar">GRAMMAR</span><span class="activity-name">Past Tense Regular Verbs</span><span class="activity-note">-ed rule + 10 common verbs</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-reading">READING</span><span class="activity-name">SI Story: Sequence of Events</span><span class="activity-note">Timeline strip: what happened first/next/last</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-grammar">GRAMMAR</span><span class="activity-name">Irregular Past Tense Verbs</span><span class="activity-note">Visual table: go→went, see→saw etc.</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-speaking">SPEAKING</span><span class="activity-name">Storytelling: "What Happened When…"</span><span class="activity-note">Retell a SI event in past tense</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-vocab">VOCAB</span><span class="activity-name">Opinion Words Showcase</span><span class="activity-note">I think / I believe / In my opinion…</span></div>
+
+    <div class="sg-time break-cell"><span style="color:#9CA3AF;font-size:10px;">☕ Break</span><span>5 min</span></div>
+    <div class="sg-cell break-cell"><span class="activity-tag tag-break">BREAK</span></div>
+    <div class="sg-cell break-cell"><span class="activity-tag tag-break">BREAK</span></div>
+    <div class="sg-cell break-cell"><span class="activity-tag tag-break">BREAK</span></div>
+    <div class="sg-cell break-cell"><span class="activity-tag tag-break">BREAK</span></div>
+    <div class="sg-cell break-cell"><span class="activity-tag tag-break">BREAK</span></div>
+
+    <div class="sg-time"><span>Block 2</span><span class="arrow">▼</span><span style="font-weight:700;">20–35</span><span>min</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-vocab">VOCAB</span><span class="activity-name">Story Vocabulary SI Pack</span><span class="activity-note">Action verbs from SI world</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-speaking">SPEAKING</span><span class="activity-name">Opinion Expression Practice</span><span class="activity-note">State + reason: "I prefer X because…"</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-reading">READING</span><span class="activity-name">Read an Opinion Piece on SI Topic</span><span class="activity-note">Identify: opinion vs. fact</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-grammar">GRAMMAR</span><span class="activity-name">Past Tense Error Correction</span><span class="activity-note">Fix 8 sentences in SI story context</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-speaking">SPEAKING</span><span class="activity-name">Mini Debate: SI Topics</span><span class="activity-note">Choose a side · give 3 reasons</span></div>
+
+    <div class="sg-time break-cell"><span style="color:#9CA3AF;font-size:10px;">☕ Break</span><span>5 min</span></div>
+    <div class="sg-cell break-cell"><span class="activity-tag tag-break">BREAK</span></div>
+    <div class="sg-cell break-cell"><span class="activity-tag tag-break">BREAK</span></div>
+    <div class="sg-cell break-cell"><span class="activity-tag tag-break">BREAK</span></div>
+    <div class="sg-cell break-cell"><span class="activity-tag tag-break">BREAK</span></div>
+    <div class="sg-cell break-cell"><span class="activity-tag tag-break">BREAK</span></div>
+
+    <div class="sg-time"><span>Block 3</span><span class="arrow">▼</span><span style="font-weight:700;">40–55</span><span>min</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-vocab">WRITING</span><span class="activity-name">Write a Past Event in SI World</span><span class="activity-note">5 sentences: beginning, what happened, end</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-vocab">WRITING</span><span class="activity-name">Opinion Paragraph: Best SI Thing</span><span class="activity-note">Opinion + 2 reasons + concluding sentence</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-vocab">WRITING</span><span class="activity-name">Short Story: SI Character Past Adventure</span><span class="activity-note">6–8 sentences using past tense verbs</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-reading">READ ALOUD</span><span class="activity-name">Own Writing Read-Aloud</span><span class="activity-note">Read back today's story · listen to tone</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-grammar">GRAMMAR</span><span class="activity-name">Week 3 Consolidation: Past Tense Relay</span><span class="activity-note">Fill-in quiz · self-check answer sheet</span></div>
+
+    <div class="sg-time"><span>Wrap</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-wrap">WRAP</span><span class="activity-name">⭐ Fill Star Chart</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-wrap">WRAP</span><span class="activity-name">⭐ Fill Star Chart</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-wrap">WRAP</span><span class="activity-name">⭐ Fill Star Chart</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-wrap">WRAP</span><span class="activity-name">⭐ Fill Star Chart</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-wrap">WRAP</span><span class="activity-name">🏆 Week 3 Review</span></div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:10px;">
+    <div style="background:#EFF6FF;border:2px solid #93C5FD;border-radius:10px;padding:10px 12px;"><div style="font-size:11px;font-weight:800;color:#2563EB;margin-bottom:4px;">🔵 GRAMMAR GOAL</div><div style="font-size:11px;color:#374151;">Use regular + irregular past tense verbs correctly in sentences and short texts</div></div>
+    <div style="background:#F5F3FF;border:2px solid #C4B5FD;border-radius:10px;padding:10px 12px;"><div style="font-size:11px;font-weight:800;color:#7C3AED;margin-bottom:4px;">🟣 VOCAB GOAL</div><div style="font-size:11px;color:#374151;">Learn 15 opinion + action words; use them in narrative and opinion writing</div></div>
+    <div style="background:#FFFBEB;border:2px solid #FCD34D;border-radius:10px;padding:10px 12px;"><div style="font-size:11px;font-weight:800;color:#D97706;margin-bottom:4px;">🟡 SPEAKING GOAL</div><div style="font-size:11px;color:#374151;">Express opinions with reasons and retell a past event using correct tense</div></div>
+    <div style="background:#F0FDF4;border:2px solid #86EFAC;border-radius:10px;padding:10px 12px;"><div style="font-size:11px;font-weight:800;color:#16A34A;margin-bottom:4px;">🟢 READING GOAL</div><div style="font-size:11px;color:#374151;">Distinguish fact from opinion in a short text; sequence a story timeline</div></div>
+  </div>
+  <div class="page-footer">4-Week English Curriculum · ASD/ADHD · Age 15 · Week 3</div>
+</div>
+
+<!-- ================================================================ WEEK 4 SCHEDULE ================================================================ -->
+<div class="week-page">
+  <div class="week-header">
+    <div>
+      <div class="week-badge" style="background:linear-gradient(90deg,#16A34A,#0D9488)">📕 WEEK 4 — SHOWCASE</div>
+      <div style="font-size:12px;color:#6B7280;margin-top:4px;">Focus: Modal Verbs · Persuasive Writing · Presentation &amp; Fluency</div>
+    </div>
+    <div class="week-progress-bar">
+      <span style="font-size:11px;color:#6B7280;margin-right:4px;">Progress:</span>
+      <div class="dot done">1</div>
+      <div class="dot done">2</div>
+      <div class="dot done">3</div>
+      <div class="dot current">4</div>
+    </div>
+  </div>
+
+  <div class="schedule-grid">
+    <div class="sg-header" style="border-radius:12px 0 0 0;">⏰ Time</div>
+    <div class="sg-header">📅 MON</div>
+    <div class="sg-header">📅 TUE</div>
+    <div class="sg-header">📅 WED</div>
+    <div class="sg-header">📅 THU</div>
+    <div class="sg-header" style="border-radius:0 12px 0 0;">📅 FRI</div>
+
+    <div class="sg-time"><span>Block 1</span><span class="arrow">▼</span><span style="font-weight:700;">0–15</span><span>min</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-grammar">GRAMMAR</span><span class="activity-name">Modal Verbs: can / could / should / must</span><span class="activity-note">Visual chart + SI examples</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-reading">READING</span><span class="activity-name">Persuasive Text: SI Product Review</span><span class="activity-note">Identify persuasive techniques</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-grammar">GRAMMAR</span><span class="activity-name">Modal Verbs in Context</span><span class="activity-note">Fill-in cloze: advice for SI scenario</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-speaking">SPEAKING</span><span class="activity-name">Persuasive Pitch: "You Should Try My SI"</span><span class="activity-note">3 reasons + 1 modal verb each</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-vocab">VOCAB</span><span class="activity-name">Final SI Vocabulary Showcase</span><span class="activity-note">30-word personal glossary review</span></div>
+
+    <div class="sg-time break-cell"><span style="color:#9CA3AF;font-size:10px;">☕ Break</span><span>5 min</span></div>
+    <div class="sg-cell break-cell"><span class="activity-tag tag-break">BREAK</span></div>
+    <div class="sg-cell break-cell"><span class="activity-tag tag-break">BREAK</span></div>
+    <div class="sg-cell break-cell"><span class="activity-tag tag-break">BREAK</span></div>
+    <div class="sg-cell break-cell"><span class="activity-tag tag-break">BREAK</span></div>
+    <div class="sg-cell break-cell"><span class="activity-tag tag-break">BREAK</span></div>
+
+    <div class="sg-time"><span>Block 2</span><span class="arrow">▼</span><span style="font-weight:700;">20–35</span><span>min</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-vocab">VOCAB</span><span class="activity-name">Persuasive Language Word Bank</span><span class="activity-note">Firstly / Additionally / Therefore / Clearly</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-speaking">SPEAKING</span><span class="activity-name">Practice Presentation: 2 Minutes on SI</span><span class="activity-note">Use notes only, speak naturally</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-reading">READING</span><span class="activity-name">Read &amp; Evaluate: Is It Convincing?</span><span class="activity-note">Rank 3 texts by persuasiveness + explain</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-grammar">GRAMMAR</span><span class="activity-name">Modal + Persuasive Combo Practice</span><span class="activity-note">Write 5 persuasive sentences using modals</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-speaking">SPEAKING</span>
+      <span class="activity-name">🏆 FINAL PRESENTATION</span>
+      <span class="activity-note">2-min talk on SI · full sentences · own notes</span>
+    </div>
+
+    <div class="sg-time break-cell"><span style="color:#9CA3AF;font-size:10px;">☕ Break</span><span>5 min</span></div>
+    <div class="sg-cell break-cell"><span class="activity-tag tag-break">BREAK</span></div>
+    <div class="sg-cell break-cell"><span class="activity-tag tag-break">BREAK</span></div>
+    <div class="sg-cell break-cell"><span class="activity-tag tag-break">BREAK</span></div>
+    <div class="sg-cell break-cell"><span class="activity-tag tag-break">BREAK</span></div>
+    <div class="sg-cell break-cell"><span class="activity-tag tag-break">BREAK</span></div>
+
+    <div class="sg-time"><span>Block 3</span><span class="arrow">▼</span><span style="font-weight:700;">40–55</span><span>min</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-vocab">WRITING</span><span class="activity-name">Draft: Persuasive Paragraph on SI</span><span class="activity-note">Intro + 2 reasons + conclusion</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-vocab">WRITING</span><span class="activity-name">Edit &amp; Improve Persuasive Draft</span><span class="activity-note">Add connectives + check modals</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-vocab">WRITING</span><span class="activity-name">Final Version: My SI Persuasive Essay</span><span class="activity-note">Clean copy for portfolio</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-reading">READ ALOUD</span><span class="activity-name">Read Final Essay Aloud</span><span class="activity-note">Practise for Friday presentation</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-wrap">WRAP</span>
+      <span class="activity-name" style="font-weight:800;color:#16A34A;">🏅 CERTIFICATE + BADGE CEREMONY</span>
+      <span class="activity-note">Complete all 4-week tracker · unlock final badge</span>
+    </div>
+
+    <div class="sg-time"><span>Wrap</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-wrap">WRAP</span><span class="activity-name">⭐ Fill Star Chart</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-wrap">WRAP</span><span class="activity-name">⭐ Fill Star Chart</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-wrap">WRAP</span><span class="activity-name">⭐ Fill Star Chart</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-wrap">WRAP</span><span class="activity-name">⭐ Fill Star Chart</span></div>
+    <div class="sg-cell"><span class="activity-tag tag-wrap">WRAP</span><span class="activity-name" style="color:#16A34A;font-weight:800;">🎉 GRADUATION!</span></div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:10px;">
+    <div style="background:#EFF6FF;border:2px solid #93C5FD;border-radius:10px;padding:10px 12px;"><div style="font-size:11px;font-weight:800;color:#2563EB;margin-bottom:4px;">🔵 GRAMMAR GOAL</div><div style="font-size:11px;color:#374151;">Use modal verbs (can, should, must) correctly in persuasive writing and speech</div></div>
+    <div style="background:#F5F3FF;border:2px solid #C4B5FD;border-radius:10px;padding:10px 12px;"><div style="font-size:11px;font-weight:800;color:#7C3AED;margin-bottom:4px;">🟣 VOCAB GOAL</div><div style="font-size:11px;color:#374151;">Build a personal 30-word SI glossary; use connectives and persuasive language</div></div>
+    <div style="background:#FFFBEB;border:2px solid #FCD34D;border-radius:10px;padding:10px 12px;"><div style="font-size:11px;font-weight:800;color:#D97706;margin-bottom:4px;">🟡 SPEAKING GOAL</div><div style="font-size:11px;color:#374151;">Deliver a 2-minute presentation on SI topic using notes, full sentences, and eye contact</div></div>
+    <div style="background:#F0FDF4;border:2px solid #86EFAC;border-radius:10px;padding:10px 12px;"><div style="font-size:11px;font-weight:800;color:#16A34A;margin-bottom:4px;">🟢 READING GOAL</div><div style="font-size:11px;color:#374151;">Identify and evaluate persuasive techniques in a text; explain own choices</div></div>
+  </div>
+  <div class="page-footer">4-Week English Curriculum · ASD/ADHD · Age 15 · Week 4</div>
+</div>
+
+<!-- ================================================================ LESSON BLOCKS DETAIL ================================================================ -->
+<div class="lessons-page">
+  <div class="section-title">🔵 Grammar Lessons — Detailed 15-Min Block Guide</div>
+
+  <!-- Grammar Week 1 -->
+  <div class="lesson-block subject-grammar">
+    <div class="lb-header">
+      <div class="lb-title">🔵 G1 — Simple Present Tense Introduction</div>
+      <div class="lb-meta"><span>⏱ 15 min</span><span>📘 Week 1 · Mon Block 1</span><span>👤 1-to-1 or Self-Directed</span></div>
+    </div>
+    <div class="lb-body">
+      <div class="lb-blocks">
+        <div class="time-block">
+          <div class="tb-emoji">🟢</div>
+          <div class="tb-time">0:00 – 3:00</div>
+          <div class="tb-title">Warm-Up &amp; Schedule Preview</div>
+          <div class="tb-desc">Show visual timer. Show today's 3 blocks on a card. "This is what we're doing today." Student ticks off each block as it starts.</div>
+        </div>
+        <div class="time-block">
+          <div class="tb-emoji">📋</div>
+          <div class="tb-time">3:00 – 8:00</div>
+          <div class="tb-title">Teach: Pattern Cards</div>
+          <div class="tb-desc">Show colour-coded cards: I like / He likes / They like. Point to subject → arrow → verb. Read together. No writing yet.</div>
+        </div>
+        <div class="time-block">
+          <div class="tb-emoji">✏️</div>
+          <div class="tb-time">8:00 – 13:00</div>
+          <div class="tb-title">Practice: Fill the Gaps</div>
+          <div class="tb-desc">6 sentences with missing verbs using SI topic. Student writes or selects from 3 choices. Immediate visual feedback.</div>
+        </div>
+        <div class="time-block">
+          <div class="tb-emoji">⭐</div>
+          <div class="tb-time">13:00 – 15:00</div>
+          <div class="tb-title">Check &amp; Star</div>
+          <div class="tb-desc">Check together. "You got _/6." Student draws ⭐ on star chart. One specific positive: "Great job with 'He likes'!"</div>
+        </div>
+      </div>
+      <div class="lb-footer">
+        <div class="tip">💡 <span><strong>SI Link:</strong> All 6 gap sentences use vocabulary from the student's special interest (see SI guide)</span></div>
+        <div class="tip">🔄 <span><strong>If stuck:</strong> Reduce to 3 sentences, allow verbal answer instead of writing</span></div>
+        <div class="tip">📦 <span><strong>Materials:</strong> Colour-coded subject cards, printed gap-fill, visual timer</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Grammar Week 2 -->
+  <div class="lesson-block subject-grammar">
+    <div class="lb-header">
+      <div class="lb-title">🔵 G2 — Question Forms (Wh- Questions)</div>
+      <div class="lb-meta"><span>⏱ 15 min</span><span>📘 Week 2 · Mon Block 1</span></div>
+    </div>
+    <div class="lb-body">
+      <div class="lb-blocks">
+        <div class="time-block">
+          <div class="tb-emoji">🗺️</div>
+          <div class="tb-time">0:00 – 3:00</div>
+          <div class="tb-title">Visual Map: 5Ws + How</div>
+          <div class="tb-desc">A6 card with WHO (person), WHAT (thing), WHERE (place), WHEN (time), WHY (reason), HOW (way). Colour-coded. Read each together.</div>
+        </div>
+        <div class="time-block">
+          <div class="tb-emoji">❓</div>
+          <div class="tb-time">3:00 – 8:00</div>
+          <div class="tb-title">Question Build</div>
+          <div class="tb-desc">6 question sentence starters on strips (SI topic). Student completes each: "What does [SI character] do?" Student writes ending.</div>
+        </div>
+        <div class="time-block">
+          <div class="tb-emoji">🔄</div>
+          <div class="tb-time">8:00 – 13:00</div>
+          <div class="tb-title">Question ↔ Answer Match</div>
+          <div class="tb-desc">6 question strips + 6 answer strips (shuffled). Match pairs. All about SI topic for instant motivation.</div>
+        </div>
+        <div class="time-block">
+          <div class="tb-emoji">⭐</div>
+          <div class="tb-time">13:00 – 15:00</div>
+          <div class="tb-title">Check &amp; Star</div>
+          <div class="tb-desc">Review matched pairs. Praise correct answers specifically. Add star to chart.</div>
+        </div>
+      </div>
+      <div class="lb-footer">
+        <div class="tip">💡 <span><strong>SI Link:</strong> Questions all reference the student's SI world — people, facts, events</span></div>
+        <div class="tip">🔄 <span><strong>If stuck:</strong> Allow student to choose their 3 favourite Wh-words only</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vocab Lesson -->
+  <div class="lesson-block subject-vocab">
+    <div class="lb-header">
+      <div class="lb-title">🟣 V1 — Build Vocabulary: 5 New Words (SI Theme)</div>
+      <div class="lb-meta"><span>⏱ 15 min</span><span>📗 Week 1 · Mon Block 2</span></div>
+    </div>
+    <div class="lb-body">
+      <div class="lb-blocks">
+        <div class="time-block">
+          <div class="tb-emoji">🃏</div>
+          <div class="tb-time">0:00 – 3:00</div>
+          <div class="tb-title">Flash Card Reveal</div>
+          <div class="tb-desc">Show each word card one at a time (SI vocab). Word → picture → say together. No definitions yet — just build familiarity.</div>
+        </div>
+        <div class="time-block">
+          <div class="tb-emoji">📖</div>
+          <div class="tb-time">3:00 – 8:00</div>
+          <div class="tb-title">Meaning &amp; Example</div>
+          <div class="tb-desc">For each word: short definition (1 line) + 1 example sentence using the SI world. Student repeats the example sentence aloud.</div>
+        </div>
+        <div class="time-block">
+          <div class="tb-emoji">🎨</div>
+          <div class="tb-time">8:00 – 13:00</div>
+          <div class="tb-title">Draw It + Write It</div>
+          <div class="tb-desc">Student draws a quick sketch for each word (no art skill needed — stick figures OK) and writes the word next to it.</div>
+        </div>
+        <div class="time-block">
+          <div class="tb-emoji">🎯</div>
+          <div class="tb-time">13:00 – 15:00</div>
+          <div class="tb-title">Quick Fire Test</div>
+          <div class="tb-desc">Cover definitions. Point to each word picture. Student says the word. 5/5 = gold star. Below 5 = "Let's try 2 more times — you've got this!"</div>
+        </div>
+      </div>
+      <div class="lb-footer">
+        <div class="tip">🎯 <span><strong>Recall Tip:</strong> Connect each word to a memory — "That word is like the name of [SI thing]"</span></div>
+        <div class="tip">📦 <span><strong>Materials:</strong> Vocab flashcards (print or laminate), blank paper for drawings</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">4-Week English Curriculum · ASD/ADHD · Age 15 · Lesson Guide p.1</div>
+</div>
+
+<!-- ================================================================ LESSON BLOCKS PAGE 2 ================================================================ -->
+<div class="lessons-page">
+  <div class="section-title">🟡 Speaking Lessons — Detailed 15-Min Block Guide</div>
+
+  <!-- Speaking Activity 1 -->
+  <div class="sp-activity">
+    <div class="spa-header">
+      <span>🟡 SP1 — Introduce Yourself (Week 1 · Thu Block 1)</span>
+      <span style="font-size:11px;opacity:0.9;">⏱ 15 min · Low Pressure · Scripted Support</span>
+    </div>
+    <div class="spa-body">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div>
+          <div style="font-size:12px;font-weight:700;color:#D97706;margin-bottom:6px;">📋 Script Scaffold (use until not needed)</div>
+          <div style="background:white;border:1.5px solid #FCD34D;border-radius:8px;padding:10px;font-size:12px;line-height:2;">
+            "My name is ___________."<br>
+            "I am ___ years old."<br>
+            "I live in ___________."<br>
+            "My favourite [SI topic] is ___________."<br>
+            "I like it because ___________."
+          </div>
+        </div>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:#D97706;margin-bottom:6px;">⏱ 15-Minute Breakdown</div>
+          <ul class="spa-steps">
+            <li data-n="1">Read script together (2 min) — point to each blank</li>
+            <li data-n="2">Fill in blanks with student's info (3 min) — student writes</li>
+            <li data-n="3">Practise reading aloud quietly to self (3 min)</li>
+            <li data-n="4">Deliver to teacher/parent — once with script, once without (5 min)</li>
+            <li data-n="5">Praise specific success: "I loved how you said [detail]" (2 min)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Speaking Activity 2 -->
+  <div class="sp-activity">
+    <div class="spa-header">
+      <span>🟡 SP2 — Opinion Expression: "I Think X Because…" (Week 3 · Tue Block 2)</span>
+      <span style="font-size:11px;opacity:0.9;">⏱ 15 min · Back-and-Forth · Confidence Builder</span>
+    </div>
+    <div class="spa-body">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div>
+          <div style="font-size:12px;font-weight:700;color:#D97706;margin-bottom:6px;">💬 Opinion Sentence Frames</div>
+          <div style="background:white;border:1.5px solid #FCD34D;border-radius:8px;padding:10px;font-size:12px;">
+            <div style="margin-bottom:5px;">🟡 <strong>Stating:</strong> "I think ___ is ___."</div>
+            <div style="margin-bottom:5px;">🟡 <strong>Giving reason:</strong> "I think this because ___."</div>
+            <div style="margin-bottom:5px;">🟡 <strong>Agreeing:</strong> "I agree. ___."</div>
+            <div style="margin-bottom:5px;">🟡 <strong>Disagreeing (politely):</strong> "I see your point, but ___."</div>
+            <div>🟡 <strong>Closing:</strong> "That's why I think ___."</div>
+          </div>
+        </div>
+        <div>
+          <ul class="spa-steps">
+            <li data-n="1">Teacher models: "I think [SI thing A] is better than [B] because..." (2 min)</li>
+            <li data-n="2">Student picks a side on a SI comparison topic (1 min)</li>
+            <li data-n="3">Student states opinion using frame (2 min)</li>
+            <li data-n="4">Back-and-forth: teacher asks "Why?" or "But what about...?" — student responds using frames (7 min)</li>
+            <li data-n="5">Student summarises their opinion in one sentence (3 min)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="prompt-box">
+        <h5>💬 Sample SI Prompt Topics (replace with actual SI)</h5>
+        <div class="prompt-list">
+          <span class="prompt-chip">"[Character A] is better than [Character B]"</span>
+          <span class="prompt-chip">"[Game/Topic X] should have [feature Y]"</span>
+          <span class="prompt-chip">"The best [SI thing] is ___"</span>
+          <span class="prompt-chip">"[Skill A] is harder than [Skill B]"</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Speaking Activity 3 -->
+  <div class="sp-activity">
+    <div class="spa-header">
+      <span>🟡 SP3 — Teach-Back: Be the Expert (Week 1, 2, 3 · Fri Block 2)</span>
+      <span style="font-size:11px;opacity:0.9;">⏱ 15 min · High Motivation · Uses Special Interest</span>
+    </div>
+    <div class="spa-body">
+      <ul class="spa-steps">
+        <li data-n="1">Student picks ONE thing they want to explain about their SI (1 min)</li>
+        <li data-n="2">Give 3 min to prepare — jot 3 bullet points on a card (3 min)</li>
+        <li data-n="3">Deliver explanation to teacher/parent as if they know nothing about the topic (5 min)</li>
+        <li data-n="4">Teacher asks 2 genuine questions — student answers using full sentences (4 min)</li>
+        <li data-n="5">Feedback: teacher names ONE thing done well + ONE thing to improve (2 min)</li>
+      </ul>
+      <div style="background:white;border:1.5px dashed #FCD34D;border-radius:8px;padding:8px 12px;margin-top:8px;font-size:12px;">
+        🌟 <strong>Why this works:</strong> Students with ASD/ADHD demonstrate significantly higher language complexity, vocabulary use, and confidence when speaking on their special interest topic compared to neutral topics (research-backed).
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">4-Week English Curriculum · ASD/ADHD · Age 15 · Lesson Guide p.2</div>
+</div>
+
+<!-- ================================================================ READING SECTION ================================================================ -->
+<div class="reading-page">
+  <div class="section-title">🟢 Reading Lessons — Activity Guides &amp; Comprehension Frameworks</div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px;">
+    <div class="reading-card">
+      <div class="rc-header">
+        <h4>R1 — Reading for Key Facts (Week 1 · Tue Block 1)</h4>
+        <div class="rc-meta">⏱ 15 min · Passage length: 100–150 words · SI-adapted</div>
+      </div>
+      <div class="rc-body">
+        <div style="font-size:12px;margin-bottom:8px;"><strong>Before reading (2 min):</strong> Preview title + 1 picture. Ask: "What do you think this is about?"</div>
+        <div style="font-size:12px;margin-bottom:8px;"><strong>During reading (5 min):</strong> Read together or student reads silently. Student uses a highlighter to mark any interesting word or fact.</div>
+        <div style="font-size:12px;margin-bottom:8px;"><strong>After reading (8 min):</strong> Answer the 5 questions below (visual format — point and write).</div>
+        <ul class="question-list">
+          <li data-q="1">What is the main topic of this text?</li>
+          <li data-q="2">Find ONE number or fact in the text. What does it mean?</li>
+          <li data-q="3">Which word did you highlight? What does it mean?</li>
+          <li data-q="4">Is this text about the past, present, or future?</li>
+          <li data-q="5">Write one thing you already knew + one new thing you learned.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="reading-card">
+      <div class="rc-header">
+        <h4>R2 — Fact vs Opinion (Week 3 · Wed Block 2)</h4>
+        <div class="rc-meta">⏱ 15 min · Opinion-heavy SI article or review</div>
+      </div>
+      <div class="rc-body">
+        <div style="font-size:12px;margin-bottom:8px;"><strong>Quick sort (5 min):</strong> Teacher reads 6 sentences aloud. Student puts a 🟢 card on FACT and 🟡 card on OPINION.</div>
+        <div style="font-size:12px;margin-bottom:8px;"><strong>In-text (7 min):</strong> Student reads short article (100 words). Use two highlighter colours: facts = green, opinions = yellow.</div>
+        <div style="font-size:12px;margin-bottom:2px;"><strong>Reflection (3 min):</strong></div>
+        <ul class="question-list">
+          <li data-q="1">Name one FACT you found. How do you know it's a fact?</li>
+          <li data-q="2">Name one OPINION you found. Whose opinion is it?</li>
+          <li data-q="3">Do you agree with the opinion? Why / why not?</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+    <div class="reading-card">
+      <div class="rc-header">
+        <h4>R3 — Sequence &amp; Story Timeline (Week 3 · Tue Block 1)</h4>
+        <div class="rc-meta">⏱ 15 min · SI narrative or event text</div>
+      </div>
+      <div class="rc-body">
+        <div style="font-size:12px;margin-bottom:8px;"><strong>Material:</strong> A 5-event story or real event narrative from the SI world (e.g., history of a franchise, character's journey, game storyline).</div>
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:5px;margin-bottom:8px;">
+          <div style="background:white;border:1.5px solid #86EFAC;border-radius:6px;padding:6px 4px;text-align:center;font-size:10px;"><div style="font-size:14px;">1️⃣</div><div style="color:#6B7280;">FIRST</div></div>
+          <div style="background:white;border:1.5px solid #86EFAC;border-radius:6px;padding:6px 4px;text-align:center;font-size:10px;"><div style="font-size:14px;">2️⃣</div><div style="color:#6B7280;">NEXT</div></div>
+          <div style="background:white;border:1.5px solid #86EFAC;border-radius:6px;padding:6px 4px;text-align:center;font-size:10px;"><div style="font-size:14px;">3️⃣</div><div style="color:#6B7280;">THEN</div></div>
+          <div style="background:white;border:1.5px solid #86EFAC;border-radius:6px;padding:6px 4px;text-align:center;font-size:10px;"><div style="font-size:14px;">4️⃣</div><div style="color:#6B7280;">AFTER</div></div>
+          <div style="background:white;border:1.5px solid #86EFAC;border-radius:6px;padding:6px 4px;text-align:center;font-size:10px;"><div style="font-size:14px;">5️⃣</div><div style="color:#16A34A;font-weight:700;">FINALLY</div></div>
+        </div>
+        <ul class="question-list">
+          <li data-q="1">What happened FIRST in the story? (One sentence)</li>
+          <li data-q="2">What happened at the END?</li>
+          <li data-q="3">Put the 5 events in order using the timeline strip</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="reading-card">
+      <div class="rc-header">
+        <h4>R4 — Persuasive Text Analysis (Week 4 · Tue Block 1)</h4>
+        <div class="rc-meta">⏱ 15 min · SI product review or recommendation</div>
+      </div>
+      <div class="rc-body">
+        <div style="font-size:12px;margin-bottom:8px;"><strong>Target text:</strong> A short review or recommendation (100–120 words) about something connected to the SI — a game, film, book, or topic they love.</div>
+        <div style="font-size:12px;font-weight:700;color:#16A34A;margin-bottom:5px;">Spot the Techniques:</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-bottom:8px;font-size:11px;">
+          <div style="background:white;border:1.5px solid #86EFAC;border-radius:6px;padding:6px;"><strong>🔢 Statistics/numbers</strong><br><span style="color:#6B7280;">e.g. "90% of fans agree…"</span></div>
+          <div style="background:white;border:1.5px solid #86EFAC;border-radius:6px;padding:6px;"><strong>❤️ Emotion words</strong><br><span style="color:#6B7280;">e.g. "amazing / incredible"</span></div>
+          <div style="background:white;border:1.5px solid #86EFAC;border-radius:6px;padding:6px;"><strong>📣 Direct address</strong><br><span style="color:#6B7280;">e.g. "You should try…"</span></div>
+          <div style="background:white;border:1.5px solid #86EFAC;border-radius:6px;padding:6px;"><strong>🔁 Repetition</strong><br><span style="color:#6B7280;">e.g. "best, best, best"</span></div>
+        </div>
+        <ul class="question-list">
+          <li data-q="1">Circle one technique from the table above in the text</li>
+          <li data-q="2">Does this text make you want to try/buy the thing? Why?</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:#F0FDF4;border:2px solid #86EFAC;border-radius:12px;padding:14px 16px;margin-top:16px;">
+    <div style="font-size:13px;font-weight:800;color:#16A34A;margin-bottom:8px;">📖 Adapting ANY Text for Special Interest Integration</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;font-size:11px;">
+      <div style="background:white;border-radius:8px;padding:10px;"><strong>Step 1: Find a Real Text</strong><br><span style="color:#6B7280;">Use Wikipedia, fan wikis, official websites, or YouTube captions about the SI topic. Keep it 100–150 words for 15-min sessions.</span></div>
+      <div style="background:white;border-radius:8px;padding:10px;"><strong>Step 2: Simplify Vocabulary</strong><br><span style="color:#6B7280;">Replace difficult general words but KEEP the SI-specific vocabulary — those words are high-priority learning goals.</span></div>
+      <div style="background:white;border-radius:8px;padding:10px;"><strong>Step 3: Add a Visual Anchor</strong><br><span style="color:#6B7280;">Add one image or diagram from the SI world. Students with ASD read significantly better when text is paired with a relevant image.</span></div>
+    </div>
+  </div>
+  <div class="page-footer">4-Week English Curriculum · ASD/ADHD · Age 15 · Reading Guide</div>
+</div>
+
+<!-- ================================================================ SPECIAL INTEREST GUIDE ================================================================ -->
+<div class="si-page">
+  <div class="section-title">🎯 Special Interest Integration Guide</div>
+
+  <div class="si-intro">
+    <h3>Why Special Interest Integration Works</h3>
+    <p>Research consistently shows that students on the autism spectrum demonstrate deeper vocabulary acquisition, greater sentence complexity, and longer sustained engagement when learning content is linked to their special interest (PMC 2024). For students with ADHD, interest-driven content activates dopamine pathways that enhance focus and working memory during tasks that would otherwise feel aversive. This guide shows you how to adapt every lesson type to any special interest topic.</p>
+  </div>
+
+  <!-- How to Fill in the SI Topic -->
+  <div style="background:white;border:2px solid #C4B5FD;border-radius:12px;padding:14px 16px;margin-bottom:20px;">
+    <div style="font-family:'Nunito',sans-serif;font-size:14px;font-weight:800;color:#7C3AED;margin-bottom:8px;">✏️ Step 1: Define the Student's Special Interest</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;font-size:12px;">
+      <div style="background:#F5F3FF;border-radius:8px;padding:10px;"><strong>Special Interest Topic:</strong><br><div style="height:28px;border-bottom:2px solid #C4B5FD;margin-top:8px;"></div></div>
+      <div style="background:#F5F3FF;border-radius:8px;padding:10px;"><strong>3 Key People / Characters:</strong><br><div style="height:28px;border-bottom:2px solid #C4B5FD;margin-top:8px;"></div></div>
+      <div style="background:#F5F3FF;border-radius:8px;padding:10px;"><strong>5 Key Topic Vocabulary Words:</strong><br><div style="height:28px;border-bottom:2px solid #C4B5FD;margin-top:8px;"></div></div>
+    </div>
+  </div>
+
+  <!-- Adaptations for each subject -->
+  <div class="si-subject-block">
+    <div class="si-subject-header" style="background:#2563EB;">🔵 GRAMMAR — Adapting for Special Interest</div>
+    <div class="si-subject-body">
+      <div class="si-example-row">
+        <div class="si-ex">
+          <div class="sie-label">Standard Exercise</div>
+          <div class="sie-text">"He <u>walk</u>s to school every day."</div>
+        </div>
+        <div class="si-ex">
+          <div class="sie-label">→ SI-Adapted (Gaming)</div>
+          <div class="sie-text">"The character <u>run</u>s through the level every round."</div>
+        </div>
+        <div class="si-ex">
+          <div class="sie-label">→ SI-Adapted (Anime)</div>
+          <div class="sie-text">"The hero <u>train</u>s at the dojo every morning."</div>
+        </div>
+      </div>
+      <div class="si-tip">💡 <span><strong>Rule:</strong> Keep the same grammatical target (present tense -s). Only change the noun/verb/setting to match the SI world. This takes 2 minutes per exercise to adapt.</span></div>
+    </div>
+  </div>
+
+  <div class="si-subject-block">
+    <div class="si-subject-header" style="background:#7C3AED;">🟣 VOCABULARY — Building an SI Word Bank</div>
+    <div class="si-subject-body">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:10px;">
+        <div>
+          <div style="font-size:12px;font-weight:700;color:#7C3AED;margin-bottom:6px;">Word Bank Template (Fill with Student's SI)</div>
+          <table style="width:100%;border-collapse:collapse;font-size:11px;">
+            <tr style="background:#F5F3FF;"><th style="padding:5px 8px;border:1px solid #C4B5FD;text-align:left;">Word</th><th style="padding:5px 8px;border:1px solid #C4B5FD;">Type</th><th style="padding:5px 8px;border:1px solid #C4B5FD;">Meaning</th><th style="padding:5px 8px;border:1px solid #C4B5FD;">SI Example</th></tr>
+            <tr><td style="padding:5px 8px;border:1px solid #E5E7EB;">___________</td><td style="padding:5px 8px;border:1px solid #E5E7EB;text-align:center;">noun</td><td style="padding:5px 8px;border:1px solid #E5E7EB;">___________</td><td style="padding:5px 8px;border:1px solid #E5E7EB;">___________</td></tr>
+            <tr style="background:#FAFAFA;"><td style="padding:5px 8px;border:1px solid #E5E7EB;">___________</td><td style="padding:5px 8px;border:1px solid #E5E7EB;text-align:center;">verb</td><td style="padding:5px 8px;border:1px solid #E5E7EB;">___________</td><td style="padding:5px 8px;border:1px solid #E5E7EB;">___________</td></tr>
+            <tr><td style="padding:5px 8px;border:1px solid #E5E7EB;">___________</td><td style="padding:5px 8px;border:1px solid #E5E7EB;text-align:center;">adj.</td><td style="padding:5px 8px;border:1px solid #E5E7EB;">___________</td><td style="padding:5px 8px;border:1px solid #E5E7EB;">___________</td></tr>
+            <tr style="background:#FAFAFA;"><td style="padding:5px 8px;border:1px solid #E5E7EB;">___________</td><td style="padding:5px 8px;border:1px solid #E5E7EB;text-align:center;">noun</td><td style="padding:5px 8px;border:1px solid #E5E7EB;">___________</td><td style="padding:5px 8px;border:1px solid #E5E7EB;">___________</td></tr>
+            <tr><td style="padding:5px 8px;border:1px solid #E5E7EB;">___________</td><td style="padding:5px 8px;border:1px solid #E5E7EB;text-align:center;">verb</td><td style="padding:5px 8px;border:1px solid #E5E7EB;">___________</td><td style="padding:5px 8px;border:1px solid #E5E7EB;">___________</td></tr>
+          </table>
+        </div>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:#7C3AED;margin-bottom:6px;">High-Impact Vocabulary Categories</div>
+          <div style="display:grid;gap:6px;font-size:11px;">
+            <div style="background:#F5F3FF;border-radius:6px;padding:7px 10px;"><strong>🏷️ Nouns:</strong> Names of things/places/people in SI world — these become anchor words for building sentences</div>
+            <div style="background:#F5F3FF;border-radius:6px;padding:7px 10px;"><strong>⚡ Verbs:</strong> Actions from SI world — especially useful for grammar practice (tenses)</div>
+            <div style="background:#F5F3FF;border-radius:6px;padding:7px 10px;"><strong>🎨 Adjectives:</strong> Descriptive words that feel relevant — student already uses them mentally, making formal recall easier</div>
+            <div style="background:#F5F3FF;border-radius:6px;padding:7px 10px;"><strong>🔗 Connectives:</strong> because / although / however — teach these in SI context: "I prefer X <em>because</em> it has…"</div>
+          </div>
+        </div>
+      </div>
+      <div class="si-tip">💡 <span><strong>Memory Bridge:</strong> Students with ASD often have exceptional long-term memory for SI facts. Anchor new English words to SI facts they already know: "Remember how [character] is called [X]? That word means Y in English too."</span></div>
+    </div>
+  </div>
+
+  <div class="si-subject-block">
+    <div class="si-subject-header" style="background:#D97706;">🟡 SPEAKING — Motivation Through Expertise</div>
+    <div class="si-subject-body">
+      <div class="si-example-row">
+        <div class="si-ex">
+          <div class="sie-label">Low-Motivation Prompt</div>
+          <div class="sie-text">"Tell me about your weekend."</div>
+        </div>
+        <div class="si-ex">
+          <div class="sie-label">→ High-Motivation Prompt</div>
+          <div class="sie-text">"Explain to me who [SI character/person] is and why they are important."</div>
+        </div>
+        <div class="si-ex">
+          <div class="sie-label">→ Expert Frame</div>
+          <div class="sie-text">"I don't know anything about [SI]. Can you teach me the 3 most important things?"</div>
+        </div>
+      </div>
+      <div class="si-tip">🌟 <span><strong>Expert Effect:</strong> When the student is the expert, anxiety decreases, speaking length increases, vocabulary complexity rises, and self-confidence builds. Genuine curiosity from the teacher is the key ingredient.</span></div>
+    </div>
+  </div>
+
+  <div class="si-subject-block">
+    <div class="si-subject-header" style="background:#16A34A;">🟢 READING — Finding SI Content</div>
+    <div class="si-subject-body">
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;font-size:11px;margin-bottom:8px;">
+        <div style="background:white;border:1.5px solid #86EFAC;border-radius:8px;padding:8px;"><strong>🌐 Wikis</strong><br>Fan wikis, Wikipedia — adjust reading level by switching to "Simple English Wikipedia"</div>
+        <div style="background:white;border:1.5px solid #86EFAC;border-radius:8px;padding:8px;"><strong>📰 News &amp; Blogs</strong><br>Topic-specific news sites, review blogs — short articles with natural conversational English</div>
+        <div style="background:white;border:1.5px solid #86EFAC;border-radius:8px;padding:8px;"><strong>📺 Transcripts</strong><br>YouTube auto-captions or official transcripts — bring in dialogue, informal register, real language</div>
+        <div style="background:white;border:1.5px solid #86EFAC;border-radius:8px;padding:8px;"><strong>📖 Guides</strong><br>Official game guides, instruction manuals, how-to articles — great for procedural writing models</div>
+      </div>
+      <div class="si-tip">📌 <span><strong>Curation Tip:</strong> Spend 10 minutes finding 4–5 short SI texts before the week begins. Save them in a folder. This prevents last-minute stress and keeps lesson pacing smooth.</span></div>
+    </div>
+  </div>
+  <div class="page-footer">4-Week English Curriculum · ASD/ADHD · Age 15 · Special Interest Guide</div>
+</div>
+
+<!-- ================================================================ PROGRESS TRACKER ================================================================ -->
+<div class="tracker-page">
+  <div class="section-title">⭐ Visual Progress Tracker — 4 Weeks</div>
+
+  <!-- Streak Box -->
+  <div class="streak-box">
+    <div class="sb-left">
+      <div class="sb-num">0</div>
+      <div class="sb-lbl">Day Streak 🔥<br><span style="font-size:10px;opacity:0.7;">Fill in as you go!</span></div>
+    </div>
+    <div class="sb-message">Each day you complete your 3 blocks, add a flame 🔥 to your streak counter. Beat your record every week!</div>
+    <div class="sb-right"><div class="sb-fire">🔥</div></div>
+  </div>
+
+  <!-- Daily Stars — Week by week -->
+  <div class="tracker-section">
+    <div class="tracker-title">⭐ Daily Star Chart — Colour in or stick a star each day</div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;">
+      <div>
+        <div style="font-family:'Nunito',sans-serif;font-size:12px;font-weight:800;color:#2563EB;margin-bottom:6px;padding:4px 8px;background:#EFF6FF;border-radius:6px;">📘 WEEK 1</div>
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:5px;">
+          <div style="text-align:center;border:1.5px solid #E5E7EB;border-radius:8px;padding:6px 2px;"><div style="font-size:9px;color:#6B7280;">MON</div><div style="font-size:20px;color:#D1D5DB;">☆</div><div style="font-size:9px;color:#D1D5DB;">Block</div></div>
+          <div style="text-align:center;border:1.5px solid #E5E7EB;border-radius:8px;padding:6px 2px;"><div style="font-size:9px;color:#6B7280;">TUE</div><div style="font-size:20px;color:#D1D5DB;">☆</div><div style="font-size:9px;color:#D1D5DB;">Block</div></div>
+          <div style="text-align:center;border:1.5px solid #E5E7EB;border-radius:8px;padding:6px 2px;"><div style="font-size:9px;color:#6B7280;">WED</div><div style="font-size:20px;color:#D1D5DB;">☆</div><div style="font-size:9px;color:#D1D5DB;">Block</div></div>
+          <div style="text-align:center;border:1.5px solid #E5E7EB;border-radius:8px;padding:6px 2px;"><div style="font-size:9px;color:#6B7280;">THU</div><div style="font-size:20px;color:#D1D5DB;">☆</div><div style="font-size:9px;color:#D1D5DB;">Block</div></div>
+          <div style="text-align:center;border:1.5px solid #E5E7EB;border-radius:8px;padding:6px 2px;"><div style="font-size:9px;color:#6B7280;">FRI</div><div style="font-size:20px;color:#D1D5DB;">☆</div><div style="font-size:9px;color:#D1D5DB;">Block</div></div>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:'Nunito',sans-serif;font-size:12px;font-weight:800;color:#7C3AED;margin-bottom:6px;padding:4px 8px;background:#F5F3FF;border-radius:6px;">📗 WEEK 2</div>
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:5px;">
+          <div style="text-align:center;border:1.5px solid #E5E7EB;border-radius:8px;padding:6px 2px;"><div style="font-size:9px;color:#6B7280;">MON</div><div style="font-size:20px;color:#D1D5DB;">☆</div><div style="font-size:9px;color:#D1D5DB;">Block</div></div>
+          <div style="text-align:center;border:1.5px solid #E5E7EB;border-radius:8px;padding:6px 2px;"><div style="font-size:9px;color:#6B7280;">TUE</div><div style="font-size:20px;color:#D1D5DB;">☆</div><div style="font-size:9px;color:#D1D5DB;">Block</div></div>
+          <div style="text-align:center;border:1.5px solid #E5E7EB;border-radius:8px;padding:6px 2px;"><div style="font-size:9px;color:#6B7280;">WED</div><div style="font-size:20px;color:#D1D5DB;">☆</div><div style="font-size:9px;color:#D1D5DB;">Block</div></div>
+          <div style="text-align:center;border:1.5px solid #E5E7EB;border-radius:8px;padding:6px 2px;"><div style="font-size:9px;color:#6B7280;">THU</div><div style="font-size:20px;color:#D1D5DB;">☆</div><div style="font-size:9px;color:#D1D5DB;">Block</div></div>
+          <div style="text-align:center;border:1.5px solid #E5E7EB;border-radius:8px;padding:6px 2px;"><div style="font-size:9px;color:#6B7280;">FRI</div><div style="font-size:20px;color:#D1D5DB;">☆</div><div style="font-size:9px;color:#D1D5DB;">Block</div></div>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:'Nunito',sans-serif;font-size:12px;font-weight:800;color:#D97706;margin-bottom:6px;padding:4px 8px;background:#FFFBEB;border-radius:6px;">📙 WEEK 3</div>
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:5px;">
+          <div style="text-align:center;border:1.5px solid #E5E7EB;border-radius:8px;padding:6px 2px;"><div style="font-size:9px;color:#6B7280;">MON</div><div style="font-size:20px;color:#D1D5DB;">☆</div><div style="font-size:9px;color:#D1D5DB;">Block</div></div>
+          <div style="text-align:center;border:1.5px solid #E5E7EB;border-radius:8px;padding:6px 2px;"><div style="font-size:9px;color:#6B7280;">TUE</div><div style="font-size:20px;color:#D1D5DB;">☆</div><div style="font-size:9px;color:#D1D5DB;">Block</div></div>
+          <div style="text-align:center;border:1.5px solid #E5E7EB;border-radius:8px;padding:6px 2px;"><div style="font-size:9px;color:#6B7280;">WED</div><div style="font-size:20px;color:#D1D5DB;">☆</div><div style="font-size:9px;color:#D1D5DB;">Block</div></div>
+          <div style="text-align:center;border:1.5px solid #E5E7EB;border-radius:8px;padding:6px 2px;"><div style="font-size:9px;color:#6B7280;">THU</div><div style="font-size:20px;color:#D1D5DB;">☆</div><div style="font-size:9px;color:#D1D5DB;">Block</div></div>
+          <div style="text-align:center;border:1.5px solid #E5E7EB;border-radius:8px;padding:6px 2px;"><div style="font-size:9px;color:#6B7280;">FRI</div><div style="font-size:20px;color:#D1D5DB;">☆</div><div style="font-size:9px;color:#D1D5DB;">Block</div></div>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:'Nunito',sans-serif;font-size:12px;font-weight:800;color:#16A34A;margin-bottom:6px;padding:4px 8px;background:#F0FDF4;border-radius:6px;">📕 WEEK 4</div>
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:5px;">
+          <div style="text-align:center;border:1.5px solid #E5E7EB;border-radius:8px;padding:6px 2px;"><div style="font-size:9px;color:#6B7280;">MON</div><div style="font-size:20px;color:#D1D5DB;">☆</div><div style="font-size:9px;color:#D1D5DB;">Block</div></div>
+          <div style="text-align:center;border:1.5px solid #E5E7EB;border-radius:8px;padding:6px 2px;"><div style="font-size:9px;color:#6B7280;">TUE</div><div style="font-size:20px;color:#D1D5DB;">☆</div><div style="font-size:9px;color:#D1D5DB;">Block</div></div>
+          <div style="text-align:center;border:1.5px solid #E5E7EB;border-radius:8px;padding:6px 2px;"><div style="font-size:9px;color:#6B7280;">WED</div><div style="font-size:20px;color:#D1D5DB;">☆</div><div style="font-size:9px;color:#D1D5DB;">Block</div></div>
+          <div style="text-align:center;border:1.5px solid #E5E7EB;border-radius:8px;padding:6px 2px;"><div style="font-size:9px;color:#6B7280;">THU</div><div style="font-size:20px;color:#D1D5DB;">☆</div><div style="font-size:9px;color:#D1D5DB;">Block</div></div>
+          <div style="text-align:center;border:1.5px solid #E5E7EB;border-radius:8px;padding:6px 2px;"><div style="font-size:9px;color:#6B7280;">FRI</div><div style="font-size:20px;color:#D1D5DB;">☆</div><div style="font-size:9px;color:#D1D5DB;">Block</div></div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:10px;font-size:11px;color:#6B7280;background:#F3F4F6;padding:8px 12px;border-radius:6px;">
+      🌟 <strong>Reward Ladder:</strong> 5 stars = choose a 15-min SI activity &nbsp;|&nbsp; 10 stars = special snack + extra break &nbsp;|&nbsp; 20 stars = pick a movie/game night &nbsp;|&nbsp; Complete all 20 days = unlock final badge + certificate
+    </div>
+  </div>
+
+  <!-- Skill Progress Bars -->
+  <div class="tracker-section">
+    <div class="tracker-title">📊 Skill Progress Bars — Fill in at the end of each week</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+      <div style="background:white;border:1.5px solid #E5E7EB;border-radius:10px;padding:12px 14px;">
+        <div style="font-size:12px;font-weight:700;margin-bottom:8px;color:#2563EB;">🔵 Grammar Progress</div>
+        <div style="display:grid;gap:6px;font-size:11px;">
+          <div style="display:flex;align-items:center;gap:8px;"><span style="width:70px;color:#6B7280;">Week 1</span><div style="flex:1;height:14px;background:#E5E7EB;border-radius:7px;overflow:hidden;"><div style="width:0%;height:100%;background:linear-gradient(90deg,#2563EB,#4F46E5);border-radius:7px;"></div></div><span style="width:24px;text-align:right;font-weight:700;color:#2563EB;">___%</span></div>
+          <div style="display:flex;align-items:center;gap:8px;"><span style="width:70px;color:#6B7280;">Week 2</span><div style="flex:1;height:14px;background:#E5E7EB;border-radius:7px;overflow:hidden;"><div style="width:0%;height:100%;background:linear-gradient(90deg,#2563EB,#4F46E5);border-radius:7px;"></div></div><span style="width:24px;text-align:right;font-weight:700;color:#2563EB;">___%</span></div>
+          <div style="display:flex;align-items:center;gap:8px;"><span style="width:70px;color:#6B7280;">Week 3</span><div style="flex:1;height:14px;background:#E5E7EB;border-radius:7px;overflow:hidden;"><div style="width:0%;height:100%;background:linear-gradient(90deg,#2563EB,#4F46E5);border-radius:7px;"></div></div><span style="width:24px;text-align:right;font-weight:700;color:#2563EB;">___%</span></div>
+          <div style="display:flex;align-items:center;gap:8px;"><span style="width:70px;color:#6B7280;">Week 4</span><div style="flex:1;height:14px;background:#E5E7EB;border-radius:7px;overflow:hidden;"><div style="width:0%;height:100%;background:linear-gradient(90deg,#2563EB,#4F46E5);border-radius:7px;"></div></div><span style="width:24px;text-align:right;font-weight:700;color:#2563EB;">___%</span></div>
+        </div>
+      </div>
+      <div style="background:white;border:1.5px solid #E5E7EB;border-radius:10px;padding:12px 14px;">
+        <div style="font-size:12px;font-weight:700;margin-bottom:8px;color:#7C3AED;">🟣 Vocabulary Progress</div>
+        <div style="display:grid;gap:6px;font-size:11px;">
+          <div style="display:flex;align-items:center;gap:8px;"><span style="width:70px;color:#6B7280;">Week 1</span><div style="flex:1;height:14px;background:#E5E7EB;border-radius:7px;overflow:hidden;"><div style="width:0%;height:100%;background:linear-gradient(90deg,#7C3AED,#EC4899);border-radius:7px;"></div></div><span style="width:24px;text-align:right;font-weight:700;color:#7C3AED;">___%</span></div>
+          <div style="display:flex;align-items:center;gap:8px;"><span style="width:70px;color:#6B7280;">Week 2</span><div style="flex:1;height:14px;background:#E5E7EB;border-radius:7px;overflow:hidden;"><div style="width:0%;height:100%;background:linear-gradient(90deg,#7C3AED,#EC4899);border-radius:7px;"></div></div><span style="width:24px;text-align:right;font-weight:700;color:#7C3AED;">___%</span></div>
+          <div style="display:flex;align-items:center;gap:8px;"><span style="width:70px;color:#6B7280;">Week 3</span><div style="flex:1;height:14px;background:#E5E7EB;border-radius:7px;overflow:hidden;"><div style="width:0%;height:100%;background:linear-gradient(90deg,#7C3AED,#EC4899);border-radius:7px;"></div></div><span style="width:24px;text-align:right;font-weight:700;color:#7C3AED;">___%</span></div>
+          <div style="display:flex;align-items:center;gap:8px;"><span style="width:70px;color:#6B7280;">Week 4</span><div style="flex:1;height:14px;background:#E5E7EB;border-radius:7px;overflow:hidden;"><div style="width:0%;height:100%;background:linear-gradient(90deg,#7C3AED,#EC4899);border-radius:7px;"></div></div><span style="width:24px;text-align:right;font-weight:700;color:#7C3AED;">___%</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Achievement Badges -->
+  <div class="tracker-section">
+    <div class="tracker-title">🏅 Achievement Badges — Unlock as you go!</div>
+    <div class="badge-grid">
+      <div class="badge"><div class="b-icon">🌱</div><div class="b-name">First Lesson Complete!</div></div>
+      <div class="badge"><div class="b-icon">🔥</div><div class="b-name">5-Day Streak!</div></div>
+      <div class="badge"><div class="b-icon">📖</div><div class="b-name">Week 1 Graduate</div></div>
+      <div class="badge"><div class="b-icon">🎤</div><div class="b-name">First Teach-Back!</div></div>
+      <div class="badge"><div class="b-icon">✍️</div><div class="b-name">First Paragraph Written</div></div>
+      <div class="badge"><div class="b-icon">📚</div><div class="b-name">30 New Words Learned!</div></div>
+      <div class="badge"><div class="b-icon">⚡</div><div class="b-name">Speed Grammar — 6/6!</div></div>
+      <div class="badge"><div class="b-icon">🌟</div><div class="b-name">Week 2 Graduate</div></div>
+      <div class="badge"><div class="b-icon">💬</div><div class="b-name">3-Min Speaker!</div></div>
+      <div class="badge"><div class="b-icon">🔍</div><div class="b-name">Fact Finder Expert</div></div>
+      <div class="badge"><div class="b-icon">🏆</div><div class="b-name">Week 3 Graduate</div></div>
+      <div class="badge"><div class="b-icon">✅</div><div class="b-name">Essay Published!</div></div>
+      <div class="badge"><div class="b-icon">🎓</div><div class="b-name">Final Presentation Done!</div></div>
+      <div class="badge"><div class="b-icon">🌈</div><div class="b-name">4-Week Champion!</div></div>
+      <div class="badge"><div class="b-icon">❤️</div><div class="b-name">SI Expert — Always!</div></div>
+    </div>
+  </div>
+
+  <div class="page-footer">4-Week English Curriculum · ASD/ADHD · Age 15 · Progress Tracker</div>
+</div>
+
+<!-- ================================================================ QUICK REF CARD ================================================================ -->
+<div style="padding:32px 40px;">
+  <div class="section-title">📌 Teacher / Parent Quick Reference — Strategies at a Glance</div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px;">
+    <div style="background:#EFF6FF;border:2px solid #93C5FD;border-radius:12px;padding:14px;">
+      <div style="font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;color:#2563EB;margin-bottom:8px;">⏱ Managing Time Blocks</div>
+      <ul style="font-size:11px;color:#374151;padding-left:14px;line-height:2;">
+        <li>Use a visible, analogue-style timer</li>
+        <li>Announce block starts: "Block 1 begins — 15 minutes"</li>
+        <li>Give a 2-min warning before block ends</li>
+        <li>Never extend a block if the student is dysregulated</li>
+        <li>Incomplete blocks still earn half a star</li>
+      </ul>
+    </div>
+    <div style="background:#FFFBEB;border:2px solid #FCD34D;border-radius:12px;padding:14px;">
+      <div style="font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;color:#D97706;margin-bottom:8px;">🔄 Managing Transitions</div>
+      <ul style="font-size:11px;color:#374151;padding-left:14px;line-height:2;">
+        <li>Show the visual schedule at the start of each day</li>
+        <li>Tick off blocks together when complete</li>
+        <li>Say what's coming NEXT before ending a block</li>
+        <li>Allow 1-min warning: "In one minute we move to Break"</li>
+        <li>Let student tick the schedule themselves</li>
+      </ul>
+    </div>
+    <div style="background:#F0FDF4;border:2px solid #86EFAC;border-radius:12px;padding:14px;">
+      <div style="font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;color:#16A34A;margin-bottom:8px;">🧠 On Difficult Days</div>
+      <ul style="font-size:11px;color:#374151;padding-left:14px;line-height:2;">
+        <li>Do only 1 block if energy is low — still earns a star</li>
+        <li>Let the student choose which subject to start with</li>
+        <li>Verbal answers always acceptable instead of writing</li>
+        <li>Switch to a SI-only exploration block if needed</li>
+        <li>No pressure, no shame — celebrate showing up</li>
+      </ul>
+    </div>
+  </div>
+
+  <div style="background:linear-gradient(135deg,#1e3a8a,#4F46E5,#7C3AED);color:white;border-radius:14px;padding:20px 24px;text-align:center;">
+    <div style="font-family:'Nunito',sans-serif;font-size:18px;font-weight:900;margin-bottom:6px;">🌟 Remember: Progress ≠ Perfection</div>
+    <div style="font-size:13px;opacity:0.9;max-width:600px;margin:0 auto;line-height:1.7;">
+      This curriculum is a <strong>scaffold</strong>, not a script. Adapt freely. The most important thing is that the student feels safe, seen, and successful — even if only one block gets done today. A good session leaves them wanting to come back tomorrow.
+    </div>
+  </div>
+
+  <div class="page-footer" style="margin-top:20px;">4-Week English Curriculum · ASD/ADHD · Age 15 · Teacher Reference · End of Document</div>
+</div>
+
+</body>
+</html>
