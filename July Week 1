@@ -377,3 +377,21 @@
       <span class="sd-badge-lbl">Sessions</span>
     </div>
   </div>
+
+  <!-- Jul Session 1 -->
+  <div class="session-card">
+    <div class="session-header">
+      <div class="session-date-badge">Thu 02 Jul</div>
+      <div class="session-num">Session 1 of 4</div>
+      <div class="session-focus-pill focus-speaking">🗣️ Speaking &amp; Listening</div>
+    </div>
+    <div class="session-body">
+      <div class="session-goal">🎯 Goal: Student can introduce themselves and name 5 things they like.</div>
+      <div class="time-blocks">
+        <div class="time-block"><div class="tb-time" style="background:#0891B2;">8:35</div><div class="tb-content tb-speaking"><div class="tb-label label-speaking">Who are we?</div><div class="tb-activity">Introductuce ourselves. Tell 1 interesting thing about ourselves. "Interest Map" — A blank mind map. Student says the words; teacher types them in. Verbal warm-up, no pressure. 5 "words about me": name, age, hobby, favourite, dislike. Write 1 sentence: "My name is ___. I like ___</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#F97316;">9:00</div><div class="tb-content tb-vocab"><div class="tb-label label-vocab">Break</div><div class="tb-activity">Lets strech out and drink some water.</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#7C3AED;">9:05</div><div class="tb-content tb-reading"><div class="tb-label label-reading">🔧 Grammar in Context</div><div class="tb-activity">Simple Present: "I am / I like / I have." Student says 3 sentences out loud using the frame. Teacher models first.</div><div class="grammar-inset">Grammar frame: "I am [name]. I like [thing]. I have [thing]." — spoken only today.</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#16A34A;">9:25</div><div class="tb-content tb-grammar"><div class="tb-label label-grammar">Closing</div>></div></div>
+      </div>
+    </div>
+  </div>
