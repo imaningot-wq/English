@@ -1,0 +1,17 @@
+  <!-- Jul Session 2 -->
+  <div class="session-card">
+    <div class="session-header">
+      <div class="session-date-badge">Thu 09 Jul</div>
+      <div class="session-num">Session 2 of 5</div>
+      <div class="session-focus-pill focus-vocab">✍️ Vocabulary &amp; Writing</div>
+    </div>
+    <div class="session-body">
+      <div class="session-goal">🎯 Goal: Student builds a personal vocabulary bank including 3–5 words from their special interest.</div>
+      <div class="time-blocks">
+        <div class="time-block"><div class="tb-time" style="background:#0891B2;">8:30</div><div class="tb-content tb-speaking"><div class="tb-label label-speaking">🗣️ Speaking &amp; Listening</div><div class="tb-activity">Quick quiz: teacher describes someone, student guesses. Then student describes themselves. Verbal, fast-paced.</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#F97316;">8:47</div><div class="tb-content tb-vocab"><div class="tb-label label-vocab">✍️ Vocabulary &amp; Writing ⭐ FOCUS</div><div class="tb-activity">Adjectives about me: 5 topic words + 3 SI words student chooses. Write: "I am [adj]. I am not [adj]. My [SI] is [adj]." Fill boxes on virtual card.</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#7C3AED;">9:04</div><div class="tb-content tb-reading"><div class="tb-label label-reading">📖 Reading &amp; Listening</div><div class="tb-activity">Short "About [SI topic]" paragraph (teacher prepares using student's SI). Find and circle 3 adjectives in the text.</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#16A34A;">9:21</div><div class="tb-content tb-grammar"><div class="tb-label label-grammar">🔧 Grammar in Context</div><div class="tb-activity">Adjective placement: "I am ___" vs "It is ___." Student uses their new SI words in 2 sentences.</div></div></div>
+      </div>
+    </div>
+  </div>
