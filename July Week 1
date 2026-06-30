@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>English Curriculum 2026 — Online Thursday Classes</title>
+<style>
+  /* ============================================================
+     PRINT + SCREEN STYLES
+     ============================================================ */
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600;700&display=swap');
+
+  :root {
+    --teal:    #0891B2;
+    --teal-lt: #E0F2FE;
+    --coral:   #F97316;
+    --coral-lt:#FFF7ED;
+    --violet:  #7C3AED;
+    --violet-lt:#F5F3FF;
+    --green:   #16A34A;
+    --green-lt:#F0FDF4;
+    --amber:   #D97706;
+    --amber-lt:#FFFBEB;
+    --pink:    #DB2777;
+    --pink-lt: #FDF2F8;
+    --gray:    #374151;
+    --gray-lt: #F9FAFB;
+    --border:  #E5E7EB;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 11pt;
+    color: #1F2937;
+    background: #fff;
+    line-height: 1.5;
+  }
+
+  /* ── PAGE BREAKS ── */
+  .page { 
+    width: 210mm; 
+    min-height: 297mm; 
+    margin: 0 auto 12mm; 
+    padding: 14mm 14mm 12mm;
+    background: #fff;
+    border: 1px solid #ddd;
+  }
+  @media print {
+    @page { size: A4; margin: 0; }
+    body { background: #fff; }
+    .page { border: none; margin: 0; padding: 12mm 14mm; page-break-after: always; }
+    .page:last-child { page-break-after: auto; }
+    .no-print { display: none !important; }
+  }
+
+  /* ── TYPOGRAPHY ── */
+  h1, h2, h3, h4 { font-family: 'Nunito', sans-serif; }
+  h1 { font-size: 22pt; font-weight: 900; }
+  h2 { font-size: 14pt; font-weight: 800; }
+  h3 { font-size: 11pt; font-weight: 700; }
+  h4 { font-size: 9.5pt; font-weight: 700; }
+
+  /* ── COVER PAGE ── */
+  .cover-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 280mm;
+    gap: 0;
+  }
+  .cover-badge {
+    background: linear-gradient(135deg, var(--teal), var(--violet));
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    font-size: 10pt;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 6px 20px;
+    border-radius: 20px;
+    margin-bottom: 18px;
+  }
+  .cover-title {
+    font-size: 28pt;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--teal), var(--violet));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.15;
+    margin-bottom: 10px;
+  }
+  .cover-subtitle {
+    font-size: 13pt;
+    color: #6B7280;
+    font-weight: 600;
+    margin-bottom: 28px;
+  }
+  .cover-details {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  .cover-detail-pill {
+    background: #F3F4F6;
+    border: 1.5px solid var(--border);
+    border-radius: 20px;
+    padding: 7px 16px;
+    font-size: 9.5pt;
+    font-weight: 700;
+    color: var(--gray);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .cover-overview-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    width: 100%;
+    max-width: 160mm;
+    margin: 0 auto 24px;
+  }
+  .core-concept-card {
+    border-radius: 12px;
+    padding: 14px 14px 12px;
+    border: 2px solid;
+    text-align: left;
+  }
+  .core-concept-card .cc-icon { font-size: 20px; margin-bottom: 5px; display: block; }
+  .core-concept-card .cc-title { font-size: 9.5pt; font-weight: 800; margin-bottom: 3px; }
+  .core-concept-card .cc-desc  { font-size: 8.5pt; font-weight: 500; color: #4B5563; line-height: 1.4; }
+  .cc-speaking  { background: var(--teal-lt);   border-color: var(--teal);   }
+  .cc-vocab     { background: var(--coral-lt);  border-color: var(--coral);  }
+  .cc-reading   { background: var(--violet-lt); border-color: var(--violet); }
+  .cc-grammar   { background: var(--green-lt);  border-color: var(--green);  }
+
+  .cover-journey {
+    width: 100%;
+    max-width: 160mm;
+    margin: 0 auto;
+    background: #F9FAFB;
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 16px;
+  }
+  .journey-title {
+    font-size: 9pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #9CA3AF;
+    margin-bottom: 10px;
+  }
+  .journey-months {
+    display: flex;
+    gap: 0;
+    align-items: stretch;
+  }
+  .journey-month {
+    flex: 1;
+    text-align: center;
+    position: relative;
+  }
+  .journey-month:not(:last-child)::after {
+    content: '→';
+    position: absolute;
+    right: -4px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #D1D5DB;
+    font-size: 10pt;
+    z-index: 1;
+  }
+  .journey-dot {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    margin: 0 auto 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #fff;
+    font-weight: 900;
+  }
+  .journey-month-name { font-size: 7.5pt; font-weight: 700; color: #374151; }
+  .journey-month-topic { font-size: 7pt; color: #6B7280; line-height: 1.3; margin-top: 2px; }
+  .journey-month-count { font-size: 7pt; color: #9CA3AF; }
+
+  /* ── SECTION DIVIDER ── */
+  .section-divider {
+    border-radius: 14px;
+    padding: 16px 20px 14px;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .sd-emoji { font-size: 32px; line-height: 1; }
+  .sd-text {}
+  .sd-month { font-size: 8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; opacity: 0.7; margin-bottom: 2px; }
+  .sd-title { font-size: 16pt; font-weight: 900; line-height: 1.1; }
+  .sd-meta  { font-size: 8.5pt; font-weight: 600; margin-top: 4px; opacity: 0.8; }
+  .sd-badge {
+    margin-left: auto;
+    background: rgba(255,255,255,0.35);
+    border-radius: 10px;
+    padding: 8px 14px;
+    text-align: center;
+    font-weight: 800;
+    white-space: nowrap;
+  }
+  .sd-badge-num { font-size: 18pt; display: block; line-height: 1; }
+  .sd-badge-lbl { font-size: 7.5pt; text-transform: uppercase; letter-spacing: 1px; }
+
+  .color-july   { background: linear-gradient(135deg, #DBEAFE, #EDE9FE); color: #1E3A8A; }
+  .color-august { background: linear-gradient(135deg, #D1FAE5, #ECFDF5); color: #065F46; }
+  .color-sept   { background: linear-gradient(135deg, #FEF3C7, #FFF7ED); color: #92400E; }
+  .color-oct    { background: linear-gradient(135deg, #FCE7F3, #FDF2F8); color: #831843; }
+  .color-nov    { background: linear-gradient(135deg, #EDE9FE, #F5F3FF); color: #4C1D95; }
+  .color-dec    { background: linear-gradient(135deg, #FEE2E2, #FEF3C7); color: #7F1D1D; }
+
+  /* ── SESSION CARD ── */
+  .session-card {
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+  .session-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    border-bottom: 1.5px solid var(--border);
+    background: #F9FAFB;
+  }
+  .session-date-badge {
+    background: var(--teal);
+    color: #fff;
+    border-radius: 8px;
+    padding: 3px 9px;
+    font-size: 8pt;
+    font-weight: 800;
+    white-space: nowrap;
+  }
+  .session-num {  
+    font-size: 8pt;
+    font-weight: 800;
+    color: #6B7280;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .session-focus-pill {
+    margin-left: auto;
+    border-radius: 12px;
+    padding: 3px 10px;
+    font-size: 8pt;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .focus-speaking  { background: var(--teal-lt);   color: #0E7490; }
+  .focus-vocab     { background: var(--coral-lt);  color: #C2410C; }
+  .focus-reading   { background: var(--violet-lt); color: #6D28D9; }
+  .focus-grammar   { background: var(--green-lt);  color: #15803D; }
+  .focus-showcase  { background: var(--amber-lt);  color: #B45309; }
+
+  .session-body { padding: 10px 12px; }
+  .session-goal {
+    font-size: 8.5pt;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 8px;
+    padding: 5px 10px;
+    background: #F3F4F6;
+    border-radius: 6px;
+    border-left: 3px solid #9CA3AF;
+  }
+  .time-blocks { display: flex; flex-direction: column; gap: 5px; }
+  .time-block {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+  .tb-time {
+    background: #1F2937;
+    color: #F9FAFB;
+    font-size: 7.5pt;
+    font-weight: 800;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 4px;
+    text-align: center;
+    line-height: 1.2;
+  }
+  .tb-time .tb-slot { font-size: 6.5pt; opacity: 0.6; font-weight: 600; }
+  .tb-content {
+    padding: 6px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .tb-label {
+    font-size: 7.5pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 2px;
+  }
+  .tb-activity { font-size: 8.5pt; font-weight: 600; color: #374151; }
+  .tb-tip      { font-size: 7.5pt; font-weight: 500; color: #6B7280; margin-top: 1px; }
+
+  .tb-speaking  { background: #EFF6FF; }
+  .tb-vocab     { background: #FFF7ED; }
+  .tb-reading   { background: #F5F3FF; }
+  .tb-grammar   { background: #F0FDF4; }
+  .tb-break     { background: #F9FAFB; }
+  .tb-wrap      { background: #FFFBEB; }
+
+  .label-speaking { color: #0369A1; }
+  .label-vocab    { color: #C2410C; }
+  .label-reading  { color: #7C3AED; }
+  .label-grammar  { color: #15803D; }
+  .label-break    { color: #9CA3AF; }
+  .label-wrap     { color: #B45309; }
+
+  .online-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 7.5pt;
+    font-weight: 700;
+    color: #0891B2;
+    background: #E0F2FE;
+    border-radius: 10px;
+    padding: 2px 8px;
+    margin-left: 6px;
+  }
+<!-- ══════════════════════════════════════════
+     PAGE 1 — COVER
+══════════════════════════════════════════ -->
+<div class="page">
+  <div class="cover-page">
+    <div class="cover-badge">📅 July – December 2026 &nbsp;·&nbsp; Every Thursday 8:30 PM</div>
+    <div class="cover-title">English Learning Journey<br>2026</div>
+    <div class="cover-subtitle">With Miss Iman</div>
+
+    <div class="cover-details">
+      <div class="cover-detail-pill">🌐 Fully Online (Video Call)</div>
+      <div class="cover-detail-pill">🕜 8:30 – 9:30 PM every Thursday</div>
+    </div>
+<!-- ══════════════════════════════════════════
+     PAGE 4 — JULY: MYSELF & MY WORLD
+══════════════════════════════════════════ -->
+<div class="page">
+  <div class="section-divider color-july">
+    <div class="sd-emoji">🌟</div>
+    <div class="sd-text">
+      <div class="sd-month">Month 1 · July 2026</div>
+      <div class="sd-title">Myself &amp; My World</div>
+      <div class="sd-meta">Grammar Focus: Simple Present · Vocab: Identity &amp; Interest Words · 4 Sessions</div>
+    </div>
+    <div class="sd-badge">
+      <span class="sd-badge-num">4</span>
+      <span class="sd-badge-lbl">Sessions</span>
+    </div>
+  </div>
