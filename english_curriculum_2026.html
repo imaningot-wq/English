@@ -1,0 +1,1537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>English Curriculum 2026 — Online Thursday Classes</title>
+<style>
+  /* ============================================================
+     PRINT + SCREEN STYLES
+     ============================================================ */
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600;700&display=swap');
+
+  :root {
+    --teal:    #0891B2;
+    --teal-lt: #E0F2FE;
+    --coral:   #F97316;
+    --coral-lt:#FFF7ED;
+    --violet:  #7C3AED;
+    --violet-lt:#F5F3FF;
+    --green:   #16A34A;
+    --green-lt:#F0FDF4;
+    --amber:   #D97706;
+    --amber-lt:#FFFBEB;
+    --pink:    #DB2777;
+    --pink-lt: #FDF2F8;
+    --gray:    #374151;
+    --gray-lt: #F9FAFB;
+    --border:  #E5E7EB;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 11pt;
+    color: #1F2937;
+    background: #fff;
+    line-height: 1.5;
+  }
+
+  /* ── PAGE BREAKS ── */
+  .page { 
+    width: 210mm; 
+    min-height: 297mm; 
+    margin: 0 auto 12mm; 
+    padding: 14mm 14mm 12mm;
+    background: #fff;
+    border: 1px solid #ddd;
+  }
+  @media print {
+    @page { size: A4; margin: 0; }
+    body { background: #fff; }
+    .page { border: none; margin: 0; padding: 12mm 14mm; page-break-after: always; }
+    .page:last-child { page-break-after: auto; }
+    .no-print { display: none !important; }
+  }
+
+  /* ── TYPOGRAPHY ── */
+  h1, h2, h3, h4 { font-family: 'Nunito', sans-serif; }
+  h1 { font-size: 22pt; font-weight: 900; }
+  h2 { font-size: 14pt; font-weight: 800; }
+  h3 { font-size: 11pt; font-weight: 700; }
+  h4 { font-size: 9.5pt; font-weight: 700; }
+
+  /* ── COVER PAGE ── */
+  .cover-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 280mm;
+    gap: 0;
+  }
+  .cover-badge {
+    background: linear-gradient(135deg, var(--teal), var(--violet));
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    font-size: 10pt;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 6px 20px;
+    border-radius: 20px;
+    margin-bottom: 18px;
+  }
+  .cover-title {
+    font-size: 28pt;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--teal), var(--violet));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.15;
+    margin-bottom: 10px;
+  }
+  .cover-subtitle {
+    font-size: 13pt;
+    color: #6B7280;
+    font-weight: 600;
+    margin-bottom: 28px;
+  }
+  .cover-details {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  .cover-detail-pill {
+    background: #F3F4F6;
+    border: 1.5px solid var(--border);
+    border-radius: 20px;
+    padding: 7px 16px;
+    font-size: 9.5pt;
+    font-weight: 700;
+    color: var(--gray);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .cover-overview-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    width: 100%;
+    max-width: 160mm;
+    margin: 0 auto 24px;
+  }
+  .core-concept-card {
+    border-radius: 12px;
+    padding: 14px 14px 12px;
+    border: 2px solid;
+    text-align: left;
+  }
+  .core-concept-card .cc-icon { font-size: 20px; margin-bottom: 5px; display: block; }
+  .core-concept-card .cc-title { font-size: 9.5pt; font-weight: 800; margin-bottom: 3px; }
+  .core-concept-card .cc-desc  { font-size: 8.5pt; font-weight: 500; color: #4B5563; line-height: 1.4; }
+  .cc-speaking  { background: var(--teal-lt);   border-color: var(--teal);   }
+  .cc-vocab     { background: var(--coral-lt);  border-color: var(--coral);  }
+  .cc-reading   { background: var(--violet-lt); border-color: var(--violet); }
+  .cc-grammar   { background: var(--green-lt);  border-color: var(--green);  }
+
+  .cover-journey {
+    width: 100%;
+    max-width: 160mm;
+    margin: 0 auto;
+    background: #F9FAFB;
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 16px;
+  }
+  .journey-title {
+    font-size: 9pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #9CA3AF;
+    margin-bottom: 10px;
+  }
+  .journey-months {
+    display: flex;
+    gap: 0;
+    align-items: stretch;
+  }
+  .journey-month {
+    flex: 1;
+    text-align: center;
+    position: relative;
+  }
+  .journey-month:not(:last-child)::after {
+    content: '→';
+    position: absolute;
+    right: -4px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #D1D5DB;
+    font-size: 10pt;
+    z-index: 1;
+  }
+  .journey-dot {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    margin: 0 auto 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #fff;
+    font-weight: 900;
+  }
+  .journey-month-name { font-size: 7.5pt; font-weight: 700; color: #374151; }
+  .journey-month-topic { font-size: 7pt; color: #6B7280; line-height: 1.3; margin-top: 2px; }
+  .journey-month-count { font-size: 7pt; color: #9CA3AF; }
+
+  /* ── SECTION DIVIDER ── */
+  .section-divider {
+    border-radius: 14px;
+    padding: 16px 20px 14px;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .sd-emoji { font-size: 32px; line-height: 1; }
+  .sd-text {}
+  .sd-month { font-size: 8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; opacity: 0.7; margin-bottom: 2px; }
+  .sd-title { font-size: 16pt; font-weight: 900; line-height: 1.1; }
+  .sd-meta  { font-size: 8.5pt; font-weight: 600; margin-top: 4px; opacity: 0.8; }
+  .sd-badge {
+    margin-left: auto;
+    background: rgba(255,255,255,0.35);
+    border-radius: 10px;
+    padding: 8px 14px;
+    text-align: center;
+    font-weight: 800;
+    white-space: nowrap;
+  }
+  .sd-badge-num { font-size: 18pt; display: block; line-height: 1; }
+  .sd-badge-lbl { font-size: 7.5pt; text-transform: uppercase; letter-spacing: 1px; }
+
+  .color-july   { background: linear-gradient(135deg, #DBEAFE, #EDE9FE); color: #1E3A8A; }
+  .color-august { background: linear-gradient(135deg, #D1FAE5, #ECFDF5); color: #065F46; }
+  .color-sept   { background: linear-gradient(135deg, #FEF3C7, #FFF7ED); color: #92400E; }
+  .color-oct    { background: linear-gradient(135deg, #FCE7F3, #FDF2F8); color: #831843; }
+  .color-nov    { background: linear-gradient(135deg, #EDE9FE, #F5F3FF); color: #4C1D95; }
+  .color-dec    { background: linear-gradient(135deg, #FEE2E2, #FEF3C7); color: #7F1D1D; }
+
+  /* ── SESSION CARD ── */
+  .session-card {
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+  .session-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    border-bottom: 1.5px solid var(--border);
+    background: #F9FAFB;
+  }
+  .session-date-badge {
+    background: var(--teal);
+    color: #fff;
+    border-radius: 8px;
+    padding: 3px 9px;
+    font-size: 8pt;
+    font-weight: 800;
+    white-space: nowrap;
+  }
+  .session-num {
+    font-size: 8pt;
+    font-weight: 800;
+    color: #6B7280;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .session-focus-pill {
+    margin-left: auto;
+    border-radius: 12px;
+    padding: 3px 10px;
+    font-size: 8pt;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .focus-speaking  { background: var(--teal-lt);   color: #0E7490; }
+  .focus-vocab     { background: var(--coral-lt);  color: #C2410C; }
+  .focus-reading   { background: var(--violet-lt); color: #6D28D9; }
+  .focus-grammar   { background: var(--green-lt);  color: #15803D; }
+  .focus-showcase  { background: var(--amber-lt);  color: #B45309; }
+
+  .session-body { padding: 10px 12px; }
+  .session-goal {
+    font-size: 8.5pt;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 8px;
+    padding: 5px 10px;
+    background: #F3F4F6;
+    border-radius: 6px;
+    border-left: 3px solid #9CA3AF;
+  }
+  .time-blocks { display: flex; flex-direction: column; gap: 5px; }
+  .time-block {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+  .tb-time {
+    background: #1F2937;
+    color: #F9FAFB;
+    font-size: 7.5pt;
+    font-weight: 800;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 4px;
+    text-align: center;
+    line-height: 1.2;
+  }
+  .tb-time .tb-slot { font-size: 6.5pt; opacity: 0.6; font-weight: 600; }
+  .tb-content {
+    padding: 6px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .tb-label {
+    font-size: 7.5pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 2px;
+  }
+  .tb-activity { font-size: 8.5pt; font-weight: 600; color: #374151; }
+  .tb-tip      { font-size: 7.5pt; font-weight: 500; color: #6B7280; margin-top: 1px; }
+
+  .tb-speaking  { background: #EFF6FF; }
+  .tb-vocab     { background: #FFF7ED; }
+  .tb-reading   { background: #F5F3FF; }
+  .tb-grammar   { background: #F0FDF4; }
+  .tb-break     { background: #F9FAFB; }
+  .tb-wrap      { background: #FFFBEB; }
+
+  .label-speaking { color: #0369A1; }
+  .label-vocab    { color: #C2410C; }
+  .label-reading  { color: #7C3AED; }
+  .label-grammar  { color: #15803D; }
+  .label-break    { color: #9CA3AF; }
+  .label-wrap     { color: #B45309; }
+
+  .online-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 7.5pt;
+    font-weight: 700;
+    color: #0891B2;
+    background: #E0F2FE;
+    border-radius: 10px;
+    padding: 2px 8px;
+    margin-left: 6px;
+  }
+
+  /* ── SPECIAL INTEREST GUIDE ── */
+  .si-section {
+    background: linear-gradient(135deg, #F5F3FF, #EFF6FF);
+    border: 2px solid var(--violet);
+    border-radius: 14px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+  }
+  .si-title {
+    font-size: 11pt;
+    font-weight: 900;
+    color: var(--violet);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+  .si-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  .si-card {
+    background: #fff;
+    border: 1.5px solid #DDD6FE;
+    border-radius: 8px;
+    padding: 8px 10px;
+  }
+  .si-card-title { font-size: 8pt; font-weight: 800; color: #6D28D9; margin-bottom: 3px; }
+  .si-card-body  { font-size: 7.5pt; color: #374151; line-height: 1.4; }
+
+  .si-wordbank {
+    background: #fff;
+    border: 1.5px solid #DDD6FE;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-top: 8px;
+  }
+  .si-wordbank-title { font-size: 8.5pt; font-weight: 800; color: #6D28D9; margin-bottom: 8px; }
+  .si-wb-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+  }
+  .si-wb-box {
+    border: 1px dashed #A78BFA;
+    border-radius: 5px;
+    height: 26px;
+    background: #FAFAFA;
+  }
+
+  /* ── PROGRESS TRACKER ── */
+  .tracker-title {
+    font-size: 10pt;
+    font-weight: 900;
+    color: #374151;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .stars-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 4px;
+    margin-bottom: 12px;
+  }
+  .star-cell {
+    aspect-ratio: 1;
+    border: 1.5px solid #FCD34D;
+    border-radius: 5px;
+    background: #FFFBEB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+  }
+  .star-cell.filled { background: #FEF3C7; }
+  .star-label { font-size: 7pt; color: #9CA3AF; text-align: center; margin-top: 1px; }
+
+  .reward-row {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .reward-pill {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    border-radius: 16px;
+    font-size: 8pt;
+    font-weight: 700;
+    border: 1.5px solid;
+  }
+  .rp-5  { background: #FEF9C3; border-color: #FDE047; color: #713F12; }
+  .rp-10 { background: #D1FAE5; border-color: #34D399; color: #064E3B; }
+  .rp-20 { background: #EDE9FE; border-color: #A78BFA; color: #4C1D95; }
+  .rp-24 { background: linear-gradient(135deg, #FEE2E2, #EDE9FE); border-color: #F87171; color: #7F1D1D; }
+
+  .skill-bars { margin-top: 12px; }
+  .skill-row {
+    display: grid;
+    grid-template-columns: 100px 1fr 50px;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 7px;
+  }
+  .skill-name { font-size: 8.5pt; font-weight: 700; }
+  .skill-track {
+    height: 16px;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    background: #F9FAFB;
+    overflow: hidden;
+    display: flex;
+    gap: 1px;
+    align-items: stretch;
+    padding: 2px;
+  }
+  .skill-segment {
+    flex: 1;
+    border-radius: 4px;
+    background: #E5E7EB;
+  }
+  .skill-note { font-size: 7.5pt; color: #6B7280; }
+
+  /* ── BADGES ── */
+  .badges-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 7px;
+    margin-top: 8px;
+  }
+  .badge-item {
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    padding: 7px 5px;
+    text-align: center;
+    background: #F9FAFB;
+  }
+  .badge-icon { font-size: 18px; display: block; margin-bottom: 2px; }
+  .badge-name { font-size: 6.5pt; font-weight: 700; color: #374151; line-height: 1.3; }
+  .badge-earned { border-color: var(--amber); background: var(--amber-lt); }
+  .badge-earned .badge-name { color: var(--amber); }
+
+  /* ── ONLINE TIPS BOX ── */
+  .online-box {
+    background: linear-gradient(135deg, #E0F2FE, #EFF6FF);
+    border: 2px solid var(--teal);
+    border-radius: 12px;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+  }
+  .online-box-title { font-size: 9.5pt; font-weight: 800; color: #0369A1; margin-bottom: 7px; display: flex; align-items: center; gap: 6px; }
+  .online-tips-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 7px;
+  }
+  .online-tip {
+    background: #fff;
+    border: 1px solid #BAE6FD;
+    border-radius: 7px;
+    padding: 7px 9px;
+    font-size: 8pt;
+    line-height: 1.4;
+  }
+  .online-tip strong { color: #0369A1; font-weight: 800; display: block; margin-bottom: 2px; }
+
+  .divider-line {
+    border: none;
+    border-top: 1.5px dashed var(--border);
+    margin: 10px 0;
+  }
+
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--border);
+  }
+  .page-header-title { font-size: 9pt; font-weight: 800; color: #6B7280; text-transform: uppercase; letter-spacing: 1px; }
+  .page-header-sub   { font-size: 8pt; color: #9CA3AF; }
+
+  .showcase-banner {
+    background: linear-gradient(135deg, #FEF3C7, #FFFBEB);
+    border: 2px solid #F59E0B;
+    border-radius: 10px;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+  }
+  .showcase-icon { font-size: 22px; }
+  .showcase-text { font-size: 8.5pt; font-weight: 700; color: #92400E; }
+
+  .teacher-note {
+    background: #F0FDF4;
+    border: 1.5px solid #86EFAC;
+    border-radius: 8px;
+    padding: 8px 11px;
+    font-size: 8pt;
+    color: #166534;
+    margin-top: 8px;
+    line-height: 1.45;
+  }
+  .teacher-note strong { font-weight: 800; }
+
+  .grammar-inset {
+    background: #F0FDF4;
+    border-left: 3px solid var(--green);
+    padding: 6px 10px;
+    border-radius: 0 6px 6px 0;
+    margin-top: 6px;
+    font-size: 8pt;
+    color: #166534;
+  }
+
+  .print-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: linear-gradient(135deg, var(--teal), var(--violet));
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 24px;
+    font-size: 11pt;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    z-index: 999;
+    font-family: 'Nunito', sans-serif;
+  }
+  .print-btn:hover { opacity: 0.9; }
+
+  .month-progress {
+    display: flex;
+    gap: 4px;
+    margin-left: auto;
+  }
+  .mp-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.4);
+    border: 1.5px solid rgba(255,255,255,0.7);
+  }
+  .mp-dot.done { background: rgba(255,255,255,0.85); }
+</style>
+</head>
+<body>
+
+<button class="print-btn no-print" onclick="window.print()">🖨️ Print / Save as PDF</button>
+
+<!-- ══════════════════════════════════════════
+     PAGE 1 — COVER
+══════════════════════════════════════════ -->
+<div class="page">
+  <div class="cover-page">
+    <div class="cover-badge">📅 July – December 2026 &nbsp;·&nbsp; Every Thursday 8:30 PM</div>
+    <div class="cover-title">English Learning Journey<br>2026</div>
+    <div class="cover-subtitle">A 24-Session Online Curriculum for a 15-Year-Old Learner</div>
+
+    <div class="cover-details">
+      <div class="cover-detail-pill">🌐 Fully Online (Video Call)</div>
+      <div class="cover-detail-pill">🕜 8:30 – 9:30 PM every Thursday</div>
+      <div class="cover-detail-pill">⏱ 1 Hour · 4 × 15-min Blocks</div>
+      <div class="cover-detail-pill">📚 24 Total Sessions</div>
+      <div class="cover-detail-pill">🧩 ASD/ADHD-Friendly Design</div>
+    </div>
+
+    <div style="font-size:9pt;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:#9CA3AF;margin-bottom:10px;">4 Core Concepts — Every Session</div>
+    <div class="cover-overview-grid">
+      <div class="core-concept-card cc-speaking">
+        <span class="cc-icon">🗣️</span>
+        <div class="cc-title">Speaking &amp; Listening</div>
+        <div class="cc-desc">Concrete, interactive activities — real conversations, not drills</div>
+      </div>
+      <div class="core-concept-card cc-vocab">
+        <span class="cc-icon">✍️</span>
+        <div class="cc-title">Vocabulary &amp; Writing</div>
+        <div class="cc-desc">Short, structured outputs — 1–3 sentences, word banks, never an essay</div>
+      </div>
+      <div class="core-concept-card cc-reading">
+        <span class="cc-icon">📖</span>
+        <div class="cc-title">Reading &amp; Listening</div>
+        <div class="cc-desc">Very short texts on high-interest topics — 50–100 words max</div>
+      </div>
+      <div class="core-concept-card cc-grammar">
+        <span class="cc-icon">🔧</span>
+        <div class="cc-title">Grammar in Context</div>
+        <div class="cc-desc">Tiny chunks only — always inside speaking or writing, never isolated drills</div>
+      </div>
+    </div>
+
+    <div class="cover-journey">
+      <div class="journey-title">📍 Monthly Topic Journey</div>
+      <div class="journey-months">
+        <div class="journey-month">
+          <div class="journey-dot" style="background:linear-gradient(135deg,#3B82F6,#8B5CF6);">🌟</div>
+          <div class="journey-month-name">July</div>
+          <div class="journey-month-topic">Myself &amp; My World</div>
+          <div class="journey-month-count">5 sessions</div>
+        </div>
+        <div class="journey-month">
+          <div class="journey-dot" style="background:linear-gradient(135deg,#10B981,#34D399);">🐾</div>
+          <div class="journey-month-name">August</div>
+          <div class="journey-month-topic">Animals &amp; Nature</div>
+          <div class="journey-month-count">4 sessions</div>
+        </div>
+        <div class="journey-month">
+          <div class="journey-dot" style="background:linear-gradient(135deg,#F59E0B,#FBBF24);">🍜</div>
+          <div class="journey-month-name">September</div>
+          <div class="journey-month-topic">Food &amp; Daily Life</div>
+          <div class="journey-month-count">4 sessions</div>
+        </div>
+        <div class="journey-month">
+          <div class="journey-dot" style="background:linear-gradient(135deg,#EC4899,#F472B6);">🗺️</div>
+          <div class="journey-month-name">October</div>
+          <div class="journey-month-topic">Adventure &amp; Exploration</div>
+          <div class="journey-month-count">5 sessions</div>
+        </div>
+        <div class="journey-month">
+          <div class="journey-dot" style="background:linear-gradient(135deg,#7C3AED,#A78BFA);">🎮</div>
+          <div class="journey-month-name">November</div>
+          <div class="journey-month-topic">Technology &amp; Games</div>
+          <div class="journey-month-count">4 sessions</div>
+        </div>
+        <div class="journey-month">
+          <div class="journey-dot" style="background:linear-gradient(135deg,#EF4444,#F97316);">🏆</div>
+          <div class="journey-month-name">December</div>
+          <div class="journey-month-topic">My Year in Review</div>
+          <div class="journey-month-count">2 sessions</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PAGE 2 — HOW EVERY CLASS WORKS + SI GUIDE
+══════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-header">
+    <div class="page-header-title">📋 How Every Class Works</div>
+    <div class="page-header-sub">Thursday 8:30 – 9:30 PM · Online · 4 × 15-min Blocks</div>
+  </div>
+
+  <!-- Class structure table -->
+  <div style="margin-bottom:12px;">
+    <h3 style="margin-bottom:7px;font-size:10pt;">⏰ Standard 1-Hour Session Blueprint</h3>
+    <div style="display:grid;grid-template-columns:56px 1fr;gap:5px;">
+
+      <div class="time-block" style="grid-column:1/-1;">
+        <div class="tb-time" style="background:#0891B2;">8:30<div class="tb-slot">START</div></div>
+        <div class="tb-content tb-speaking">
+          <div class="tb-label label-speaking">🗣️ Block 1 · Speaking &amp; Listening (15 min)</div>
+          <div class="tb-activity">Warm-up game, guided question, or short listening task linked to this month's topic. Verbal responses only — no writing pressure.</div>
+          <div class="tb-tip">💡 Online tip: Use chat box, emoji reactions, or screen-share pictures as props.</div>
+        </div>
+      </div>
+
+      <div class="time-block" style="grid-column:1/-1;">
+        <div class="tb-time" style="background:#6B7280;">8:45<div class="tb-slot">BREAK</div></div>
+        <div class="tb-content tb-break">
+          <div class="tb-label label-break">☕ 2-min Transition</div>
+          <div class="tb-activity">Announce what comes next before stopping. Student may stretch, drink water, or turn camera off briefly.</div>
+        </div>
+      </div>
+
+      <div class="time-block" style="grid-column:1/-1;">
+        <div class="tb-time" style="background:#F97316;">8:47<div class="tb-slot">BLOCK 2</div></div>
+        <div class="tb-content tb-vocab">
+          <div class="tb-label label-vocab">✍️ Block 2 · Vocabulary &amp; Writing (15 min)</div>
+          <div class="tb-activity">5–8 new words from topic + special interest. Short structured output: fill a word bank, label a picture, write 1–3 sentences using a frame.</div>
+          <div class="tb-tip">💡 Online tip: Shared Google Slides or Jamboard as a virtual word wall.</div>
+        </div>
+      </div>
+
+      <div class="time-block" style="grid-column:1/-1;">
+        <div class="tb-time" style="background:#6B7280;">9:02<div class="tb-slot">BREAK</div></div>
+        <div class="tb-content tb-break">
+          <div class="tb-label label-break">☕ 2-min Transition</div>
+          <div class="tb-activity">Announce next block. Optional: student picks a sticker/emoji for the digital star chart now.</div>
+        </div>
+      </div>
+
+      <div class="time-block" style="grid-column:1/-1;">
+        <div class="tb-time" style="background:#7C3AED;">9:04<div class="tb-slot">BLOCK 3</div></div>
+        <div class="tb-content tb-reading">
+          <div class="tb-label label-reading">📖 Block 3 · Reading &amp; Listening (15 min)</div>
+          <div class="tb-activity">1 short text (50–100 words) or 1 short audio/video clip on today's topic. Answer 2–3 questions: 1 factual, 1 personal, 1 vocab-check.</div>
+          <div class="tb-tip">💡 Online tip: Screen-share the text; highlight words together using annotation tools.</div>
+        </div>
+      </div>
+
+      <div class="time-block" style="grid-column:1/-1;">
+        <div class="tb-time" style="background:#6B7280;">9:19<div class="tb-slot">BREAK</div></div>
+        <div class="tb-content tb-break">
+          <div class="tb-label label-break">☕ 2-min Transition</div>
+          <div class="tb-activity">Last block! Announce the grammar task — keep it light and fun.</div>
+        </div>
+      </div>
+
+      <div class="time-block" style="grid-column:1/-1;">
+        <div class="tb-time" style="background:#16A34A;">9:21<div class="tb-slot">BLOCK 4</div></div>
+        <div class="tb-content tb-grammar">
+          <div class="tb-label label-grammar">🔧 Block 4 · Grammar in Context (13 min)</div>
+          <div class="tb-activity">1 grammar point only. Embedded in speaking or a 1–3 sentence writing task. Use sentence frames, not explanations. Student produces, teacher models.</div>
+          <div class="tb-tip">💡 Online tip: Type-in-chat grammar games — student types sentences, teacher reacts.</div>
+        </div>
+      </div>
+
+      <div class="time-block" style="grid-column:1/-1;">
+        <div class="tb-time" style="background:#D97706;">9:34<div class="tb-slot">WRAP</div></div>
+        <div class="tb-content tb-wrap">
+          <div class="tb-label label-wrap">⭐ Wrap-Up (5 min)</div>
+          <div class="tb-activity">Student says 1 thing they learned. Teacher adds star to chart. Preview next Thursday's topic (max 1 sentence). Say goodbye! ✋</div>
+        </div>
+      </div>
+
+      <div class="time-block" style="grid-column:1/-1;">
+        <div class="tb-time" style="background:#374151;">9:39<div class="tb-slot">END</div></div>
+        <div class="tb-content" style="background:#F3F4F6;">
+          <div class="tb-label" style="color:#374151;">🏁 Class Ends · See you next Thursday!</div>
+          <div class="tb-activity">Total: ~65 min with transitions. Adjust blocks if student needs more time on one area.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="teacher-note">
+    <strong>🧠 Neurodivergent Design Notes:</strong> Always announce transitions before they happen ("In 2 minutes, we're moving to Block 2 — reading!"). Accept verbal answers in place of written ones on hard days. If focus drops, skip Block 4 and end with the star chart — completing 3 blocks is still a full session win. One earned star = one session attempted.
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PAGE 3 — SPECIAL INTEREST GUIDE + ONLINE TIPS
+══════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-header">
+    <div class="page-header-title">⭐ Special Interest (SI) Integration Guide</div>
+    <div class="page-header-sub">Adapt any lesson to the student's favourite topic for maximum motivation</div>
+  </div>
+
+  <div class="si-section">
+    <div class="si-title">✨ Why SI Integration Works</div>
+    <p style="font-size:8.5pt;color:#374151;line-height:1.5;margin-bottom:10px;">For ASD/ADHD learners, embedding a special interest ("SI") into vocabulary and speaking tasks dramatically increases engagement, reduces anxiety, and improves recall. The grammar and structure stay the same — only the nouns and verbs change to match what the student loves.</p>
+
+    <div class="si-grid">
+      <div class="si-card">
+        <div class="si-card-title">📝 Vocabulary Swap Rule</div>
+        <div class="si-card-body">Replace 3–5 of each session's example words with SI-related words. Keep the grammar frame identical. <em>E.g., "The [animal] is fast" → "The [character] is fast"</em></div>
+      </div>
+      <div class="si-card">
+        <div class="si-card-title">🗣️ Expert Effect (Speaking)</div>
+        <div class="si-card-body">Frame the student as the teacher: "Can you explain [SI concept] to me in English?" This increases sentence complexity and fluency naturally.</div>
+      </div>
+      <div class="si-card">
+        <div class="si-card-title">📖 Reading Source Finder</div>
+        <div class="si-card-body">Use fan wikis, Simple English Wikipedia, game guides, or YouTube subtitles as reading texts. 50–100 words max. Print or screen-share.</div>
+      </div>
+      <div class="si-card">
+        <div class="si-card-title">✍️ Writing Frame Swap</div>
+        <div class="si-card-body">Use SI context in all writing frames: "My favourite [SI thing] is ___ because ___." Structural target stays the same.</div>
+      </div>
+      <div class="si-card">
+        <div class="si-card-title">🎮 Game-ify Grammar</div>
+        <div class="si-card-body">Use SI scenarios in grammar tasks: "You are a [SI character]. What do you do every day?" → Simple Present practice.</div>
+      </div>
+      <div class="si-card">
+        <div class="si-card-title">⚡ Motivation Reset</div>
+        <div class="si-card-body">If focus drops mid-session, pivot to the SI topic for 3 minutes ("Tell me one thing about [SI] in English") then return to task.</div>
+      </div>
+    </div>
+
+    <div class="si-wordbank">
+      <div class="si-wordbank-title">📦 Monthly SI Word Bank — Fill Before Each Month Starts</div>
+      <p style="font-size:8pt;color:#6B7280;margin-bottom:7px;">Write 8 SI-specific words the student will encounter this month. Use them in all 4 blocks throughout the month.</p>
+      <div class="si-wb-grid">
+        <div class="si-wb-box"></div><div class="si-wb-box"></div><div class="si-wb-box"></div><div class="si-wb-box"></div>
+        <div class="si-wb-box"></div><div class="si-wb-box"></div><div class="si-wb-box"></div><div class="si-wb-box"></div>
+      </div>
+      <p style="font-size:7.5pt;color:#A78BFA;margin-top:6px;font-weight:600;">📌 Tip: Ask the student to help fill in these boxes at the start of each month. It builds ownership and excitement.</p>
+    </div>
+  </div>
+
+  <div class="online-box">
+    <div class="online-box-title">🌐 Online Class Setup &amp; Tips — Every Thursday 8:30 PM</div>
+    <div class="online-tips-grid">
+      <div class="online-tip">
+        <strong>📲 Platform Setup</strong>
+        Use Zoom, Google Meet, or Teams. Enable screen annotation so both teacher and student can draw/highlight on shared materials.
+      </div>
+      <div class="online-tip">
+        <strong>🖼️ Visual Support</strong>
+        Prepare slides or a shared Google Doc before class. Visual schedules work better on-screen — show the 4 blocks as a checklist at the top of every slide.
+      </div>
+      <div class="online-tip">
+        <strong>💬 Chat Box as Safety Net</strong>
+        If the student is hesitant to speak, let them type answers in the chat box first, then read it aloud. This reduces speaking pressure significantly.
+      </div>
+      <div class="online-tip">
+        <strong>📸 Camera Optional</strong>
+        Never force camera on. A student who joins with audio only is still fully participating. Normalise this in the first session.
+      </div>
+      <div class="online-tip">
+        <strong>⏰ 8:30 PM Is Late — Pre-Wind-Down Tips</strong>
+        Ask parents to avoid screens or stimulating activities 30 min before class. A consistent pre-class ritual (drink water, sit at desk) helps the brain prepare.
+      </div>
+      <div class="online-tip">
+        <strong>🌟 Digital Star Chart</strong>
+        Keep a shared Google Sheet or Notion page as the running star chart. Student can see it live on screen and add their own star emoji after each session.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PAGE 4 — JULY: MYSELF & MY WORLD
+══════════════════════════════════════════ -->
+<div class="page">
+  <div class="section-divider color-july">
+    <div class="sd-emoji">🌟</div>
+    <div class="sd-text">
+      <div class="sd-month">Month 1 · July 2026</div>
+      <div class="sd-title">Myself &amp; My World</div>
+      <div class="sd-meta">Grammar Focus: Simple Present · Vocab: Identity &amp; Interest Words · 5 Sessions</div>
+    </div>
+    <div class="sd-badge">
+      <span class="sd-badge-num">5</span>
+      <span class="sd-badge-lbl">Sessions</span>
+    </div>
+  </div>
+
+  <!-- Jul Session 1 -->
+  <div class="session-card">
+    <div class="session-header">
+      <div class="session-date-badge">Thu 02 Jul</div>
+      <div class="session-num">Session 1 of 5</div>
+      <div class="session-focus-pill focus-speaking">🗣️ Speaking &amp; Listening</div>
+    </div>
+    <div class="session-body">
+      <div class="session-goal">🎯 Goal: Student can introduce themselves and name 3 things they like, all in English.</div>
+      <div class="time-blocks">
+        <div class="time-block"><div class="tb-time" style="background:#0891B2;">8:30</div><div class="tb-content tb-speaking"><div class="tb-label label-speaking">🗣️ Speaking &amp; Listening</div><div class="tb-activity">"Interest Map" — teacher screen-shares a blank mind map. Student says words they like; teacher types them in. Verbal warm-up, no pressure.</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#F97316;">8:47</div><div class="tb-content tb-vocab"><div class="tb-label label-vocab">✍️ Vocabulary &amp; Writing</div><div class="tb-activity">5 "words about me": name, age, hobby, favourite, dislike. Write 1 sentence: "My name is ___. I like ___." Word bank provided.</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#7C3AED;">9:04</div><div class="tb-content tb-reading"><div class="tb-label label-reading">📖 Reading &amp; Listening</div><div class="tb-activity">Read a 60-word "About Me" example card together. Answer: What does this person like? What do you have in common?</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#16A34A;">9:21</div><div class="tb-content tb-grammar"><div class="tb-label label-grammar">🔧 Grammar in Context</div><div class="tb-activity">Simple Present: "I am / I like / I have." Student says 3 sentences out loud using the frame. Teacher models first.</div><div class="grammar-inset">Grammar frame: "I am [name]. I like [thing]. I have [thing]." — spoken only today.</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Jul Session 2 -->
+  <div class="session-card">
+    <div class="session-header">
+      <div class="session-date-badge">Thu 09 Jul</div>
+      <div class="session-num">Session 2 of 5</div>
+      <div class="session-focus-pill focus-vocab">✍️ Vocabulary &amp; Writing</div>
+    </div>
+    <div class="session-body">
+      <div class="session-goal">🎯 Goal: Student builds a personal vocabulary bank including 3–5 words from their special interest.</div>
+      <div class="time-blocks">
+        <div class="time-block"><div class="tb-time" style="background:#0891B2;">8:30</div><div class="tb-content tb-speaking"><div class="tb-label label-speaking">🗣️ Speaking &amp; Listening</div><div class="tb-activity">Quick quiz: teacher describes someone, student guesses. Then student describes themselves. Verbal, fast-paced.</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#F97316;">8:47</div><div class="tb-content tb-vocab"><div class="tb-label label-vocab">✍️ Vocabulary &amp; Writing ⭐ FOCUS</div><div class="tb-activity">Adjectives about me: 5 topic words + 3 SI words student chooses. Write: "I am [adj]. I am not [adj]. My [SI] is [adj]." Fill boxes on virtual card.</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#7C3AED;">9:04</div><div class="tb-content tb-reading"><div class="tb-label label-reading">📖 Reading &amp; Listening</div><div class="tb-activity">Short "About [SI topic]" paragraph (teacher prepares using student's SI). Find and circle 3 adjectives in the text.</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#16A34A;">9:21</div><div class="tb-content tb-grammar"><div class="tb-label label-grammar">🔧 Grammar in Context</div><div class="tb-activity">Adjective placement: "I am ___" vs "It is ___." Student uses their new SI words in 2 sentences.</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Jul Session 3 -->
+  <div class="session-card">
+    <div class="session-header">
+      <div class="session-date-badge">Thu 16 Jul</div>
+      <div class="session-num">Session 3 of 5</div>
+      <div class="session-focus-pill focus-reading">📖 Reading &amp; Listening</div>
+    </div>
+    <div class="session-body">
+      <div class="session-goal">🎯 Goal: Student reads and listens to a short SI-based text and answers 3 questions in English.</div>
+      <div class="time-blocks">
+        <div class="time-block"><div class="tb-time" style="background:#0891B2;">8:30</div><div class="tb-content tb-speaking"><div class="tb-label label-speaking">🗣️ Speaking &amp; Listening</div><div class="tb-activity">True/False game about last week's vocabulary — teacher says sentences, student says "True!" or "False!" then corrects.</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#F97316;">8:47</div><div class="tb-content tb-vocab"><div class="tb-label label-vocab">✍️ Vocabulary &amp; Writing</div><div class="tb-activity">5 new words from today's reading text. Match word to picture/emoji. Write 1 sentence using 2 new words.</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#7C3AED;">9:04</div><div class="tb-content tb-reading"><div class="tb-label label-reading">📖 Reading &amp; Listening ⭐ FOCUS</div><div class="tb-activity">Read aloud together: 80-word text about student's SI (teacher prepares in advance). Answer: 1 factual, 1 "what do you think?" question, 1 word-meaning question.</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#16A34A;">9:21</div><div class="tb-content tb-grammar"><div class="tb-label label-grammar">🔧 Grammar in Context</div><div class="tb-activity">Subject–Verb agreement with "is/are/has": Student makes 3 true sentences about the text: "[Name] is ___ . [Thing] has ___."</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Jul Session 4 -->
+  <div class="session-card">
+    <div class="session-header">
+      <div class="session-date-badge">Thu 23 Jul</div>
+      <div class="session-num">Session 4 of 5</div>
+      <div class="session-focus-pill focus-grammar">🔧 Grammar in Context</div>
+    </div>
+    <div class="session-body">
+      <div class="session-goal">🎯 Goal: Student can use "I like / I am / I have / I don't like" correctly in spoken and written sentences.</div>
+      <div class="time-blocks">
+        <div class="time-block"><div class="tb-time" style="background:#0891B2;">8:30</div><div class="tb-content tb-speaking"><div class="tb-label label-speaking">🗣️ Speaking &amp; Listening</div><div class="tb-activity">"This or That?" — teacher shows 2 images, student says full sentence: "I like [A] because ___." Fast and fun.</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#F97316;">8:47</div><div class="tb-content tb-vocab"><div class="tb-label label-vocab">✍️ Vocabulary &amp; Writing</div><div class="tb-activity">Review July's word bank. Student picks their 5 favourite words and writes 1 sentence each — using a sentence starter frame.</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#7C3AED;">9:04</div><div class="tb-content tb-reading"><div class="tb-label label-reading">📖 Reading &amp; Listening</div><div class="tb-activity">Short "interview" script — student reads aloud as a character, teacher reads the interviewer. Then swap roles.</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#16A34A;">9:21</div><div class="tb-content tb-grammar"><div class="tb-label label-grammar">🔧 Grammar in Context ⭐ FOCUS</div><div class="tb-activity">Negative Simple Present: "I don't like ___. I am not ___." Student makes 3 true negative sentences verbally. Then writes 2 in the chat.</div><div class="grammar-inset">Key pattern: "I don't like [thing]." / "I am not [adjective]." — no drilling, just natural use in sentences.</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Jul Session 5 Showcase -->
+  <div class="showcase-banner">
+    <div class="showcase-icon">⭐</div>
+    <div class="showcase-text">Session 5 — Mini Showcase! Student shares 3 facts about themselves in English using all vocabulary from July.</div>
+  </div>
+  <div class="session-card" style="border-color:#F59E0B;">
+    <div class="session-header" style="background:#FFFBEB;">
+      <div class="session-date-badge" style="background:#D97706;">Thu 30 Jul</div>
+      <div class="session-num">Session 5 of 5 ★ SHOWCASE</div>
+      <div class="session-focus-pill focus-showcase">⭐ Mini Showcase + Review</div>
+    </div>
+    <div class="session-body">
+      <div class="session-goal">🎯 Goal: Student uses July's vocabulary in a short, supported self-presentation (2–3 sentences per block).</div>
+      <div class="time-blocks">
+        <div class="time-block"><div class="tb-time" style="background:#0891B2;">8:30</div><div class="tb-content tb-speaking"><div class="tb-label label-speaking">🗣️ Speaking</div><div class="tb-activity">Student introduces themselves to an imaginary new friend — verbal, supported by their July word bank if needed.</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#F97316;">8:47</div><div class="tb-content tb-vocab"><div class="tb-label label-vocab">✍️ Vocabulary</div><div class="tb-activity">Student writes 3 sentences: "I am ___. I like ___. I don't like ___." — freestyle, no frame needed now.</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#7C3AED;">9:04</div><div class="tb-content tb-reading"><div class="tb-label label-reading">📖 Reading</div><div class="tb-activity">Student reads their written sentences aloud. Teacher gives 1 positive comment + 1 small improvement tip. Celebrate!</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#D97706;">9:21</div><div class="tb-content tb-wrap"><div class="tb-label label-wrap">🏆 Mini Celebration</div><div class="tb-activity">Review July's star chart. Award "Month 1 Complete 🌟" badge. Preview August topic: Animals &amp; Nature.</div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PAGE 5 — AUGUST: ANIMALS & NATURE
+══════════════════════════════════════════ -->
+<div class="page">
+  <div class="section-divider color-august">
+    <div class="sd-emoji">🐾</div>
+    <div class="sd-text">
+      <div class="sd-month">Month 2 · August 2026</div>
+      <div class="sd-title">Animals &amp; Nature</div>
+      <div class="sd-meta">Grammar Focus: Describing with Adjectives · Vocab: Animal &amp; Habitat Words · 4 Sessions</div>
+    </div>
+    <div class="sd-badge">
+      <span class="sd-badge-num">4</span>
+      <span class="sd-badge-lbl">Sessions</span>
+    </div>
+  </div>
+
+  <div class="session-card">
+    <div class="session-header">
+      <div class="session-date-badge" style="background:#16A34A;">Thu 06 Aug</div>
+      <div class="session-num">Session 1 of 4</div>
+      <div class="session-focus-pill focus-speaking">🗣️ Speaking &amp; Listening</div>
+    </div>
+    <div class="session-body">
+      <div class="session-goal">🎯 Goal: Student can describe a favourite animal using 2–3 adjectives and a reason, spoken aloud.</div>
+      <div class="time-blocks">
+        <div class="time-block"><div class="tb-time" style="background:#0891B2;">8:30</div><div class="tb-content tb-speaking"><div class="tb-label label-speaking">🗣️ Speaking &amp; Listening ⭐ FOCUS</div><div class="tb-activity">"Animal Quiz" — teacher describes an animal in 3 clues, student guesses. Then student describes their favourite animal using clues. Fun, no wrong answers.</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#F97316;">8:47</div><div class="tb-content tb-vocab"><div class="tb-label label-vocab">✍️ Vocabulary &amp; Writing</div><div class="tb-activity">5 animal adjectives: big, small, fast, soft, scary. + 2 SI-linked animal words. Write: "My favourite animal is [name]. It is [adj] and [adj]."</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#7C3AED;">9:04</div><div class="tb-content tb-reading"><div class="tb-label label-reading">📖 Reading &amp; Listening</div><div class="tb-activity">Listen to 60-sec nature clip or read a 70-word animal fact card. Answer: What animal is it? One surprising fact?</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#16A34A;">9:21</div><div class="tb-content tb-grammar"><div class="tb-label label-grammar">🔧 Grammar in Context</div><div class="tb-activity">Adjective + noun word order: "A big dog" vs "A dog big" — student corrects teacher's funny wrong sentences verbally.</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="session-card">
+    <div class="session-header">
+      <div class="session-date-badge" style="background:#16A34A;">Thu 13 Aug</div>
+      <div class="session-num">Session 2 of 4</div>
+      <div class="session-focus-pill focus-vocab">✍️ Vocabulary &amp; Writing</div>
+    </div>
+    <div class="session-body">
+      <div class="session-goal">🎯 Goal: Student writes 3 sentences about an animal using action verbs and habitat words.</div>
+      <div class="time-blocks">
+        <div class="time-block"><div class="tb-time" style="background:#0891B2;">8:30</div><div class="tb-content tb-speaking"><div class="tb-label label-speaking">🗣️ Speaking &amp; Listening</div><div class="tb-activity">"What does it do?" — teacher names an animal, student says what it does: "A fish swims. A bird flies." Keep it fast and game-like.</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#F97316;">8:47</div><div class="tb-content tb-vocab"><div class="tb-label label-vocab">✍️ Vocabulary &amp; Writing ⭐ FOCUS</div><div class="tb-activity">Action verbs: swims, runs, flies, eats, lives. Habitat words: forest, ocean, sky, desert. Write: "The [animal] [verb] in the [habitat]." × 3 sentences.</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#7C3AED;">9:04</div><div class="tb-content tb-reading"><div class="tb-label label-reading">📖 Reading &amp; Listening</div><div class="tb-activity">Read a 75-word animal habitat fact card. Underline all action verbs. How many did you find?</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#16A34A;">9:21</div><div class="tb-content tb-grammar"><div class="tb-label label-grammar">🔧 Grammar in Context</div><div class="tb-activity">Third-person Simple Present: "It swims / It eats / It has." Student makes 3 sentences about their chosen animal.</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="session-card">
+    <div class="session-header">
+      <div class="session-date-badge" style="background:#16A34A;">Thu 20 Aug</div>
+      <div class="session-num">Session 3 of 4</div>
+      <div class="session-focus-pill focus-reading">📖 Reading &amp; Listening</div>
+    </div>
+    <div class="session-body">
+      <div class="session-goal">🎯 Goal: Student finds 2 interesting facts from a text and shares them verbally in their own words.</div>
+      <div class="time-blocks">
+        <div class="time-block"><div class="tb-time" style="background:#0891B2;">8:30</div><div class="tb-content tb-speaking"><div class="tb-label label-speaking">🗣️ Speaking &amp; Listening</div><div class="tb-activity">"Did you know?" game — each person shares 1 animal fact they remember. Student starts. Teacher reacts with genuine curiosity.</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#F97316;">8:47</div><div class="tb-content tb-vocab"><div class="tb-label label-vocab">✍️ Vocabulary &amp; Writing</div><div class="tb-activity">Review: match 6 animal words to their pictures. Write 1 new sentence using a word from today's reading text.</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#7C3AED;">9:04</div><div class="tb-content tb-reading"><div class="tb-label label-reading">📖 Reading &amp; Listening ⭐ FOCUS</div><div class="tb-activity">Read a cool animal fact sheet (SI-adapted if possible). Find 2 facts you didn't know. Retell them verbally: "I learned that ___."</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#16A34A;">9:21</div><div class="tb-content tb-grammar"><div class="tb-label label-grammar">🔧 Grammar in Context</div><div class="tb-activity">Comparative adjectives: "bigger than / faster than / more [adj] than." Student compares 2 animals in 2 sentences, spoken.</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="session-card">
+    <div class="session-header">
+      <div class="session-date-badge" style="background:#16A34A;">Thu 27 Aug</div>
+      <div class="session-num">Session 4 of 4 ★ REVIEW</div>
+      <div class="session-focus-pill focus-grammar">🔧 Grammar + Review</div>
+    </div>
+    <div class="session-body">
+      <div class="session-goal">🎯 Goal: Student uses all August vocabulary to describe and compare 2 animals in spoken and written English.</div>
+      <div class="time-blocks">
+        <div class="time-block"><div class="tb-time" style="background:#0891B2;">8:30</div><div class="tb-content tb-speaking"><div class="tb-label label-speaking">🗣️ Speaking &amp; Listening</div><div class="tb-activity">"My Animal Expert Report" — student presents their favourite animal in 4–5 sentences verbally. Teacher listens, asks 1 follow-up question.</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#F97316;">8:47</div><div class="tb-content tb-vocab"><div class="tb-label label-vocab">✍️ Vocabulary &amp; Writing</div><div class="tb-activity">Write a 3-sentence animal mini-report: "The [animal] is [adj]. It [verb] in [habitat]. It is [comp] than [other animal]."</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#7C3AED;">9:04</div><div class="tb-content tb-reading"><div class="tb-label label-reading">📖 Reading &amp; Listening</div><div class="tb-activity">Student reads their mini-report aloud. Teacher gives 2 positive points. Quick: find 1 word in the text to add to their word bank.</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#16A34A;">9:21</div><div class="tb-content tb-grammar"><div class="tb-label label-grammar">🔧 Grammar in Context ⭐ FOCUS</div><div class="tb-activity">Describing game: "The [animal] is [adj] but the [animal] is [adj]er." Using "but / and / because" — student makes 3 spoken sentences.</div><div class="grammar-inset">Celebrate August completion! Award "Animals Expert 🐾" badge. Preview: September = Food &amp; Daily Life 🍜</div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PAGE 6 — SEPTEMBER: FOOD & DAILY LIFE
+══════════════════════════════════════════ -->
+<div class="page">
+  <div class="section-divider color-sept">
+    <div class="sd-emoji">🍜</div>
+    <div class="sd-text">
+      <div class="sd-month">Month 3 · September 2026</div>
+      <div class="sd-title">Food &amp; Daily Life</div>
+      <div class="sd-meta">Grammar Focus: Time Connectors &amp; Simple Present Routine · Vocab: Food, Verbs, Daily Schedule · 4 Sessions</div>
+    </div>
+    <div class="sd-badge"><span class="sd-badge-num">4</span><span class="sd-badge-lbl">Sessions</span></div>
+  </div>
+
+  <div class="session-card">
+    <div class="session-header">
+      <div class="session-date-badge" style="background:#D97706;">Thu 03 Sep</div>
+      <div class="session-num">Session 1 of 4</div>
+      <div class="session-focus-pill focus-speaking">🗣️ Speaking &amp; Listening</div>
+    </div>
+    <div class="session-body">
+      <div class="session-goal">🎯 Goal: Student can describe their favourite food and one part of their daily routine in English.</div>
+      <div class="time-blocks">
+        <div class="time-block"><div class="tb-time" style="background:#0891B2;">8:30</div><div class="tb-content tb-speaking"><div class="tb-label label-speaking">🗣️ Speaking &amp; Listening ⭐ FOCUS</div><div class="tb-activity">"Perfect Day" — teacher asks: "What do you eat for breakfast?" "What do you do after school?" Student answers in English, teacher helps with words as needed.</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#F97316;">8:47</div><div class="tb-content tb-vocab"><div class="tb-label label-vocab">✍️ Vocabulary &amp; Writing</div><div class="tb-activity">5 food words + 3 routine verbs (wake up, eat, sleep). Write: "In the morning, I ___. Then I ___." × 2 sentences.</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#7C3AED;">9:04</div><div class="tb-content tb-reading"><div class="tb-label label-reading">📖 Reading &amp; Listening</div><div class="tb-activity">Read a 70-word "My Perfect Day" example. Underline 3 routine verbs. Discuss: "Is this like your day?"</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#16A34A;">9:21</div><div class="tb-content tb-grammar"><div class="tb-label label-grammar">🔧 Grammar in Context</div><div class="tb-activity">Time words: "in the morning / at night / after [activity]." Student places them in their 2 sentences from Block 2.</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="session-card">
+    <div class="session-header">
+      <div class="session-date-badge" style="background:#D97706;">Thu 10 Sep</div>
+      <div class="session-num">Session 2 of 4</div>
+      <div class="session-focus-pill focus-vocab">✍️ Vocabulary &amp; Writing</div>
+    </div>
+    <div class="session-body">
+      <div class="session-goal">🎯 Goal: Student writes a simple daily schedule using time expressions and routine verbs.</div>
+      <div class="time-blocks">
+        <div class="time-block"><div class="tb-time" style="background:#0891B2;">8:30</div><div class="tb-content tb-speaking"><div class="tb-label label-speaking">🗣️ Speaking &amp; Listening</div><div class="tb-activity">"What time do you ___?" — rapid-fire verbal Q&amp;A. Teacher keeps it light and funny: "Do you eat pizza for breakfast?" Student corrects teacher's silly statements.</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#F97316;">8:47</div><div class="tb-content tb-vocab"><div class="tb-label label-vocab">✍️ Vocabulary &amp; Writing ⭐ FOCUS</div><div class="tb-activity">Complete a visual daily schedule template: 5 time slots, student writes the activity. Use word bank. E.g., "7:00 am — I wake up."</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#7C3AED;">9:04</div><div class="tb-content tb-reading"><div class="tb-label label-reading">📖 Reading &amp; Listening</div><div class="tb-activity">Read a character's daily schedule (70 words). Answer: What does [character] eat for lunch? What time does [character] sleep?</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#16A34A;">9:21</div><div class="tb-content tb-grammar"><div class="tb-label label-grammar">🔧 Grammar in Context</div><div class="tb-activity">Sequence connectors: "First… then… next… finally…" Student retells their daily schedule using these words — spoken, 4 sentences.</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="session-card">
+    <div class="session-header">
+      <div class="session-date-badge" style="background:#D97706;">Thu 17 Sep</div>
+      <div class="session-num">Session 3 of 4</div>
+      <div class="session-focus-pill focus-reading">📖 Reading &amp; Listening</div>
+    </div>
+    <div class="session-body">
+      <div class="session-goal">🎯 Goal: Student follows a sequenced text (recipe / routine) and can retell the steps in order.</div>
+      <div class="time-blocks">
+        <div class="time-block"><div class="tb-time" style="background:#0891B2;">8:30</div><div class="tb-content tb-speaking"><div class="tb-label label-speaking">🗣️ Speaking &amp; Listening</div><div class="tb-activity">"How do you make [SI food or game snack]?" Student explains steps in English — teacher helps with verbs as needed. No pressure to be perfect.</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#F97316;">8:47</div><div class="tb-content tb-vocab"><div class="tb-label label-vocab">✍️ Vocabulary &amp; Writing</div><div class="tb-activity">Cooking verbs: mix, add, cut, cook, eat. Write: "First, [verb] the ___. Then, [verb] the ___." × 2 steps.</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#7C3AED;">9:04</div><div class="tb-content tb-reading"><div class="tb-label label-reading">📖 Reading &amp; Listening ⭐ FOCUS</div><div class="tb-activity">Read a simple 5-step recipe (SI-adapted, e.g., "How to make [favourite snack]"). Number the steps. Retell steps 1, 3, 5 verbally without looking.</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#16A34A;">9:21</div><div class="tb-content tb-grammar"><div class="tb-label label-grammar">🔧 Grammar in Context</div><div class="tb-activity">Imperative verbs for instructions: "Mix the ___ . Add the ___ . Eat the ___!" Student writes 3 instructions for their own favourite snack.</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="session-card">
+    <div class="session-header">
+      <div class="session-date-badge" style="background:#D97706;">Thu 24 Sep</div>
+      <div class="session-num">Session 4 of 4 ★ REVIEW</div>
+      <div class="session-focus-pill focus-grammar">🔧 Grammar + Review</div>
+    </div>
+    <div class="session-body">
+      <div class="session-goal">🎯 Goal: Student uses sequence connectors to describe a daily routine or a recipe aloud and in writing.</div>
+      <div class="time-blocks">
+        <div class="time-block"><div class="tb-time" style="background:#0891B2;">8:30</div><div class="tb-content tb-speaking"><div class="tb-label label-speaking">🗣️ Speaking &amp; Listening</div><div class="tb-activity">"My Morning in 4 Sentences" — student describes their morning routine using First/Then/Next/Finally. Teacher times it (aim: under 45 seconds).</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#F97316;">8:47</div><div class="tb-content tb-vocab"><div class="tb-label label-vocab">✍️ Vocabulary &amp; Writing</div><div class="tb-activity">Write a 4-sentence routine: "First I ___. Then I ___. Next I ___. Finally I ___." Can be about a game routine if preferred (SI integration).</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#7C3AED;">9:04</div><div class="tb-content tb-reading"><div class="tb-label label-reading">📖 Reading &amp; Listening</div><div class="tb-activity">Student reads their 4 sentences aloud. Teacher asks 1 question. Award "Daily Life Pro 🍜" badge. Preview October!</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#16A34A;">9:21</div><div class="tb-content tb-grammar"><div class="tb-label label-grammar">🔧 Grammar in Context ⭐ FOCUS</div><div class="tb-activity">Simple Present frequency: "I always / usually / sometimes / never ___." Student makes 4 true sentences about their week.</div><div class="grammar-inset">🎉 September done! Preview October: Adventure &amp; Exploration 🗺️ — "Next week we travel the world in English!"</div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PAGE 7 — OCTOBER: ADVENTURE & EXPLORATION
+══════════════════════════════════════════ -->
+<div class="page">
+  <div class="section-divider color-oct">
+    <div class="sd-emoji">🗺️</div>
+    <div class="sd-text">
+      <div class="sd-month">Month 4 · October 2026</div>
+      <div class="sd-title">Adventure &amp; Exploration</div>
+      <div class="sd-meta">Grammar Focus: Simple Past Tense · Vocab: Places, Travel, Story Words · 5 Sessions</div>
+    </div>
+    <div class="sd-badge"><span class="sd-badge-num">5</span><span class="sd-badge-lbl">Sessions</span></div>
+  </div>
+
+  <div class="session-card">
+    <div class="session-header">
+      <div class="session-date-badge" style="background:#DB2777;">Thu 01 Oct</div>
+      <div class="session-num">Session 1 of 5</div>
+      <div class="session-focus-pill focus-speaking">🗣️ Speaking &amp; Listening</div>
+    </div>
+    <div class="session-body">
+      <div class="session-goal">🎯 Goal: Student can say where they want to go and give 1 reason, spoken in English.</div>
+      <div class="time-blocks">
+        <div class="time-block"><div class="tb-time" style="background:#0891B2;">8:30</div><div class="tb-content tb-speaking"><div class="tb-label label-speaking">🗣️ Speaking &amp; Listening ⭐ FOCUS</div><div class="tb-activity">Interactive map activity: teacher screen-shares a world map. Student clicks on places they want to visit and says 1 sentence about each: "I want to go to [place] because ___."</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#F97316;">8:47</div><div class="tb-content tb-vocab"><div class="tb-label label-vocab">✍️ Vocabulary &amp; Writing</div><div class="tb-activity">Travel words: mountain, ocean, city, jungle, castle. Write: "I want to visit [place]. I want to see ___."</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#7C3AED;">9:04</div><div class="tb-content tb-reading"><div class="tb-label label-reading">📖 Reading &amp; Listening</div><div class="tb-activity">Read a 70-word "Dream Destination" paragraph. Answer: Where is it? What can you do there? Would you go?</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#16A34A;">9:21</div><div class="tb-content tb-grammar"><div class="tb-label label-grammar">🔧 Grammar in Context</div><div class="tb-activity">"Want to + verb": "I want to go / see / eat / try ___." Student makes 3 spoken sentences about their imaginary trip.</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="session-card">
+    <div class="session-header">
+      <div class="session-date-badge" style="background:#DB2777;">Thu 08 Oct</div>
+      <div class="session-num">Session 2 of 5</div>
+      <div class="session-focus-pill focus-vocab">✍️ Vocabulary &amp; Writing</div>
+    </div>
+    <div class="session-body">
+      <div class="session-goal">🎯 Goal: Student writes a 3-sentence postcard from an imaginary destination using new place vocabulary.</div>
+      <div class="time-blocks">
+        <div class="time-block"><div class="tb-time" style="background:#0891B2;">8:30</div><div class="tb-content tb-speaking"><div class="tb-label label-speaking">🗣️ Speaking &amp; Listening</div><div class="tb-activity">"Postcard Guessing" — teacher reads a postcard aloud, student guesses the destination. Then student reads one back.</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#F97316;">8:47</div><div class="tb-content tb-vocab"><div class="tb-label label-vocab">✍️ Vocabulary &amp; Writing ⭐ FOCUS</div><div class="tb-activity">Postcard writing frame: "Dear [name], I am in [place]. It is [adj]. I can see [thing]. I love it here!" Student writes their own 3-sentence postcard on a virtual card.</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#7C3AED;">9:04</div><div class="tb-content tb-reading"><div class="tb-label label-reading">📖 Reading &amp; Listening</div><div class="tb-activity">Read 2 short postcards (60 words each). Which place sounds more interesting? Why? Discuss verbally.</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#16A34A;">9:21</div><div class="tb-content tb-grammar"><div class="tb-label label-grammar">🔧 Grammar in Context</div><div class="tb-activity">Present continuous for ongoing actions: "I am sitting on the beach. I am eating [food]." Student adds 1 present continuous sentence to their postcard.</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="session-card">
+    <div class="session-header">
+      <div class="session-date-badge" style="background:#DB2777;">Thu 15 Oct</div>
+      <div class="session-num">Session 3 of 5</div>
+      <div class="session-focus-pill focus-reading">📖 Reading &amp; Listening</div>
+    </div>
+    <div class="session-body">
+      <div class="session-goal">🎯 Goal: Student reads a short travel blog and finds 2 new words and 1 interesting fact.</div>
+      <div class="time-blocks">
+        <div class="time-block"><div class="tb-time" style="background:#0891B2;">8:30</div><div class="tb-content tb-speaking"><div class="tb-label label-speaking">🗣️ Speaking &amp; Listening</div><div class="tb-activity">"Explorer's Q&amp;A" — student is an explorer returning from a trip (real or SI-linked). Teacher interviews them: "What did you see? What did you eat?"</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#F97316;">8:47</div><div class="tb-content tb-vocab"><div class="tb-label label-vocab">✍️ Vocabulary &amp; Writing</div><div class="tb-activity">Highlight 3 new words from the blog text. Write a definition in English using: "It means ___" or "It is like ___."</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#7C3AED;">9:04</div><div class="tb-content tb-reading"><div class="tb-label label-reading">📖 Reading &amp; Listening ⭐ FOCUS</div><div class="tb-activity">Read a travel blog post (80 words, SI-adapted). Answer: What is the place? 1 activity there? 1 surprising fact? Share verbally using "I learned that ___."</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#16A34A;">9:21</div><div class="tb-content tb-grammar"><div class="tb-label label-grammar">🔧 Grammar in Context</div><div class="tb-activity">Introduce Simple Past: "went / saw / ate / was." Teacher shows examples from the blog. Student finds 2 past tense verbs in the text.</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="session-card">
+    <div class="session-header">
+      <div class="session-date-badge" style="background:#DB2777;">Thu 22 Oct</div>
+      <div class="session-num">Session 4 of 5</div>
+      <div class="session-focus-pill focus-grammar">🔧 Grammar in Context</div>
+    </div>
+    <div class="session-body">
+      <div class="session-goal">🎯 Goal: Student tells a short past-tense story using "I went / I saw / It was."</div>
+      <div class="time-blocks">
+        <div class="time-block"><div class="tb-time" style="background:#0891B2;">8:30</div><div class="tb-content tb-speaking"><div class="tb-label label-speaking">🗣️ Speaking &amp; Listening</div><div class="tb-activity">"Story Starter" — teacher says a sentence, student continues: "Last week I went to a forest. I saw a ___." Take turns adding to the story.</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#F97316;">8:47</div><div class="tb-content tb-vocab"><div class="tb-label label-vocab">✍️ Vocabulary &amp; Writing</div><div class="tb-activity">Story words: suddenly, then, finally, but, because. Write a 3-sentence mini-story about an imaginary adventure using 2 of these words.</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#7C3AED;">9:04</div><div class="tb-content tb-reading"><div class="tb-label label-reading">📖 Reading &amp; Listening</div><div class="tb-activity">Listen to a 60-second adventure story. Put 4 events in order. Retell the story in 2 sentences.</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#16A34A;">9:21</div><div class="tb-content tb-grammar"><div class="tb-label label-grammar">🔧 Grammar in Context ⭐ FOCUS</div><div class="tb-activity">Simple Past irregular verbs practice in context: went, saw, found, ate, was. Student tells a 3-sentence story using all 5 verbs — spoken, supported by verb card.</div><div class="grammar-inset">Verb card: go→went, see→saw, find→found, eat→ate, be→was. Post this in the chat at the start of Block 4.</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="showcase-banner">
+    <div class="showcase-icon">🗺️</div>
+    <div class="showcase-text">Session 5 — October Mini Showcase! Student describes a full imaginary adventure using Simple Past tense.</div>
+  </div>
+  <div class="session-card" style="border-color:#F59E0B;">
+    <div class="session-header" style="background:#FDF2F8;">
+      <div class="session-date-badge" style="background:#DB2777;">Thu 29 Oct</div>
+      <div class="session-num">Session 5 of 5 ★ SHOWCASE</div>
+      <div class="session-focus-pill focus-showcase">⭐ Mini Showcase + Review</div>
+    </div>
+    <div class="session-body">
+      <div class="session-goal">🎯 Goal: Student narrates a 4–5 sentence adventure story in past tense, using vocabulary from October.</div>
+      <div class="time-blocks">
+        <div class="time-block"><div class="tb-time" style="background:#0891B2;">8:30</div><div class="tb-content tb-speaking"><div class="tb-label label-speaking">🗣️ Speaking</div><div class="tb-activity">Student presents "My Imaginary Adventure" — 4–5 sentences spoken. Can refer to postcard or story notes. Teacher listens fully before commenting.</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#F97316;">8:47</div><div class="tb-content tb-vocab"><div class="tb-label label-vocab">✍️ Vocabulary</div><div class="tb-activity">Write adventure story in 4 sentences using past tense + October word bank. Teacher helps only if stuck — no correction mid-writing.</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#7C3AED;">9:04</div><div class="tb-content tb-reading"><div class="tb-label label-reading">📖 Showcase Read-Aloud</div><div class="tb-activity">Student reads their story aloud. Teacher gives 2 positive comments. Award "Explorer Badge 🗺️". Preview November!</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#D97706;">9:21</div><div class="tb-content tb-wrap"><div class="tb-label label-wrap">🏆 Celebrate October!</div><div class="tb-activity">Update star chart. Review progress bars. Preview: November = Technology &amp; Games 🎮 "You're the expert next month!"</div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PAGE 8 — NOVEMBER: TECHNOLOGY & GAMES
+══════════════════════════════════════════ -->
+<div class="page">
+  <div class="section-divider color-nov">
+    <div class="sd-emoji">🎮</div>
+    <div class="sd-text">
+      <div class="sd-month">Month 5 · November 2026</div>
+      <div class="sd-title">Technology &amp; Games</div>
+      <div class="sd-meta">Grammar Focus: Modal Verbs (should / can / must) · Vocab: Tech, Games, Instructions · 4 Sessions</div>
+    </div>
+    <div class="sd-badge"><span class="sd-badge-num">4</span><span class="sd-badge-lbl">Sessions</span></div>
+  </div>
+
+  <div class="session-card">
+    <div class="session-header">
+      <div class="session-date-badge" style="background:#7C3AED;">Thu 05 Nov</div>
+      <div class="session-num">Session 1 of 4</div>
+      <div class="session-focus-pill focus-speaking">🗣️ Speaking &amp; Listening</div>
+    </div>
+    <div class="session-body">
+      <div class="session-goal">🎯 Goal: Student explains how a favourite game/app/tech works in English — acts as the expert.</div>
+      <div class="time-blocks">
+        <div class="time-block"><div class="tb-time" style="background:#0891B2;">8:30</div><div class="tb-content tb-speaking"><div class="tb-label label-speaking">🗣️ Speaking &amp; Listening ⭐ FOCUS</div><div class="tb-activity">"Teach the Teacher" — student explains their favourite game or app to the teacher who pretends not to know it. Teacher asks genuine questions. Student is the expert!</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#F97316;">8:47</div><div class="tb-content tb-vocab"><div class="tb-label label-vocab">✍️ Vocabulary &amp; Writing</div><div class="tb-activity">Tech/game words: screen, level, character, control, win. + 3 SI-specific game terms student provides. Write: "In [game], you [verb] to [achieve]."</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#7C3AED;">9:04</div><div class="tb-content tb-reading"><div class="tb-label label-reading">📖 Reading &amp; Listening</div><div class="tb-activity">Read a short game description (75 words, ideally student's actual SI game). Find: the goal, 2 things the player does, 1 new word.</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#16A34A;">9:21</div><div class="tb-content tb-grammar"><div class="tb-label label-grammar">🔧 Grammar in Context</div><div class="tb-activity">Introduce "can" for ability: "In this game, you can ___. You cannot ___." Student makes 3 spoken sentences about their game.</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="session-card">
+    <div class="session-header">
+      <div class="session-date-badge" style="background:#7C3AED;">Thu 12 Nov</div>
+      <div class="session-num">Session 2 of 4</div>
+      <div class="session-focus-pill focus-vocab">✍️ Vocabulary &amp; Writing</div>
+    </div>
+    <div class="session-body">
+      <div class="session-goal">🎯 Goal: Student writes 3 clear game instructions using imperative and modal verbs.</div>
+      <div class="time-blocks">
+        <div class="time-block"><div class="tb-time" style="background:#0891B2;">8:30</div><div class="tb-content tb-speaking"><div class="tb-label label-speaking">🗣️ Speaking &amp; Listening</div><div class="tb-activity">"How To Play" verbal instructions — student explains a game in exactly 4 spoken sentences. Teacher follows the instructions (and pretends to play badly 😄).</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#F97316;">8:47</div><div class="tb-content tb-vocab"><div class="tb-label label-vocab">✍️ Vocabulary &amp; Writing ⭐ FOCUS</div><div class="tb-activity">Write a 3-instruction game guide: "Step 1: [verb] the ___. Step 2: [verb] the ___. Step 3: [verb] to win!" Use SI game. Teacher provides a sentence frame template.</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#7C3AED;">9:04</div><div class="tb-content tb-reading"><div class="tb-label label-reading">📖 Reading &amp; Listening</div><div class="tb-activity">Read a real short game instruction snippet (80 words, from the actual game or manual if available). Find the imperatives — circle them.</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#16A34A;">9:21</div><div class="tb-content tb-grammar"><div class="tb-label label-grammar">🔧 Grammar in Context</div><div class="tb-activity">"You must / you should" for rules and advice: "You must collect coins. You should avoid the enemy." Student adds 2 of these to their game guide.</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="session-card">
+    <div class="session-header">
+      <div class="session-date-badge" style="background:#7C3AED;">Thu 19 Nov</div>
+      <div class="session-num">Session 3 of 4</div>
+      <div class="session-focus-pill focus-reading">📖 Reading &amp; Listening</div>
+    </div>
+    <div class="session-body">
+      <div class="session-goal">🎯 Goal: Student reads a tech article or game review and passes a true/false quiz, then discusses their opinion.</div>
+      <div class="time-blocks">
+        <div class="time-block"><div class="tb-time" style="background:#0891B2;">8:30</div><div class="tb-content tb-speaking"><div class="tb-label label-speaking">🗣️ Speaking &amp; Listening</div><div class="tb-activity">"Opinion Hot Seat" — teacher says a tech opinion ("Video games are better than TV"), student agrees/disagrees and gives 1 reason in English.</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#F97316;">8:47</div><div class="tb-content tb-vocab"><div class="tb-label label-vocab">✍️ Vocabulary &amp; Writing</div><div class="tb-activity">Opinion + evaluation words: amazing, difficult, boring, useful, popular. Write: "I think [tech/game] is [adj] because ___." × 2 sentences.</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#7C3AED;">9:04</div><div class="tb-content tb-reading"><div class="tb-label label-reading">📖 Reading &amp; Listening ⭐ FOCUS</div><div class="tb-activity">Read a short game/tech review (80 words). Complete a T/F quiz (5 statements). Discuss: "Do you agree with this review?" — student gives their opinion in 1–2 sentences.</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#16A34A;">9:21</div><div class="tb-content tb-grammar"><div class="tb-label label-grammar">🔧 Grammar in Context</div><div class="tb-activity">Opinion starters: "I think ___. I believe ___. In my opinion ___." Student uses each one in a spoken sentence about today's topic.</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="session-card">
+    <div class="session-header">
+      <div class="session-date-badge" style="background:#7C3AED;">Thu 26 Nov</div>
+      <div class="session-num">Session 4 of 4 ★ REVIEW</div>
+      <div class="session-focus-pill focus-grammar">🔧 Grammar + Review</div>
+    </div>
+    <div class="session-body">
+      <div class="session-goal">🎯 Goal: Student uses modal verbs naturally in a game instruction context — spoken and written.</div>
+      <div class="time-blocks">
+        <div class="time-block"><div class="tb-time" style="background:#0891B2;">8:30</div><div class="tb-content tb-speaking"><div class="tb-label label-speaking">🗣️ Speaking &amp; Listening</div><div class="tb-activity">"Game Show Host" — student is the host, explains a mystery game using only modal verbs: "You must… you can… you should not…" Teacher guesses the game.</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#F97316;">8:47</div><div class="tb-content tb-vocab"><div class="tb-label label-vocab">✍️ Vocabulary &amp; Writing</div><div class="tb-activity">Review November word bank. Student writes their top 3 game words in sentences. Teacher selects the best sentence for the "Best of November" wall.</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#7C3AED;">9:04</div><div class="tb-content tb-reading"><div class="tb-label label-reading">📖 Reading &amp; Listening</div><div class="tb-activity">Read student's own game guide from Session 2. Improve 1 sentence using a modal verb. Read it aloud — celebrate the improvement!</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#16A34A;">9:21</div><div class="tb-content tb-grammar"><div class="tb-label label-grammar">🔧 Grammar in Context ⭐ FOCUS</div><div class="tb-activity">Modal review game: teacher shows a situation, student picks the right modal: "The player is lost. You ___ look at the map." (should/must/can) — rapid-fire spoken.</div><div class="grammar-inset">🎉 November done! Award "Tech Expert 🎮" badge. Big preview: December is the FINAL SHOWCASE — "You will show everything you've learned!"</div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PAGE 9 — DECEMBER: MY YEAR IN REVIEW
+══════════════════════════════════════════ -->
+<div class="page">
+  <div class="section-divider color-dec">
+    <div class="sd-emoji">🏆</div>
+    <div class="sd-text">
+      <div class="sd-month">Month 6 · December 2026</div>
+      <div class="sd-title">My Year in Review</div>
+      <div class="sd-meta">All Grammar &amp; Vocabulary from July–November · Reflection + Final Showcase · 2 Sessions</div>
+    </div>
+    <div class="sd-badge"><span class="sd-badge-num">2</span><span class="sd-badge-lbl">Sessions</span></div>
+  </div>
+
+  <div class="session-card">
+    <div class="session-header">
+      <div class="session-date-badge" style="background:#EF4444;">Thu 03 Dec</div>
+      <div class="session-num">Session 1 of 2 · Reflection</div>
+      <div class="session-focus-pill focus-speaking">🗣️ Speaking &amp; Listening</div>
+    </div>
+    <div class="session-body">
+      <div class="session-goal">🎯 Goal: Student reflects on their favourite topic and learning moments, using all tenses covered during the year.</div>
+      <div class="time-blocks">
+        <div class="time-block"><div class="tb-time" style="background:#0891B2;">8:30</div><div class="tb-content tb-speaking"><div class="tb-label label-speaking">🗣️ Speaking &amp; Listening ⭐ FOCUS</div><div class="tb-activity">"Year in Review" guided conversation — teacher asks: "What was your favourite topic? What new word do you remember? What was the hardest thing?" Student answers freely in English.</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#F97316;">8:47</div><div class="tb-content tb-vocab"><div class="tb-label label-vocab">✍️ Vocabulary &amp; Writing</div><div class="tb-activity">Write "My Top 5 English Words from 2026" — student chooses 5 words from any month and writes 1 sentence each. Completely their choice.</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#7C3AED;">9:04</div><div class="tb-content tb-reading"><div class="tb-label label-reading">📖 Reading &amp; Listening</div><div class="tb-activity">Read back 1 piece of writing from an earlier month (teacher saves one). Student reacts: "I wrote this in [month]. Now I can ___." Celebrate the progress!</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#16A34A;">9:21</div><div class="tb-content tb-grammar"><div class="tb-label label-grammar">🔧 Grammar in Context</div><div class="tb-activity">Review all tenses in 1 activity: "In July I was ___. In September I learned ___. Now I can ___." Student makes 3 sentences covering past to present. Prepare for showcase!</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider-line">
+
+  <div class="showcase-banner" style="background:linear-gradient(135deg,#FEE2E2,#EDE9FE);border-color:#EF4444;">
+    <div class="showcase-icon">🏆</div>
+    <div class="showcase-text">FINAL SESSION — Full Showcase! Student presents a 2-minute talk on their favourite topic using all 4 core skills. Celebration + Final Badge Ceremony!</div>
+  </div>
+
+  <div class="session-card" style="border: 2px solid #EF4444;">
+    <div class="session-header" style="background:linear-gradient(135deg,#FEE2E2,#FEF3C7);">
+      <div class="session-date-badge" style="background:linear-gradient(135deg,#EF4444,#F97316);">Thu 10 Dec ★ FINAL</div>
+      <div class="session-num">Session 2 of 2 · FINAL SHOWCASE</div>
+      <div class="session-focus-pill focus-showcase">🏆 Full Showcase — All 4 Skills</div>
+    </div>
+    <div class="session-body">
+      <div class="session-goal">🎯 Goal: Student delivers a 2-minute presentation on their favourite topic — using speaking, vocabulary, reading comprehension, and grammar from the full year.</div>
+      <div class="time-blocks">
+        <div class="time-block"><div class="tb-time" style="background:#0891B2;">8:30</div><div class="tb-content tb-speaking"><div class="tb-label label-speaking">🗣️ Speaking &amp; Listening — SHOWCASE</div><div class="tb-activity">Student presents 2-minute talk: "My favourite topic was [X]. I learned that ___. I can now say ___." Teacher only listens — no interruptions. This is their moment!</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#F97316;">8:47</div><div class="tb-content tb-vocab"><div class="tb-label label-vocab">✍️ Vocabulary — SHOWCASE</div><div class="tb-activity">Student writes "My English Journey" — 5 sentences about what they learned from July to December. Teacher keeps this forever as a record of progress.</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#7C3AED;">9:04</div><div class="tb-content tb-reading"><div class="tb-label label-reading">📖 Reading — SHOWCASE</div><div class="tb-activity">Student reads their "English Journey" sentences aloud. Teacher reads one back with a special comment about each one. Pure celebration — no corrections today!</div></div></div>
+        <div class="time-block"><div class="tb-time" style="background:#D97706;">9:21</div><div class="tb-content tb-wrap"><div class="tb-label label-wrap">🎉 FINAL BADGE CEREMONY (15 min)</div><div class="tb-activity">Award ALL remaining badges. Complete the star chart. Teacher reads out student's biggest achievement of the year. Say: "You did it. 24 sessions. In English. 🎉"</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="teacher-note" style="margin-top:10px;background:linear-gradient(135deg,#F0FDF4,#FFFBEB);border-color:#F59E0B;">
+    <strong>🎓 End-of-Year Note for Teacher/Parent:</strong> At this point, the student has been exposed to Simple Present, Past Tense, Modal Verbs, Imperatives, Adjectives, Comparatives, Sequence Connectors, and Opinion Language — all through meaningful, topic-driven, neurodivergent-friendly instruction. No grammar was drilled in isolation. Every structure was produced in real communication. That is the most durable kind of learning.
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PAGE 10 — PROGRESS TRACKER + BADGES
+══════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-header">
+    <div class="page-header-title">⭐ Progress Tracker — July to December 2026</div>
+    <div class="page-header-sub">Colour or sticker a star after every completed session</div>
+  </div>
+
+  <div class="tracker-title">🌟 Session Star Chart — 24 Sessions Total</div>
+  <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-bottom:6px;">
+    <!-- July 5 -->
+    <div>
+      <div style="font-size:7.5pt;font-weight:800;color:#3B82F6;margin-bottom:4px;text-align:center;">JULY 🌟</div>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:3px;">
+        <div class="star-cell">⭐</div><div class="star-cell">⭐</div><div class="star-cell">⭐</div><div class="star-cell">⭐</div><div class="star-cell">⭐</div>
+      </div>
+      <div class="star-label">5 sessions</div>
+    </div>
+    <!-- August 4 -->
+    <div>
+      <div style="font-size:7.5pt;font-weight:800;color:#16A34A;margin-bottom:4px;text-align:center;">AUGUST 🐾</div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:3px;">
+        <div class="star-cell">⭐</div><div class="star-cell">⭐</div><div class="star-cell">⭐</div><div class="star-cell">⭐</div>
+      </div>
+      <div class="star-label">4 sessions</div>
+    </div>
+    <!-- September 4 -->
+    <div>
+      <div style="font-size:7.5pt;font-weight:800;color:#D97706;margin-bottom:4px;text-align:center;">SEPT 🍜</div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:3px;">
+        <div class="star-cell">⭐</div><div class="star-cell">⭐</div><div class="star-cell">⭐</div><div class="star-cell">⭐</div>
+      </div>
+      <div class="star-label">4 sessions</div>
+    </div>
+    <!-- October 5 -->
+    <div>
+      <div style="font-size:7.5pt;font-weight:800;color:#DB2777;margin-bottom:4px;text-align:center;">OCTOBER 🗺️</div>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:3px;">
+        <div class="star-cell">⭐</div><div class="star-cell">⭐</div><div class="star-cell">⭐</div><div class="star-cell">⭐</div><div class="star-cell">⭐</div>
+      </div>
+      <div class="star-label">5 sessions</div>
+    </div>
+    <!-- November 4 -->
+    <div>
+      <div style="font-size:7.5pt;font-weight:800;color:#7C3AED;margin-bottom:4px;text-align:center;">NOV 🎮</div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:3px;">
+        <div class="star-cell">⭐</div><div class="star-cell">⭐</div><div class="star-cell">⭐</div><div class="star-cell">⭐</div>
+      </div>
+      <div class="star-label">4 sessions</div>
+    </div>
+    <!-- December 2 -->
+    <div>
+      <div style="font-size:7.5pt;font-weight:800;color:#EF4444;margin-bottom:4px;text-align:center;">DEC 🏆</div>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:3px;">
+        <div class="star-cell">⭐</div><div class="star-cell">⭐</div>
+      </div>
+      <div class="star-label">2 sessions</div>
+    </div>
+  </div>
+
+  <hr class="divider-line">
+
+  <div style="font-size:9.5pt;font-weight:800;color:#374151;margin-bottom:7px;">🎁 Reward Milestones</div>
+  <div class="reward-row">
+    <div class="reward-pill rp-5">⭐ 5 Stars → Extra SI activity time</div>
+    <div class="reward-pill rp-10">✨ 10 Stars → Extended break next session</div>
+    <div class="reward-pill rp-20">🌈 20 Stars → Movie/game night</div>
+    <div class="reward-pill rp-24">🏆 24/24 → Final Champion Badge + Certificate</div>
+  </div>
+
+  <hr class="divider-line">
+
+  <div class="skill-bars">
+    <div style="font-size:9.5pt;font-weight:800;color:#374151;margin-bottom:8px;">📊 My Skill Progress — Fill in at the end of each month (colour each segment ✓)</div>
+    <div class="skill-row">
+      <div class="skill-name" style="color:#0891B2;">🗣️ Speaking</div>
+      <div class="skill-track">
+        <div class="skill-segment"></div><div class="skill-segment"></div><div class="skill-segment"></div><div class="skill-segment"></div><div class="skill-segment"></div><div class="skill-segment"></div>
+      </div>
+      <div class="skill-note">Jul → Dec</div>
+    </div>
+    <div class="skill-row">
+      <div class="skill-name" style="color:#F97316;">✍️ Vocabulary</div>
+      <div class="skill-track">
+        <div class="skill-segment"></div><div class="skill-segment"></div><div class="skill-segment"></div><div class="skill-segment"></div><div class="skill-segment"></div><div class="skill-segment"></div>
+      </div>
+      <div class="skill-note">Jul → Dec</div>
+    </div>
+    <div class="skill-row">
+      <div class="skill-name" style="color:#7C3AED;">📖 Reading</div>
+      <div class="skill-track">
+        <div class="skill-segment"></div><div class="skill-segment"></div><div class="skill-segment"></div><div class="skill-segment"></div><div class="skill-segment"></div><div class="skill-segment"></div>
+      </div>
+      <div class="skill-note">Jul → Dec</div>
+    </div>
+    <div class="skill-row">
+      <div class="skill-name" style="color:#16A34A;">🔧 Grammar</div>
+      <div class="skill-track">
+        <div class="skill-segment"></div><div class="skill-segment"></div><div class="skill-segment"></div><div class="skill-segment"></div><div class="skill-segment"></div><div class="skill-segment"></div>
+      </div>
+      <div class="skill-note">Jul → Dec</div>
+    </div>
+  </div>
+
+  <hr class="divider-line">
+
+  <div style="font-size:9.5pt;font-weight:800;color:#374151;margin-bottom:7px;">🏅 Achievement Badges — Award when earned!</div>
+  <div class="badges-grid">
+    <div class="badge-item"><span class="badge-icon">🌱</span><div class="badge-name">First Session Complete</div></div>
+    <div class="badge-item"><span class="badge-icon">🌟</span><div class="badge-name">Month 1 Champion (July)</div></div>
+    <div class="badge-item"><span class="badge-icon">🗣️</span><div class="badge-name">Brave Speaker</div></div>
+    <div class="badge-item"><span class="badge-icon">✍️</span><div class="badge-name">Word Builder</div></div>
+    <div class="badge-item"><span class="badge-icon">📖</span><div class="badge-name">Story Finder</div></div>
+    <div class="badge-item"><span class="badge-icon">🐾</span><div class="badge-name">Animals Expert (Aug)</div></div>
+    <div class="badge-item"><span class="badge-icon">🍜</span><div class="badge-name">Daily Life Pro (Sep)</div></div>
+    <div class="badge-item"><span class="badge-icon">🗺️</span><div class="badge-name">Explorer (October)</div></div>
+    <div class="badge-item"><span class="badge-icon">🎮</span><div class="badge-name">Tech Expert (Nov)</div></div>
+    <div class="badge-item"><span class="badge-icon">💬</span><div class="badge-name">5 Full Sentences!</div></div>
+    <div class="badge-item"><span class="badge-icon">⭐</span><div class="badge-name">10 Stars Earned</div></div>
+    <div class="badge-item"><span class="badge-icon">🔥</span><div class="badge-name">3-Week Streak</div></div>
+    <div class="badge-item"><span class="badge-icon">🌈</span><div class="badge-name">20 Stars Milestone</div></div>
+    <div class="badge-item"><span class="badge-icon">🎓</span><div class="badge-name">Final Showcase Star</div></div>
+    <div class="badge-item" style="background:linear-gradient(135deg,#FEE2E2,#EDE9FE);border-color:#EF4444;"><span class="badge-icon">🏆</span><div class="badge-name" style="color:#7F1D1D;">4-Month Champion 🏆</div></div>
+  </div>
+
+  <div class="teacher-note" style="margin-top:10px;">
+    <strong>📌 On Hard Days:</strong> Completing even 1 block still earns a star. Verbal answers always accepted instead of written. If the student can only engage for 20 minutes, celebrate that — it counts. Consistency over perfection, always. 💙
+  </div>
+</div>
+
+</body>
+</html>
